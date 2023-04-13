@@ -37,7 +37,7 @@ export default function Home({
 
       <main>
         <h1 className="title">
-          Turn 17 Media coming soon!
+          Turn 17 Media is coming soon!
         </h1>
 
         {isConnected ? (
