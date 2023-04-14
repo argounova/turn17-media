@@ -2,6 +2,7 @@ import Head from 'next/head'
 import clientPromise from '../lib/mongodb'
 import { InferGetServerSidePropsType } from 'next'
 import Button from '@mui/material/Button'
+import TopNavigation from '../components/TopNavigation'
 
 export async function getServerSideProps() {
   try {
@@ -36,17 +37,14 @@ export default function Home({
         <link rel="icon" href="/favicon.ico" />
         <meta name="viewport" content="initial-scale=1, width=device-width" />
       </Head>
-
+      <TopNavigation />
       <main>
         <h1 className="title">
           Turn 17 Media is coming soon!
         </h1>
-        <Button variant='contained'>Do Not Press</Button>
-
         {isConnected ? (
           <>
-          <img src="/turn17-logo-2.png" alt="Turn 17 Media Logo" className="logo" />
-          {/* <img src="/turn17-logo-1.png" alt="Turn 17 Media Logo" className="logo" /> */}
+          db connected...
           </>
         ) : (
           <p className="subtitle">
@@ -54,11 +52,6 @@ export default function Home({
             for instructions.
           </p>
         )}
-
-        {/* <p className="description">
-          Get started by editing <code>pages/index.js</code>
-        </p> */}
-
         <div className="grid">
           <div className="card">
             <h3>Single Page &rarr;</h3>
