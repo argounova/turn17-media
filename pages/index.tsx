@@ -1,6 +1,7 @@
 import Head from 'next/head'
 import clientPromise from '../lib/mongodb'
 import { InferGetServerSidePropsType } from 'next'
+import Button from '@mui/material/Button'
 
 export async function getServerSideProps() {
   try {
@@ -33,12 +34,14 @@ export default function Home({
       <Head>
         <title>Home - Turn 17 Media</title>
         <link rel="icon" href="/favicon.ico" />
+        <meta name="viewport" content="initial-scale=1, width=device-width" />
       </Head>
 
       <main>
         <h1 className="title">
           Turn 17 Media is coming soon!
         </h1>
+        <Button variant='contained'>Do Not Press</Button>
 
         {isConnected ? (
           <>
@@ -79,12 +82,7 @@ export default function Home({
         </div>
       </main>
 
-      <footer>
-        <div>
-          Turn 17 Media Copyright 2023{' '}
-          {/* <img src="/vercel.svg" alt="Vercel Logo" className="logo" /> */}
-        </div>
-      </footer>
+ 
 
       <style jsx>{`
         .container {
@@ -227,7 +225,7 @@ export default function Home({
           padding: 0;
           margin: 0;
           font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
-            Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue,
+            Oxygen, Bungee Spice, Audiowide, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue,
             sans-serif;
         }
 
