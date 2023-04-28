@@ -18,13 +18,13 @@ const pages = ['Basics', 'Pricing', 'Latest'];
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
 function TopNavigation() {
-  const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(null);
-  const [anchorElUser, setAnchorElUser] = React.useState<null | HTMLElement>(null);
+  const [anchorElNav, setAnchorElNav] = React.useState(null);
+  const [anchorElUser, setAnchorElUser] = React.useState(null);
 
-  const handleOpenNavMenu = (event: React.MouseEvent<HTMLElement>) => {
+  const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
   };
-  const handleOpenUserMenu = (event: React.MouseEvent<HTMLElement>) => {
+  const handleOpenUserMenu = (event) => {
     setAnchorElUser(event.currentTarget);
   };
 
@@ -47,7 +47,7 @@ function TopNavigation() {
               display: { xs: 'none', md: 'flex' },
             }}
           >
-            <img src="/turn17-logo-2.png" alt="Turn 17 Media Logo" style={{ width: '100px' }} />
+            <img src="/turn17-media-logo-v1-1.png" alt="Turn 17 Media Logo" style={{ width: '100px' }} />
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
             <IconButton
@@ -101,7 +101,7 @@ function TopNavigation() {
               textDecoration: 'none',
             }}
           >
-            <img src="/turn17-logo-2.png" alt="Turn 17 Media Logo" style={{ width: '100px' }} />
+            <img src="/turn17-media-logo-v1-1.png" alt="Turn 17 Media Logo" style={{ width: '100px' }} />
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' }, justifyContent: 'center' }}>
             {pages.map((page) => (
@@ -118,7 +118,7 @@ function TopNavigation() {
           <Box sx={{ flexGrow: 0 }}>
             <Tooltip title="Open settings">
               <IconButton onClick={handleOpenUserMenu} sx={{ p: 0, width: '100px' }}>
-                <Avatar alt="Remy Sharp" src="/static/images/avatar/2.png" />
+                <Avatar alt="Turn 17 User" src="/favicon.ico" />
               </IconButton>
             </Tooltip>
             <Menu
