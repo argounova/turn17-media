@@ -7,15 +7,16 @@ import Typography from '@mui/material/Typography';
 import Menu from '@mui/material/Menu';
 import MenuIcon from '@mui/icons-material/Menu';
 import Container from '@mui/material/Container';
-import Avatar from '@mui/material/Avatar';
+// import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
-import Tooltip from '@mui/material/Tooltip';
+// import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import '@fontsource/audiowide'
+import BannerHeader from './BannerHeader';
 
 
 const pages = ['Basics', 'Pricing', 'Latest'];
-const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
+// const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
 function TopNavigation() {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
@@ -24,20 +25,19 @@ function TopNavigation() {
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
   };
-  const handleOpenUserMenu = (event) => {
-    setAnchorElUser(event.currentTarget);
-  };
-
+  // const handleOpenUserMenu = (event) => {
+  //   setAnchorElUser(event.currentTarget);
+  // };
   const handleCloseNavMenu = () => {
     setAnchorElNav(null);
   };
-
-  const handleCloseUserMenu = () => {
-    setAnchorElUser(null);
-  };
+  // const handleCloseUserMenu = () => {
+  //   setAnchorElUser(null);
+  // };
 
   return (
-    <AppBar position="static" color="transparent" elevation={0}>
+    <>
+    <AppBar color="transparent" elevation={0}>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <Typography
@@ -49,7 +49,27 @@ function TopNavigation() {
           >
             <img src="/turn17-media-logo-v1-1.png" alt="Turn 17 Media Logo" style={{ width: '100px' }} />
           </Typography>
-          <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
+          <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' }, justifyContent: 'center', ml: '-100px' }}>
+            {pages.map((page) => (
+              <Button
+                key={page}
+                onClick={handleCloseNavMenu}
+                sx={{ my: 2, color: '#85D3E7', display: 'block', fontFamily: 'audiowide', fontSize: '1.15rem', letterSpacing: '.1rem', paddingLeft: '2%', paddingRight: '2%' }}
+              >
+                {page}
+              </Button>
+            ))}
+          </Box>
+          <Typography
+            component="a"
+            href="/"
+            sx={{
+              display: { xs: 'flex', md: 'none' },
+            }}
+          >
+            <img src="/turn17-media-logo-v1-1.png" alt="Turn 17 Media Logo" style={{ width: '80px' }} />
+          </Typography>
+          <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' }, justifyContent: 'end' }}>
             <IconButton
               size="large"
               aria-label="account of current user"
@@ -84,38 +104,10 @@ function TopNavigation() {
                 </MenuItem>
               ))}
             </Menu>
-          </Box>
-          <Typography
-            variant="h5"
-            noWrap
-            component="a"
-            href=""
-            sx={{
-              mr: 2,
-              display: { xs: 'flex', md: 'none' },
-              flexGrow: 1,
-              fontFamily: 'audiowide',
-              fontWeight: 700,
-              letterSpacing: '.3rem',
-              color: 'inherit',
-              textDecoration: 'none',
-            }}
-          >
-            <img src="/turn17-media-logo-v1-1.png" alt="Turn 17 Media Logo" style={{ width: '100px' }} />
-          </Typography>
-          <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' }, justifyContent: 'center' }}>
-            {pages.map((page) => (
-              <Button
-                key={page}
-                onClick={handleCloseNavMenu}
-                sx={{ my: 2, color: '#85D3E7', display: 'block', fontFamily: 'audiowide', fontSize: '1.15rem', letterSpacing: '.1rem', paddingLeft: '2%', paddingRight: '2%' }}
-              >
-                {page}
-              </Button>
-            ))}
+            
           </Box>
 
-          <Box sx={{ flexGrow: 0 }}>
+          {/* <Box sx={{ flexGrow: 0 }}>
             <Tooltip title="Open settings">
               <IconButton onClick={handleOpenUserMenu} sx={{ p: 0, width: '100px' }}>
                 <Avatar alt="Turn 17 User" src="/favicon.ico" />
@@ -143,10 +135,21 @@ function TopNavigation() {
                 </MenuItem>
               ))}
             </Menu>
-          </Box>
+          </Box> */}
         </Toolbar>
       </Container>
     </AppBar>
+    <Box>
+      <img 
+        src="/images/turn17media-header-background.png" 
+        style={{
+          width: '100vw',
+          maxHeight: '75vh'
+        }}  
+      />
+      <BannerHeader />
+    </Box>
+    </>
   );
 }
 export default TopNavigation;

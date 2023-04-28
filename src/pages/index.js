@@ -33,11 +33,9 @@ export default function Home({isConnected}) {
       <TopNavigation />
       <main className={`${styles.main} ${inter.className}`}>
         <div className={styles.center}>
-          <h1>Turn17 Media</h1>
-          <h2>Coming Soon</h2>
+          <h1>Coming Soon</h1>
             {isConnected ? (
           <>
-          ...db connected...
           </>
         ) : (
           <p className="subtitle">
