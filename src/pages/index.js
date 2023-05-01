@@ -5,6 +5,9 @@ import { Inter } from 'next/font/google'
 import styles from '@/styles/Home.module.css'
 import TopNavigation from '../../components/TopNavigation'
 import MainFeatures from '../../components/MainFeatures'
+import DownArrow from '../../components/DownArrow'
+import FinishedSiteEx from '../../components/FinishedSiteEx'
+import Footer from '../../components/Footer/Footer'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -44,7 +47,10 @@ export default function Home({isConnected}) {
             for instructions.
           </p>
         )}
+          <DownArrow />
+          <FinishedSiteEx />
         </div>
+        <Footer />
       </main>
     </>
   )

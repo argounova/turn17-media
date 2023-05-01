@@ -103,7 +103,8 @@ body {
 }
 
 body {
-
+  background: rgb(242,242,242);
+  background: linear-gradient(180deg, rgba(242,242,242,1) 45%, rgba(73,156,166,1) 100%);
 }
 
 a {
