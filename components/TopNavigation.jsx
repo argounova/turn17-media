@@ -139,16 +139,7 @@ function TopNavigation() {
         </Toolbar>
       </Container>
     </AppBar>
-    <Box>
-      <img 
-        src="/images/turn17media-header-background.png" 
-        style={{
-          width: '100vw',
-          maxHeight: '75vh'
-        }}  
-      />
-      <BannerHeader />
-    </Box>
+    <BannerHeader />
     </>
   );
 }
