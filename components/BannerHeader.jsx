@@ -6,7 +6,8 @@ function BannerHeader() {
     return(
         <Box className={styles.bannerHeader}>
             <img 
-                src="/images/turn17media-header-background.png" 
+                src="/images/turn17media-header-background.png"
+                alt='turn17media background'
                 style={{
                 width: '100vw',
                 maxHeight: '75vh'

@@ -2,7 +2,6 @@ import * as React from "react"
 import Link from "next/link"
 import { menuItems } from "../../constants/links"
 import { FooterStyles, FooterMenuStyles, CopyrightStyles } from "./style"
-// import useAllProduct from "../../hooks/use-all-product"
 import { metadata } from "../../config/metadata"
 import {
   FaLinkedin as LinkedIn,
@@ -10,10 +9,8 @@ import {
   FaYoutube as Youtube,
   FaFacebook as Facebook,
 } from "react-icons/fa"
-import { Face } from "@mui/icons-material"
 
 const Footer = () => {
-  // const allProduct = useAllProduct()
   return (
     <FooterStyles style={{ marginBottom: 0 }} className="section">
       <div className="gradient">
@@ -32,7 +29,6 @@ const Footer = () => {
             })}
           </ul>
         </FooterMenuStyles>
-        {/* {allProduct.length > 0 && ( */}
           <FooterMenuStyles className="footer__menu products__menu">
             <h5>
               <Link href="/services/all" style={{ color: '#000' }}>
@@ -43,22 +39,8 @@ const Footer = () => {
               <li><Link href="/services/artwork">Album Artwork</Link></li>
               <li><Link href="/services/production">Music Production</Link></li>
               <li><Link href="/services/mixing">Mixing & Mastering</Link></li>
-              {/* {allProduct.map((item, index) => {
-                const { gatsbyPath, title } = item
-
-                return ( */}
-                  {/* <li key={index}>
-                    <Link to={gatsbyPath}>
-                      {title}
-                      <span>.</span>
-                    </Link>
-                  </li> */}
-                {/* )
-              })} */}
             </ul>
           </FooterMenuStyles>
-        {/* )} */}
-
         {metadata.linkedInUsername ||
         metadata.instagramUsername ||
         metadata.youtubeUsername ? (
