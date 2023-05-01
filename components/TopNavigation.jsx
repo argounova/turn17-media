@@ -12,6 +12,7 @@ import Button from '@mui/material/Button';
 // import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import '@fontsource/audiowide'
+import '@fontsource/oxygen'
 import BannerHeader from './BannerHeader';
 
 
@@ -100,7 +101,7 @@ function TopNavigation() {
             >
               {pages.map((page) => (
                 <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  <Typography textAlign="center" sx={{ fontFamily: 'audiowide' }}>{page}</Typography>
+                  <Typography textAlign="center" sx={{ fontFamily: 'Oxygen' }}>{page}</Typography>
                 </MenuItem>
               ))}
             </Menu>
