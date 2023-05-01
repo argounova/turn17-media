@@ -1,5 +1,5 @@
 .bannerHeader {
-    max-height: 33vh;
+    max-height: 25vh;
 }
 
 .bannerHeaderContent {
@@ -21,14 +21,12 @@
 }
 
 @media(min-width:525px) {
-    .bannerHeader {
-        max-height: 50vh;
-    }
+    
 }
 
 @media(min-width:768px) {
     .bannerHeader {
-        max-height: 68vh;
+        max-height: 37vh;
     }
     .bannerHeaderContent {
         top: -275px;
@@ -48,7 +46,7 @@
 
 @media(min-width:1024px) {
     .bannerHeader {
-        max-height: 75vh;
+        max-height: 70vh;
     }
     .bannerHeaderContent {
         top: -300px;
