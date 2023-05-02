@@ -24,7 +24,6 @@ function Image({ id }) {
           title="Build Steps Title"
           description="Description of each step in the development process."
         />
-        {/* <img src={`/images/parallax/${id}.jpeg`} alt="A London skyscraper" /> */}
       </div>
       <motion.h2 style={{ y }}>{`${id}`}</motion.h2>
     </section>
@@ -44,7 +43,7 @@ export default function Parallax() {
       <main>
         <ParallaxStyles>
           {[1, 2, 3, 4, 5].map((image) => (
-            <Image id={image} />
+            <Image id={image} key={id}/>
           ))}
           <motion.div className="progress" style={{ scaleX }} />
         </ParallaxStyles>
