@@ -6,6 +6,7 @@ import styles from '@/styles/Home.module.css'
 import TopNavigation from '../../components/TopNavigation'
 import MainFeatures from '../../components/MainFeatures'
 import DownArrow from '../../components/DownArrow'
+import Parallax from '../../components/Parallax/Parallax'
 import FinishedSiteEx from '../../components/FinishedSiteEx'
 import Footer from '../../components/Footer/Footer'
 
@@ -47,6 +48,8 @@ export default function Home({isConnected}) {
             for instructions.
           </p>
         )}
+          <DownArrow />
+          <Parallax />
           <DownArrow />
           <FinishedSiteEx />
         </div>
