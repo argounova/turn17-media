@@ -36,9 +36,9 @@ const Footer = () => {
               </Link>
             </h5>
             <ul>
-              <li><Link href="/services/artwork">Album Artwork</Link></li>
-              <li><Link href="/services/production">Music Production</Link></li>
-              <li><Link href="/services/mixing">Mixing & Mastering</Link></li>
+              <li><Link href="/">Single Page Websites</Link></li>
+              <li><Link href="/">Multi Page Websites</Link></li>
+              <li><Link href="/">Database & eCommerce</Link></li>
             </ul>
           </FooterMenuStyles>
         {metadata.linkedInUsername ||
