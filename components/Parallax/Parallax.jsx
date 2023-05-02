@@ -12,7 +12,7 @@ function useParallax(value, distance) {
   return useTransform(value, [0, 1], [-distance, distance]);
 }
 
-function Image({ id }) {
+function Step({ id }) {
   const ref = useRef(null);
   const { scrollYProgress } = useScroll({ target: ref });
   const y = useParallax(scrollYProgress, 300);
@@ -25,7 +25,7 @@ function Image({ id }) {
           description="Description of each step in the development process."
         />
       </div>
-      <motion.h2 style={{ y }}>{`${id}`}</motion.h2>
+      <motion.h2 style={{ y }}>{id}</motion.h2>
     </section>
   );
 }
@@ -42,8 +42,8 @@ export default function Parallax() {
     <>
       <main>
         <ParallaxStyles>
-          {[1, 2, 3, 4, 5].map((image) => (
-            <Image id={image} key={id}/>
+          {[1, 2, 3, 4, 5].map((step) => (
+            <Step id={step} key={step}/>
           ))}
           <motion.div className="progress" style={{ scaleX }} />
         </ParallaxStyles>
