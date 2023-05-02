@@ -38,7 +38,7 @@ function TopNavigation() {
 
   return (
     <>
-    <AppBar color="transparent" elevation={0} position='relative'>
+    <AppBar color="" elevation={0} position='relative' style={{ backgroundColor: 'var(--char5)' }}>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <Typography
