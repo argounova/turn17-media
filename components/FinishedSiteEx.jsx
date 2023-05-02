@@ -1,40 +1,31 @@
 import Image from "next/image";
 import finishedSiteEx from "../public/images/finished-site-example.png"
+import styles from "@/styles/FinishedSiteEx.module.css"
 
 export default function FinishedSiteEx() {
     return(
         <>
-            <div
-                style={{
-                    display: 'flex',
-                    flexDirection: 'column',
-                    justifyContent: 'space-between',
-                    alignItems: 'center',
-                    borderRadius: '10px',
-                    backgroundColor: 'var(--char0)',
-                    height: '950px',
-                    boxShadow: '4px 5px 4px var(--char2)',
-                }}
-            >
-                <h1
+            <div>
+                <h2
+                    className={styles.common}
                     style={{
-                        color: 'var(--mb1-1)',
-                        textAlign: 'center',
-                        lineHeight: '120px',
-                        fontSize: '50px'
+                        borderTopLeftRadius: '10px',
+                        borderTopRightRadius: '10px',
+                        padding: '2% 0px',
                     }}
                 >
                     Your site.  Easy peasy, lemon squeezy.
-                </h1>
-                <Image 
-                    src={finishedSiteEx}
-                    alt='finished site example'
-                    style={{
-                        borderBottomLeftRadius: '10px',
-                        borderBottomRightRadius: '10px',
-                    }}
-                />
+                </h2>
             </div>
+            <Image 
+                className={styles.common}
+                src={finishedSiteEx}
+                alt='finished site example'
+                style={{
+                    borderBottomLeftRadius: '10px',
+                    borderBottomRightRadius: '10px',
+                }}
+            />
         </>
     )
 }

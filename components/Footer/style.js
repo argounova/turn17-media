@@ -89,14 +89,14 @@ export const FooterMenuStyles = styled.div`
 
   &.social__menu {
     margin-bottom: var(--gap);
-    text-align: center;
+    text-align: start;
 
     ul {
       display: flex;
 
       @media (min-width: 768px) {
         flex-direction: row;
-        justify-content: center;
+        justify-content: flex-start;
 
       }
 
@@ -129,21 +129,10 @@ export const CopyrightStyles = styled.div`
   padding-top: var(--gap);
 
   p {
-    margin: 0;
+    margin: 10px 0px;
 
-    a {
-      color: #fff;
-      font-weight: 700;
-      text-decoration: none;
-
-      &:hover,
-      &:focus {
-        color: var(--primary);
-      }
-    }
-
-    span {
-      color: var(--primary);
+    @media (max-width: 475px) {
+      font-size: 13px
     }
   }
 `
