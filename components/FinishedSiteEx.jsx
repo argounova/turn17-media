@@ -9,7 +9,10 @@ export default function FinishedSiteEx() {
             <motion.div
                     initial={{ opacity: 0 }}
                     whileInView={{ opacity: 1 }}
-                    transition={{ duration: 1.5 }}
+                    transition={{ duration: 2.5 }}
+                    style={{
+                        marginBottom: '2%'
+                    }}
             >
                 <div>
                     <h2

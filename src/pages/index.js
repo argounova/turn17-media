@@ -8,6 +8,7 @@ import MainFeatures from '../../components/MainFeatures'
 import DownArrow from '../../components/DownArrow'
 import Parallax from '../../components/Parallax/Parallax'
 import FinishedSiteEx from '../../components/FinishedSiteEx'
+import Button from '../../components/Button/index'
 import Footer from '../../components/Footer/Footer'
 
 const inter = Inter({ subsets: ['latin'] })
@@ -52,6 +53,11 @@ export default function Home({isConnected}) {
           <Parallax />
           <DownArrow />
           <FinishedSiteEx />
+          <Button
+            href='/'
+            text='Get Started'
+            arrow={true}
+          />
         </div>
         <Footer />
       </main>

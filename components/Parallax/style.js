@@ -66,13 +66,13 @@ export const ParallaxStyles = styled.div`
     text-shadow: 2px 1px 2px var(--char3);
     
     @media(min-width:767px) {
-      left: calc(50% + 125px);
+      left: calc(50% + 145px);
     }
     
   }
   
   section {
-    height: 90vh;
+    height: 50vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -82,7 +82,7 @@ export const ParallaxStyles = styled.div`
   }
   
   section > div {
-    width: fit-content;
+    width: 100%;
     height: auto;
     position: relative;
     max-height: 90vh;

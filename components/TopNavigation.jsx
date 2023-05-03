@@ -48,7 +48,7 @@ function TopNavigation() {
               display: { xs: 'none', md: 'flex' },
             }}
           >
-            <img src="/turn17-media-logo-v1-1.png" alt="Turn 17 Media Logo" style={{ width: '100px' }} />
+            <img src="/turn17-logo-main.png" alt="Turn 17 Media Logo" style={{ width: '100px' }} />
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' }, justifyContent: 'center', ml: '-100px' }}>
             {pages.map((page) => (
@@ -68,7 +68,7 @@ function TopNavigation() {
               display: { xs: 'flex', md: 'none' },
             }}
           >
-            <img src="/turn17-media-logo-v1-1.png" alt="Turn 17 Media Logo" style={{ width: '80px' }} />
+            <img src="/turn17-logo-main.png" alt="Turn 17 Media Logo" style={{ width: '80px' }} />
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' }, justifyContent: 'end' }}>
             <IconButton

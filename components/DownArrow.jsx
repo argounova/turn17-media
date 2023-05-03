@@ -7,10 +7,14 @@ export default function DownArrow() {
         <>
             <motion.div
                 style={{
-                    height: '200px',
+                    height: '50px',
+                    width: '50px',
                     display: 'flex',
                     justifyContent: 'center',
                     alignItems: 'center',
+                    backgroundColor: 'var(--mb1-3)',
+                    borderRadius: '50%',
+                    margin: '100px 0px'
                 }}
                 animate={{
                     scale: [2, 3, 3, 2, 2],

@@ -1,18 +1,25 @@
 import { ParallaxStyles } from "./style"
 import { useRef } from "react";
+import * as React from 'react';
+import Card from '@mui/material/Card';
+import CardActions from '@mui/material/CardActions';
+import CardActionArea from '@mui/material/CardActionArea';
+import CardContent from '@mui/material/CardContent';
+import Button from '@mui/material/Button';
+import Typography from '@mui/material/Typography';
 import {
   motion,
   useScroll,
   useSpring,
   useTransform,
-} from "framer-motion";
-import FeatureTextCard from "../FeatureTextCard";
+} from "framer-motion"
+import steps from "./steps"
 
 function useParallax(value, distance) {
   return useTransform(value, [0, 1], [-distance, distance]);
 }
 
-function Step({ id }) {
+function Step({ title, subtitle, step }) {
   const ref = useRef(null);
   const { scrollYProgress } = useScroll({ target: ref });
   const y = useParallax(scrollYProgress, 300);
@@ -20,12 +27,23 @@ function Step({ id }) {
   return (
     <section>
       <div ref={ref}>
-        <FeatureTextCard
-          title="Build Steps Title"
-          description="Description of each step in the development process."
-        />
+        <Card sx={{ 
+        maxWidth: 400,
+        backgroundColor: 'var(--mb1-2)',
+        }}>
+          <CardActionArea>
+            <CardContent>
+              <Typography gutterBottom variant="h5" component="div">
+                {title}
+              </Typography>
+              <Typography variant="body2" color='var(--char0)' align='left'>
+                {subtitle}
+              </Typography>
+            </CardContent>
+          </CardActionArea>
+        </Card>      
       </div>
-      <motion.h2 style={{ y }}>{id}</motion.h2>
+      <motion.h2 style={{ y }}>{step}</motion.h2>
     </section>
   );
 }
@@ -42,8 +60,13 @@ export default function Parallax() {
     <>
       <main>
         <ParallaxStyles>
-          {[1, 2, 3, 4, 5].map((step) => (
-            <Step id={step} key={step}/>
+          {steps.map((step) => (
+            <Step 
+              key={ step.step }
+              title={ step.title }
+              subtitle={ step.subtitle }
+              step={ step.step }
+            />
           ))}
           <motion.div className="progress" style={{ scaleX }} />
         </ParallaxStyles>
