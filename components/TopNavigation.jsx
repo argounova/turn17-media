@@ -90,7 +90,7 @@ function TopNavigation() {
               }}
             >
               {menuItems.map((page, index) => (
-                <MenuItem key={index} >
+                <MenuItem key={index}>
                   <Button textAlign="center" sx={{ fontFamily: 'Oxygen' }} href={page.path}>{page.text}</Button>
                 </MenuItem>
               ))}
