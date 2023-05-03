@@ -40,8 +40,7 @@ export default function Home({isConnected}) {
       <TopNavigation />
       <BannerHeader 
         tag1='Design a website on your terms'
-        tag2={['with a', <span style={{  color: '#88deeb'}}> clear pricing </span>, 'structure.']}
-        key='bannerheaderkey'
+        tag2='with a clear pricing structure.'
         subtag='If you have to ask, you can&apos;t afford it'
         subtext1='Understand what you&apos;re getting and how much it will cost from day one.'
         subtext2='A secure, professional website doesn&apos;t need to be complicated.'
