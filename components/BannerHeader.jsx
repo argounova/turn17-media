@@ -2,7 +2,7 @@ import Box from '@mui/material/Box';
 import styles from '@/styles/BannerHeader.module.css'
 import Oxygen from '@fontsource/oxygen'
 
-function BannerHeader() {
+function BannerHeader({ tag1, tag2, subtag, subtext1, subtext2 }) {
     return(
         <Box className={styles.bannerHeader}>
             <img 
@@ -15,10 +15,10 @@ function BannerHeader() {
             />
             <Box className={styles.bannerHeaderContent}>
                 <h6>
-                    Design a website on your terms
+                    {tag1}
                 </h6>
                 <h6>
-                    with a <span style={{  color: '#88deeb'}}>clear pricing</span> structure.
+                    {tag2}
                 </h6>
                 <p
                 style={{
@@ -27,13 +27,13 @@ function BannerHeader() {
                     padding: '15px 0px',
                 }}
                 >
-                    If you have to ask, you can&apos;t afford it
+                    {subtag}
                 </p>
                 <p className={styles.subtext}>
-                    Understand what you&apos;re getting and how much it will cost from day one.
+                    {subtext1}
                 </p>
                 <p className={styles.subtext}>
-                    A secure, professional website doesn&apos;t need to be complicated.
+                    {subtext2}
                 </p>
             </Box>
         </Box>

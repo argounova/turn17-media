@@ -4,7 +4,7 @@ export const Styles = styled.button`
   color: var(--char0);
   background-color: transparent;
   font-family: "Oxygen", sans-serif;
-  font-size: 2.5rem;
+  font-size: 1.25rem;
   border: 0;
   text-decoration: none;
   padding: 0;
@@ -15,10 +15,6 @@ export const Styles = styled.button`
   padding-bottom: 15px;
   display: inline-flex;
   align-items: center;
-
-  @media(max-width:800px) {
-    font-size: 2rem;
-  }
 
   &::after {
     content: "";

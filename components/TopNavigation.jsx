@@ -11,12 +11,14 @@ import Container from '@mui/material/Container';
 import Button from '@mui/material/Button';
 // import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
+import Image from 'next/image';
 import '@fontsource/audiowide'
 import '@fontsource/oxygen'
 import BannerHeader from './BannerHeader';
+import { menuItems } from '../constants/topNavigationLinks';
 
 
-const pages = ['Basics', 'Pricing', 'Latest'];
+// const pages = ['Basics', 'Pricing', 'Latest'];
 // const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
 function TopNavigation() {
@@ -41,35 +43,23 @@ function TopNavigation() {
     <AppBar color="" elevation={0} position='relative' style={{ backgroundColor: 'var(--char5)' }}>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
-          <Typography
-            component="a"
+          <Button
             href="/"
-            sx={{
-              display: { xs: 'none', md: 'flex' },
-            }}
           >
-            <img src="/turn17-logo-main.png" alt="Turn 17 Media Logo" style={{ width: '100px' }} />
-          </Typography>
+            <img src="/turn17-logo-main.png" alt="Turn 17 Media Logo" style={{ width: '90px' }} />
+          </Button>
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' }, justifyContent: 'center', ml: '-100px' }}>
-            {pages.map((page) => (
+            {menuItems.map((page, index) => (
               <Button
-                key={page}
-                onClick={handleCloseNavMenu}
+                key={index}
+                href={page.path}
                 sx={{ my: 2, color: '#85D3E7', display: 'block', fontFamily: 'audiowide', fontSize: '1.15rem', letterSpacing: '.1rem', paddingLeft: '2%', paddingRight: '2%' }}
               >
-                {page}
+                {page.text}
               </Button>
             ))}
           </Box>
-          <Typography
-            component="a"
-            href="/"
-            sx={{
-              display: { xs: 'flex', md: 'none' },
-            }}
-          >
-            <img src="/turn17-logo-main.png" alt="Turn 17 Media Logo" style={{ width: '80px' }} />
-          </Typography>
+
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' }, justifyContent: 'end' }}>
             <IconButton
               size="large"
@@ -99,13 +89,12 @@ function TopNavigation() {
                 display: { xs: 'block', md: 'none' },
               }}
             >
-              {pages.map((page) => (
-                <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  <Typography textAlign="center" sx={{ fontFamily: 'Oxygen' }}>{page}</Typography>
+              {menuItems.map((page, index) => (
+                <MenuItem key={index} >
+                  <Button textAlign="center" sx={{ fontFamily: 'Oxygen' }} href={page.path}>{page.text}</Button>
                 </MenuItem>
               ))}
             </Menu>
-            
           </Box>
 
           {/* <Box sx={{ flexGrow: 0 }}>
@@ -140,7 +129,6 @@ function TopNavigation() {
         </Toolbar>
       </Container>
     </AppBar>
-    <BannerHeader />
     </>
   );
 }

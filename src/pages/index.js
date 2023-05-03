@@ -4,6 +4,7 @@ import clientPromise from '../../lib/mongodb'
 import { Inter } from 'next/font/google'
 import styles from '@/styles/Home.module.css'
 import TopNavigation from '../../components/TopNavigation'
+import BannerHeader from '../../components/BannerHeader'
 import MainFeatures from '../../components/MainFeatures'
 import DownArrow from '../../components/DownArrow'
 import Parallax from '../../components/Parallax/Parallax'
@@ -37,24 +38,22 @@ export default function Home({isConnected}) {
         <link rel="icon" href="/turn17-media-tab-logo.jpg" />
       </Head>
       <TopNavigation />
+      <BannerHeader 
+        tag1='Design a website on your terms'
+        tag2={['with a', <span style={{  color: '#88deeb'}}> clear pricing </span>, 'structure.']}
+        subtag='If you have to ask, you can&apos;t afford it'
+        subtext1='Understand what you&apos;re getting and how much it will cost from day one.'
+        subtext2='A secure, professional website doesn&apos;t need to be complicated.'
+      />
       <main className={`${styles.main} ${inter.className}`}>
         <div className={styles.center}>
           <MainFeatures />
-            {isConnected ? (
-          <>
-          </>
-        ) : (
-          <p className="subtitle">
-            You are NOT connected to MongoDB. Check the <code>README.md</code>{' '}
-            for instructions.
-          </p>
-        )}
           <DownArrow />
           <Parallax />
           <DownArrow />
           <FinishedSiteEx />
           <Button
-            href='/'
+            href='/pricing'
             text='Get Started'
             arrow={true}
           />
