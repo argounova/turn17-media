@@ -1,12 +1,11 @@
 import Head from 'next/head'
-import Image from 'next/image'
 import clientPromise from '../../lib/mongodb'
 import styles from '@/styles/Pricing.module.css'
 import TopNavigation from '../../components/TopNavigation'
 import BannerHeader from '../../components/BannerHeader'
 import Footer from '../../components/Footer/Footer'
 import PricingCards from '../../components/PricingCards/pricing'
-
+import FaQuestions from '../../components/Faq/index'
 
 export async function getServerSideProps() {
   try {
@@ -39,9 +38,8 @@ export default function Pricing({isConnected}) {
         subtext2='Shopping for a website shouldn&apos;t take place in the dark.  Know the final figure before you pull the trigger.'
       />
       <PricingCards />
-
       <main className={styles.main}>
-
+        <FaQuestions />
       </main>
       <Footer />
     </>
