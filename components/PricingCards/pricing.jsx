@@ -23,6 +23,7 @@ export default function PricingCards() {
                 price={each.price}
                 etc={each.etc}
                 btnText={each.btnText}
+                href={each.href}
                 />
             ))}
             </Box>

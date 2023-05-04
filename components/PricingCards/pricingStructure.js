@@ -6,6 +6,7 @@ const pricingStructure = [
         price: '$550 USD',
         etc: 'ETC: Three business days',
         btnText: 'Get Started',
+        href: '/get-started/singlepage'
     },
     {
         tier: '2',
@@ -14,6 +15,7 @@ const pricingStructure = [
         price: '$990 USD',
         etc: 'ETC: Six business days',
         btnText: 'Get Started',
+        href: '/get-started/multipage'
     },
     {
         tier: '3',
@@ -22,6 +24,7 @@ const pricingStructure = [
         price: '$TBD',
         etc: 'ETC: TBD',
         btnText: 'Contact Us',
+        href: '/contact'
     },
     // {
     //     tier: '4',

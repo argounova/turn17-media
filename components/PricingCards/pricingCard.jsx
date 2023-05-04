@@ -4,7 +4,7 @@ import CardActions from '@mui/material/CardActions';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 
-export default function PricingCard({ title, subtitle, price, etc, btnText }) {
+export default function PricingCard({ title, subtitle, price, etc, btnText, href }) {
     return(
         <Card sx={{ minWidth: 275, maxWidth: 400, height: 400, display: 'flex', flexDirection: 'column', justifyContent: 'space-between', padding: '20px', background: 'linear-gradient(131deg, rgba(58,134,148,1) 18%, rgba(73,156,166,1) 100%)' }}>
                 <div style={{ height: '15%' }}>
@@ -27,7 +27,7 @@ export default function PricingCard({ title, subtitle, price, etc, btnText }) {
                     </Typography>
                 </div>
             <CardActions sx={{ p: 0 }}>
-                <Button color="inherit" variant="contained" disableElevation>{btnText}</Button>
+                <Button href={href} color="inherit" variant="contained" disableElevation>{btnText}</Button>
             </CardActions>
         </Card>
     )
