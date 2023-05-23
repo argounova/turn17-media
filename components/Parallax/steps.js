@@ -2,7 +2,7 @@ const steps = [
     {
         step: '1',
         title: 'Select a package',
-        subtitle: 'i.e., Single page, multi page, etc.'
+        subtitle: 'Single page, multi page or custom.'
     },
     {
         step: '2',

@@ -2,10 +2,8 @@ import { ParallaxStyles } from "./style"
 import { useRef } from "react";
 import * as React from 'react';
 import Card from '@mui/material/Card';
-import CardActions from '@mui/material/CardActions';
 import CardActionArea from '@mui/material/CardActionArea';
 import CardContent from '@mui/material/CardContent';
-import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import {
   motion,
@@ -58,7 +56,7 @@ export default function Parallax() {
 
   return (
     <>
-      <main>
+      <main >
         <ParallaxStyles>
           {steps.map((step) => (
             <Step 
