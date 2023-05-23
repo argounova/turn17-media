@@ -20,19 +20,19 @@ export default function MainFeatures() {
           <FeaturePhotoCard 
             cardImage={cardImageColors}
             altText='card image colors'
-            title='Colors'
-            description='Select from hundreds of Adobe color palettes or create your own.'
+            title='Customization'
+            description='Select from hundreds of color palettes, fonts, and more.'
           />
         </Grid>
         <Grid>
             <Stack gap={2}>
                 <FeatureTextCard 
                     title='Pages'
-                    description='Single, 4-6 or any custom number of pages.'
+                    description='Single, 2-5 or any custom number of pages.'
                 />
                 <FeatureTextCard 
-                    title='Databases'
-                    description='Lots of data or product?  Our non-relational databases have you covered.'
+                    title='Photography'
+                    description='We can connect you with a local, trusted photographer.  Up to 2 photo shoots included at no additional cost depending on the site you choose.'
                 />
             </Stack>
         </Grid>
@@ -40,7 +40,7 @@ export default function MainFeatures() {
           <FeaturePhotoCard 
             cardImage={cardImagePayments}
             altText='card image payments'
-            title='Payments'
+            title='Payments (Coming Soon)'
             description='Processed via Stripe or Shopify, accept payments from anywhere.'
           />
         </Grid>

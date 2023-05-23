@@ -1,27 +1,27 @@
 const pricingStructure = [
     {
         tier: '1',
-        title: '1-2 Pages',
-        subtitle: 'Far from basic, this one to two page site is packed with features.',
+        title: 'Single Page',
+        subtitle: 'Far from basic, the single page site is packed with features.',
         price: '$ USD',
-        etc: 'ETC: Three business days',
+        etc: 'ETC: 4 business days',
         btnText: 'Get Started',
         href: '/get-started/singlepage'
     },
     {
         tier: '2',
-        title: '3-4 Pages',
-        subtitle: 'More real estate for your content, or room to grow into.',
+        title: '2-5 Pages',
+        subtitle: 'More real estate for your content or room to grow into.',
         price: '$ USD',
-        etc: 'ETC: Six business days',
+        etc: 'ETC: 5-11 business days',
         btnText: 'Get Started',
         href: '/get-started/multipage'
     },
     {
         tier: '3',
-        title: 'Custom',
+        title: '6+ Pages',
         subtitle: `Need more?  Let's chat.`,
-        price: '$ USD',
+        price: 'Starting @ $ USD',
         etc: 'ETC: TBD',
         btnText: 'Contact Us',
         href: '/contact'
