@@ -37,7 +37,13 @@ export default function Selector() {
             exit={{ y: -10, opacity: 0 }}
             transition={{ duration: 0.2 }}
           >
-            {selectedTab.title}
+            <br />
+            <h1>{selectedTab.title}</h1>
+            <h5>{selectedTab.subtitle}</h5>
+            <br />
+            <hr />
+            <br />
+
           </motion.div>
         </AnimatePresence>
       </main>

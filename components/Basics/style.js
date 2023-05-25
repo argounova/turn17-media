@@ -30,10 +30,12 @@ export const BasicsStyles = styled.section`
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 100px;
     flex-grow: 1;
     user-select: none;
+    padding: 10px;
   }
+
+  
   
   ul,
   li {
