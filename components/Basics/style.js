@@ -2,9 +2,8 @@ import styled from "@emotion/styled"
 
 export const BasicsStyles = styled.section`
   .window {
-    width: 480px;
-    height: 360px;
-    border-radius: 10px;
+    width: 1000px;
+    border-radius: 5px;
     background: white;
     overflow: hidden;
     box-shadow: 0 1px 1px hsl(0deg 0% 0% / 0.075),
@@ -15,19 +14,13 @@ export const BasicsStyles = styled.section`
   }
   
   nav {
-    background: #fdfdfd;
-    padding: 5px 5px 0;
-    border-radius: 10px;
-    border-bottom-left-radius: 0;
-    border-bottom-right-radius: 0;
-    border-bottom: 1px solid #eeeeee;
-    height: 44px;
+    padding: 5px;
   }
   
   .tabs {
     flex-grow: 1;
     display: flex;
-    justify-content: flex-start;
+    justify-content: center;
     align-items: flex-end;
     flex-wrap: nowrap;
     width: 100%;
@@ -37,7 +30,7 @@ export const BasicsStyles = styled.section`
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 128px;
+    font-size: 100px;
     flex-grow: 1;
     user-select: none;
   }
@@ -47,9 +40,9 @@ export const BasicsStyles = styled.section`
     list-style: none;
     padding: 0;
     margin: 0;
-    font-family: "Poppins", sans-serif;
+    font-family: "Oxygen", sans-serif;
     font-weight: 500;
-    font-size: 14px;
+    font-size: 22px;
   }
   
   ul {
@@ -58,35 +51,29 @@ export const BasicsStyles = styled.section`
   }
   
   li {
-    border-radius: 5px;
-    border-bottom-left-radius: 0;
-    border-bottom-right-radius: 0;
+    border-radius: 15px;
     width: 100%;
-    padding: 10px 15px;
+    padding: 15px;
     position: relative;
-    background: white;
     cursor: pointer;
-    height: 24px;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     flex: 1;
-    min-width: 0;
-    position: relative;
-    user-select: none;
   }
   
   .underline {
     position: absolute;
-    bottom: -1px;
+    bottom: -15px;
     left: 0;
     right: 0;
-    height: 1px;
-    background: #8855ff;
+    height: 5px;
+    background: var(--mb1-1);
+    border-radius: 25px;
   }
   
   li.selected {
-    background: #eee;
+    background: var(--mb1-3);
   }
   
   li button {
@@ -111,22 +98,5 @@ export const BasicsStyles = styled.section`
     bottom: 0;
     width: 300px;
     background: #fff;
-  }
-  
-  .add-item {
-    width: 30px;
-    height: 30px;
-    background: #eee;
-    border-radius: 50%;
-    border: 0;
-    cursor: pointer;
-    align-self: center;
-  }
-  
-  .add-item:disabled {
-    opacity: 0.4;
-    cursor: default;
-    pointer-events: none;
-  }
-  
+  }  
 `

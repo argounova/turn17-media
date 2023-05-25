@@ -37,9 +37,7 @@ export default function Basics({isConnected}) {
         subtext2='Contact info@turn17media.com with any questions.'
       />
       <main className={styles.main}>
-        <div className={styles.center}>
           <BasicsCards />
-        </div>
       </main>
       <Footer />
     </>
