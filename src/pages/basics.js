@@ -1,8 +1,9 @@
 import Head from 'next/head'
 import clientPromise from '../../lib/mongodb'
-import styles from '@/styles/singlepage.module.css'
+import styles from '@/styles/basics.module.css'
 import TopNavigation from '../../components/TopNavigation'
 import BannerHeader from '../../components/BannerHeader'
+import BasicsCards from '../../components/Basics'
 import Footer from '../../components/Footer/Footer'
 
 export async function getServerSideProps() {
@@ -36,6 +37,9 @@ export default function Basics({isConnected}) {
         subtext2='Contact info@turn17media.com with any questions.'
       />
       <main className={styles.main}>
+        <div className={styles.center}>
+          <BasicsCards />
+        </div>
       </main>
       <Footer />
     </>
