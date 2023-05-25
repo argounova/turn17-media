@@ -3,6 +3,7 @@ import styled from "@emotion/styled"
 export const BasicsStyles = styled.section`
   .window {
     width: 1000px;
+    max-width: 90vw;
     border-radius: 5px;
     background: white;
     overflow: hidden;
@@ -28,7 +29,7 @@ export const BasicsStyles = styled.section`
   
   main {
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     flex-grow: 1;
     user-select: none;
@@ -44,7 +45,7 @@ export const BasicsStyles = styled.section`
     margin: 0;
     font-family: "Oxygen", sans-serif;
     font-weight: 500;
-    font-size: 22px;
+    font-size: var(--h5);
   }
   
   ul {
@@ -55,7 +56,7 @@ export const BasicsStyles = styled.section`
   li {
     border-radius: 15px;
     width: 100%;
-    padding: 15px;
+    padding: 5px;
     position: relative;
     cursor: pointer;
     display: flex;
@@ -101,4 +102,13 @@ export const BasicsStyles = styled.section`
     width: 300px;
     background: #fff;
   }  
+
+  .button-div {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    background: linear-gradient(131deg, rgba(58,134,148,1) 18%, rgba(73,156,166,1) 100%);
+    padding: 5px 5px 0px;
+    border-radius: 5px;
 `

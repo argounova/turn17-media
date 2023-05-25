@@ -2,6 +2,8 @@ import { BasicsStyles } from "./style"
 import { useState } from "react"
 import { tabs } from "./content"
 import { motion, AnimatePresence } from "framer-motion"
+import ContentGrid from "./ContentGrid"
+import Button from "../Button"
 
 export default function Selector() {
   const [selectedTab, setSelectedTab] = useState(tabs[0])
@@ -43,7 +45,25 @@ export default function Selector() {
             <br />
             <hr />
             <br />
-
+            <ContentGrid
+                primaryText1={selectedTab.primaryText1}
+                secondaryText1={selectedTab.secondaryText1}
+                primaryText2={selectedTab.primaryText2}
+                secondaryText2={selectedTab.secondaryText2}
+                primaryText3={selectedTab.primaryText3}
+                secondaryText3={selectedTab.secondaryText3}
+                primaryText4={selectedTab.primaryText4}
+                secondaryText4={selectedTab.secondaryText4}
+                primaryText5={selectedTab.primaryText5}
+                secondaryText5={selectedTab.secondaryText5}
+            />
+            <div className="button-div">
+                <Button
+                    href={selectedTab.href}
+                    text='Get Started'
+                    arrow={true}
+                />
+            </div>
           </motion.div>
         </AnimatePresence>
       </main>

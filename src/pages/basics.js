@@ -31,10 +31,10 @@ export default function Basics({isConnected}) {
       </Head>
       <TopNavigation />
       <BannerHeader 
-        tag1='Under Construction'
-        // subtag='Hidden fees'
-        subtext1='Please bear with us as our site is being built.'
-        subtext2='Contact info@turn17media.com with any questions.'
+        tag1='How does this all work?'
+        subtag='Complex understanding'
+        subtext1='Here you&apos;ll find an overview of how the process works.'
+        subtext2='After getting started with one of our products, further details and specific features will be made available.'
       />
       <main className={styles.main}>
           <BasicsCards />
