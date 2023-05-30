@@ -17,17 +17,21 @@ function useParallax(value, distance) {
   return useTransform(value, [0, 1], [-distance, distance]);
 }
 
-function Step({ title, subtitle, step }) {
+function Step({ title, subtitle, step, bgColor }) {
   const ref = useRef(null);
   const { scrollYProgress } = useScroll({ target: ref });
   const y = useParallax(scrollYProgress, 300);
 
   return (
-    <section>
+    <section style={{ backgroundColor: bgColor, borderRadius: '15px', margin: '10px 10px', boxShadow: '0px 3px 3px var(--char3)' }}
+    >
       <div ref={ref}>
         <Card sx={{ 
         maxWidth: 400,
         backgroundColor: 'var(--mb1-2)',
+        borderRadius: '25px',
+        boxShadow: '0px 3px 3px var(--char3)',
+        margin: '5px 1px'
         }}>
           <CardActionArea>
             <CardContent>
@@ -64,6 +68,7 @@ export default function Parallax() {
               title={ step.title }
               subtitle={ step.subtitle }
               step={ step.step }
+              bgColor={ step.bgColor }
             />
           ))}
           <motion.div className="progress" style={{ scaleX }} />
