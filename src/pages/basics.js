@@ -34,7 +34,7 @@ export default function Basics({isConnected}) {
         tag1='How does this all work?'
         subtag='Complex understanding'
         subtext1='Here you&apos;ll find an overview of how the process works.'
-        subtext2='After getting started with one of our products, further details and specific features will be made available.'
+        subtext2='Click Get Started to learn more.'
       />
       <main className={styles.main}>
           <BasicsCards />

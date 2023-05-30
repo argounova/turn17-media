@@ -4,9 +4,11 @@ import ListItem from '@mui/material/ListItem';
 import ListItemText from '@mui/material/ListItemText';
 import ListItemAvatar from '@mui/material/ListItemAvatar';
 import Avatar from '@mui/material/Avatar';
-import ImageIcon from '@mui/icons-material/Image';
-import WorkIcon from '@mui/icons-material/Work';
-import BeachAccessIcon from '@mui/icons-material/BeachAccess';
+import LooksOneRoundedIcon from '@mui/icons-material/LooksOneRounded';
+import LooksTwoRoundedIcon from '@mui/icons-material/LooksTwoRounded';
+import Looks3RoundedIcon from '@mui/icons-material/Looks3Rounded';
+import Looks4RoundedIcon from '@mui/icons-material/Looks4Rounded';
+import Looks5RoundedIcon from '@mui/icons-material/Looks5Rounded';
 import Divider from '@mui/material/Divider';
 
 export default function ContentGrid({ 
@@ -30,8 +32,8 @@ export default function ContentGrid({
     >
       <ListItem>
         <ListItemAvatar>
-          <Avatar>
-            <ImageIcon />
+          <Avatar sx={{ bgcolor: 'var(--mb1-1)' }}>
+            <LooksOneRoundedIcon />
           </Avatar>
         </ListItemAvatar>
         <ListItemText primary={primaryText1} secondary={secondaryText1} />
@@ -39,8 +41,8 @@ export default function ContentGrid({
       <Divider variant="inset" component="li" style={{ borderRadius: '0px' }}/>
       <ListItem>
         <ListItemAvatar>
-          <Avatar>
-            <WorkIcon />
+          <Avatar sx={{ bgcolor: 'var(--mb1-1)' }}>
+            <LooksTwoRoundedIcon />
           </Avatar>
         </ListItemAvatar>
         <ListItemText primary={primaryText2} secondary={secondaryText2} />
@@ -48,8 +50,8 @@ export default function ContentGrid({
       <Divider variant="inset" component="li" style={{ borderRadius: '0px' }}/>
       <ListItem>
         <ListItemAvatar>
-          <Avatar>
-            <BeachAccessIcon />
+          <Avatar sx={{ bgcolor: 'var(--mb1-1)' }}>
+            <Looks3RoundedIcon />
           </Avatar>
         </ListItemAvatar>
         <ListItemText primary={primaryText3} secondary={secondaryText3} />
@@ -57,8 +59,8 @@ export default function ContentGrid({
       <Divider variant="inset" component="li" style={{ borderRadius: '0px' }}/>
       <ListItem>
         <ListItemAvatar>
-          <Avatar>
-            <BeachAccessIcon />
+          <Avatar sx={{ bgcolor: 'var(--mb1-1)' }}>
+            <Looks4RoundedIcon />
           </Avatar>
         </ListItemAvatar>
         <ListItemText primary={primaryText4} secondary={secondaryText4} />
@@ -66,8 +68,8 @@ export default function ContentGrid({
       <Divider variant="inset" component="li" style={{ borderRadius: '0px' }}/>
       <ListItem>
         <ListItemAvatar>
-          <Avatar>
-            <BeachAccessIcon />
+          <Avatar sx={{ bgcolor: 'var(--mb1-1)' }}>
+            <Looks5RoundedIcon />
           </Avatar>
         </ListItemAvatar>
         <ListItemText primary={primaryText5} secondary={secondaryText5} />
