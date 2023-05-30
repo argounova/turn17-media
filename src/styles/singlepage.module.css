@@ -1,5 +1,14 @@
 .main {
     display: flex;
     flex-direction: column;
-    min-height: 20vh;
-  }
+    justify-content: center;
+    align-items: center;
+    min-height: 50vh;
+}
+
+.postDiv {
+  width: 80%;
+  background-color: var(--char0);
+  padding: 10px;
+  border-radius: 10px;
+}
