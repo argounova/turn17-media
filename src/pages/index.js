@@ -53,7 +53,7 @@ export default function Home({isConnected}) {
           <DownArrow />
           <FinishedSiteEx />
           <Button
-            href='/pricing'
+            href='/basics'
             text='Get Started'
             arrow={true}
           />

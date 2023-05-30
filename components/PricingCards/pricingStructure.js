@@ -23,8 +23,8 @@ const pricingStructure = [
         subtitle: `Need more?  Let's chat.`,
         price: 'Starting @ $ USD',
         etc: 'ETC: TBD',
-        btnText: 'Contact Us',
-        href: '/contact'
+        btnText: 'Get Started',
+        href: '/get-started/custom'
     },
     // {
     //     tier: '4',

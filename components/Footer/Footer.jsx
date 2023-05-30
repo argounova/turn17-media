@@ -21,7 +21,7 @@ const Footer = () => {
             {menuItems.map((item, index) => {
               return (
                 <li key={index}>
-                  <Link href={item.path} activeClassName="menu__item--active">
+                  <Link href={item.path}>
                     {item.text}
                   </Link>
                 </li>

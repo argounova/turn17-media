@@ -48,6 +48,6 @@ export const tabs = [
         secondaryText4: "Since we don't yet know the end goals, it can be difficult to provide an estimated time of completion (or ETC) at this stage.  You will have the ability to schedule the initial consultation, however.", 
         primaryText5: "Review summary.",
         secondaryText5: "Take a look at all of the information you've provided and confirm the scheduled 1x1.  No deposits required at this stage in the process.",
-        href: "/get-started/contact" 
+        href: "/get-started/custom" 
     },
 ];

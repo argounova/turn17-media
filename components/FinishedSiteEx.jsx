@@ -1,6 +1,6 @@
 import { motion } from "framer-motion"
 import Image from "next/image";
-import finishedSiteEx from "../public/images/finished-site-example.png"
+import finishedSiteEx from "../public/images/flsite.png"
 import styles from "@/styles/FinishedSiteEx.module.css"
 
 export default function FinishedSiteEx() {
