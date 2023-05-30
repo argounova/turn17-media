@@ -44,7 +44,7 @@ export default function Latest({ latest }) {
       />
       <main className={styles.main}>
         {latest.map((post) => (
-          <div className={styles.postDiv}>
+          <div className={styles.postDiv} key={post.id}>
             <Stack 
               direction={{ xs: 'column', sm: 'row' }}
               divider={<Divider orientation="vertical" flexItem />}
