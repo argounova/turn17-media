@@ -32,13 +32,13 @@ const Footer = () => {
           <FooterMenuStyles className="footer__menu products__menu">
             <h5>
               <Link href="/services/all" style={{ color: '#000' }}>
-                All Services
+                Services
               </Link>
             </h5>
             <ul>
-              <li><Link href="/get-started/singlepage">Single Page Websites</Link></li>
-              <li><Link href="/get-started/multipage">Multi Page Websites</Link></li>
-              <li><Link href="/contact">Database & eCommerce</Link></li>
+              <li><Link href="/">Single Page Websites</Link></li>
+              <li><Link href="/">Multi Page Websites</Link></li>
+              <li><Link href="/">Database & eCommerce</Link></li>
             </ul>
           </FooterMenuStyles>
         {metadata.linkedInUsername ||

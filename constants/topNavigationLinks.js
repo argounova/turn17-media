@@ -1,14 +1,14 @@
 export const menuItems = [
     {
-      path: "/basics",
+      path: "/",
       text: "Basics",
     },
     {
-      path: "/pricing",
+      path: "/",
       text: "Pricing",
     },
     {
-      path: "/latest",
+      path: "/",
       text: "Latest",
     },
   ]

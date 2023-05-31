@@ -38,11 +38,14 @@ export default function Home({isConnected}) {
       </Head>
       <TopNavigation />
       <BannerHeader 
-        tag1='Design a website on your terms'
-        tag2='with a clear pricing structure.'
-        subtag='If you have to ask, you can&apos;t afford it'
-        subtext1='Understand what you&apos;re getting and how much it will cost from day one.'
-        subtext2='A secure, professional website doesn&apos;t need to be complicated.'
+        tag1='Coming Soon'
+        subtext1='Bear with us as our new site is currently under construction.'
+        subtext2='In the meantime, you can reach us at info@turn17media.com.'
+        // tag1='Design a website on your terms'
+        // tag2='with a clear pricing structure.'
+        // subtag='If you have to ask, you can&apos;t afford it'
+        // subtext1='Understand what you&apos;re getting and how much it will cost from day one.'
+        // subtext2='A secure, professional website doesn&apos;t need to be complicated.'
       />
       <main className={`${styles.main} ${inter.className}`}>
         <div className={styles.center}>
@@ -52,7 +55,7 @@ export default function Home({isConnected}) {
           <DownArrow />
           <FinishedSiteEx />
           <Button
-            href='/basics'
+            href='/'
             text='Get Started'
             arrow={true}
           />
