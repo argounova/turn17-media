@@ -36,9 +36,9 @@ const Footer = () => {
               </Link>
             </h5>
             <ul>
-              <li><Link href="/">Single Page Websites</Link></li>
-              <li><Link href="/">Multi Page Websites</Link></li>
-              <li><Link href="/">Database & eCommerce</Link></li>
+              <li><Link href="/get-started/singlepage">Single Page Websites</Link></li>
+              <li><Link href="/get-started/multipage">Multi Page Websites</Link></li>
+              <li><Link href="/get-started/custom">Custom Sites</Link></li>
             </ul>
           </FooterMenuStyles>
         {metadata.linkedInUsername ||
