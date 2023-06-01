@@ -4,6 +4,7 @@ import styles from '@/styles/singlepage.module.css'
 import TopNavigation from '../../../components/TopNavigation'
 import BannerHeader from '../../../components/BannerHeader'
 import Footer from '../../../components/Footer/Footer'
+import Schedule from '../../../components/SelectSchedule'
 
 export async function getServerSideProps() {
   try {
@@ -30,12 +31,13 @@ export default function SinglePage({isConnected}) {
       </Head>
       <TopNavigation />
       <BannerHeader 
-        tag1='Under Construction'
+        tag1='Single Page Website'
         // subtag='Hidden fees'
-        subtext1='Please bear with us as our site is being built.'
-        subtext2='Contact info@turn17media.com with any questions.'
+        subtext1='Complete the steps below to start your journey.'
+        // subtext2='Contact info@turn17media.com with any questions.'
       />
       <main className={styles.main}>
+        <Schedule />
       </main>
       <Footer />
     </>

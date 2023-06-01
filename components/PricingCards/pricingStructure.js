@@ -4,7 +4,7 @@ const pricingStructure = [
         title: 'Single Page',
         subtitle: 'Far from basic, the single page site is packed with features.',
         price: '$ USD',
-        etc: 'ETC: 4 business days',
+        etc: 'ETC: 6 business days',
         btnText: 'Get Started',
         href: '/get-started/singlepage'
     },
@@ -13,7 +13,7 @@ const pricingStructure = [
         title: '2-5 Pages',
         subtitle: 'More real estate for your content or room to grow into.',
         price: '$ USD',
-        etc: 'ETC: 5-11 business days',
+        etc: 'ETC: 7-14 business days',
         btnText: 'Get Started',
         href: '/get-started/multipage'
     },
