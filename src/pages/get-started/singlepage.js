@@ -4,7 +4,10 @@ import styles from '@/styles/singlepage.module.css'
 import TopNavigation from '../../../components/TopNavigation'
 import BannerHeader from '../../../components/BannerHeader'
 import Footer from '../../../components/Footer/Footer'
+import Content from '../../../components/SelectAddContent'
+import Options from '../../../components/SelectOptions'
 import Schedule from '../../../components/SelectSchedule'
+import Template from '../../../components/SelectTemplate'
 
 export async function getServerSideProps() {
   try {
@@ -37,6 +40,9 @@ export default function SinglePage({isConnected}) {
         // subtext2='Contact info@turn17media.com with any questions.'
       />
       <main className={styles.main}>
+        <Template />
+        <Options />
+        <Content />
         <Schedule />
       </main>
       <Footer />
