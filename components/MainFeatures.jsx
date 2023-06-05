@@ -21,18 +21,18 @@ export default function MainFeatures() {
             cardImage={cardImageColors}
             altText='card image colors'
             title='Customization'
-            description='Select from hundreds of color palettes, fonts, and more.'
+            description='Select from hundreds of color palettes and fonts.'
           />
         </Grid>
         <Grid>
             <Stack gap={2}>
                 <FeatureTextCard 
                     title='Pages'
-                    description='Single, 2-5 or any custom number of pages.'
+                    description='Currently offering 1-3 page custom websites.'
                 />
                 <FeatureTextCard 
                     title='Photography'
-                    description='We can connect you with a local, trusted photographer.  Up to 2 photo shoots included at no additional cost depending on the site you choose.'
+                    description='We are happy to find and connect you with local photographers.'
                 />
             </Stack>
         </Grid>
@@ -41,7 +41,7 @@ export default function MainFeatures() {
             cardImage={cardImagePayments}
             altText='card image payments'
             title='Payments (Coming Soon)'
-            description='Processed via Stripe or Shopify, accept payments from anywhere.'
+            description='Accept payments from anywhere.'
           />
         </Grid>
       </Grid>

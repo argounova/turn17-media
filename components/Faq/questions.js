@@ -11,13 +11,13 @@ const questions = [
     },
     {
         id: '3',
-        question: 'Can I really have a website up and running in as little as four business days?',
+        question: 'Can I really have a website up and running in as little as six to ten business days?',
         answer: 'Yes!  But (there is always a but)...keep in mind that the estimated time to completion, or ETC, listed is for design and development only.  Other considerations such as securing a domain, setting up hosting and providing Turn17 Media with photos/content can add time.  If you happen to have everything else in place then there is no reason your site cannot go live at the end of development.',
     },
     {
         id: '4',
         question: 'Is a domain and hosting included?',
-        answer: 'No, however, we may be able to help you with that.  A comprehensive list of what is included will be available after clicking Get Started above.',
+        answer: 'Yes, the price above includes a domain and six months of free hosting.  Certain restrictions apply such as a cap on domain cost, available bandwith, etc.',
     },
     {
         id: '5',
