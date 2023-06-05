@@ -22,6 +22,7 @@ const FontsOption = () => {
             <br />
             {fontChoices.map((item) => (
                 <TextField 
+                    key={item.index}
                     label={item.choice}
                     id="outlined-start-adornment"
                     sx={{ m: 1, width: '25ch' }}

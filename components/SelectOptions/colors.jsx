@@ -33,6 +33,7 @@ const ColorsOption = () => {
             <div style={{ display: 'flex', flexDirection: 'row', flexWrap: 'wrap' }}>
                 {colorChoices.map((item) => (
                         <TextField
+                            key={item.index}
                             label={item.choice}
                             id="outlined-start-adornment"
                             sx={{ m: 1, width: '25ch' }}
