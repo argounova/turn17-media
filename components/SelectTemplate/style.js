@@ -10,7 +10,6 @@ export const TemplateStyles = styled.div`
     height: fit-content;
     margin-bottom: 30px;
     padding: 15px 45px;
-
     background-color: var(--white);
     box-shadow: 1px 3px 3px var(--char3);
 

@@ -19,22 +19,24 @@ const Schedule = () => {
                     </div>
                     <Grid container justifyContent="flex-start">
                         <Box
-                        sx={{
-                            p: 2,
-                            display: 'grid',
-                            gridTemplateColumns: { xs: '1fr' },
-                            gap: 2,
-                            width: '100%'
-                        }}
-                        
+                            sx={{
+                                p: {
+                                    xs: 2,
+                                    xl: 0,
+                                },
+                                display: 'grid',
+                                gridTemplateColumns: { xs: '1fr' },
+                                gap: 2,
+                                width: '100%'
+                            }}
                         >
-                        {faqs.map((each) => (
-                            <Faq 
-                                key={each.id}
-                                question={each.question}
-                                answer={each.answer}
-                            />
-                        ))}
+                            {faqs.map((each) => (
+                                <Faq 
+                                    key={each.id}
+                                    question={each.question}
+                                    answer={each.answer}
+                                />
+                            ))}
                         </Box>
                     </Grid>
                 </div>

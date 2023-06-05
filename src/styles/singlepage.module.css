@@ -12,3 +12,23 @@
   padding: 10px;
   border-radius: 10px;
 }
+
+.submitBtn {
+  width: 95vw;
+  height: 60px;
+  font-size: var(--h5);
+  background-color: var(--mb2-2);
+  color: var(--char5);
+
+  @media (min-width: 999px) {
+    width: 60vw;
+  }
+
+  @media (min-width: 1500px) {
+    width: 40vw;
+  }
+}
+
+.submitBtn:hover {
+  background-color: #ffe419;
+}

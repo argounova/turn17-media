@@ -131,9 +131,3 @@ a {
   color: inherit;
   text-decoration: none;
 }
-
-.para-div {
-  width: 100%;
-  height: fit-content;
-  padding: 30px;
-}

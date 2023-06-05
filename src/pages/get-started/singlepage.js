@@ -8,6 +8,7 @@ import Content from '../../../components/SelectAddContent'
 import Options from '../../../components/SelectOptions'
 import Schedule from '../../../components/SelectSchedule'
 import Template from '../../../components/SelectTemplate'
+import Button from '@mui/material/Button';
 
 export async function getServerSideProps() {
   try {
@@ -44,6 +45,12 @@ export default function SinglePage({isConnected}) {
         <Options />
         <Content />
         <Schedule />
+        <Button 
+          variant="contained" 
+          className={styles.submitBtn}  
+        >
+        submit info and pay deposit
+      </Button>
       </main>
       <Footer />
     </>
