@@ -78,6 +78,7 @@ h1 {
 }
 
 h2 {
+  font-family: 'Oxygen';
   font-size: var(--h2);
 }
 
@@ -105,7 +106,9 @@ text-align: center;
 color: #fff;
 }
 
-
+li {
+  font-family: 'Oxygen';
+}
 
 * {
   box-sizing: border-box;
