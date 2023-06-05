@@ -29,6 +29,7 @@ const Content = () => {
                         />
                         {dropDownTextQuestions.map((item) => (
                             <DropDownTextArea 
+                                key={item.index}
                                 question={item.question}
                             />
                         ))}

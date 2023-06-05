@@ -39,9 +39,10 @@ const DropDownInput = ({ question }) => {
         >
           {dropDownLabels.map((item) => (
             <TextField 
-                label={item.label}
-                id="outlined-start-adornment"
-                sx={{ m: 1, width: '35ch' }}
+              key={item.index}
+              label={item.label}
+              id="outlined-start-adornment"
+              sx={{ m: 1, width: '35ch' }}
             />
           ))}
         </motion.div>
