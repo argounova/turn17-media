@@ -7,19 +7,19 @@ import Typography from '@mui/material/Typography';
 import Menu from '@mui/material/Menu';
 import MenuIcon from '@mui/icons-material/Menu';
 import Container from '@mui/material/Container';
-// import Avatar from '@mui/material/Avatar';
+import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
-// import Tooltip from '@mui/material/Tooltip';
+import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import Image from 'next/image';
 import '@fontsource/audiowide'
 import '@fontsource/oxygen'
 import BannerHeader from './BannerHeader';
 import { menuItems } from '../constants/topNavigationLinks';
+import { loggedInLinks, loggedOutLinks } from '../constants/userLinks';
+import { useSession, signOut, signIn, signUp } from 'next-auth/react'
 
-
-// const pages = ['Basics', 'Pricing', 'Latest'];
-// const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
+const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
 function TopNavigation() {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
@@ -28,15 +28,17 @@ function TopNavigation() {
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
   };
-  // const handleOpenUserMenu = (event) => {
-  //   setAnchorElUser(event.currentTarget);
-  // };
+  const handleOpenUserMenu = (event) => {
+    setAnchorElUser(event.currentTarget);
+  };
   const handleCloseNavMenu = () => {
     setAnchorElNav(null);
   };
-  // const handleCloseUserMenu = () => {
-  //   setAnchorElUser(null);
-  // };
+  const handleCloseUserMenu = () => {
+    setAnchorElUser(null);
+  };
+
+  const { data: session } = useSession()
 
   return (
     <>
@@ -97,10 +99,10 @@ function TopNavigation() {
             </Menu>
           </Box>
 
-          {/* <Box sx={{ flexGrow: 0 }}>
+          <Box sx={{ flexGrow: 0 }}>
             <Tooltip title="Open settings">
               <IconButton onClick={handleOpenUserMenu} sx={{ p: 0, width: '100px' }}>
-                <Avatar alt="Turn 17 User" src="/favicon.ico" />
+                <Avatar alt="Turn 17 User" />
               </IconButton>
             </Tooltip>
             <Menu
@@ -119,13 +121,33 @@ function TopNavigation() {
               open={Boolean(anchorElUser)}
               onClose={handleCloseUserMenu}
             >
-              {settings.map((setting) => (
-                <MenuItem key={setting} onClick={handleCloseUserMenu}>
-                  <Typography textAlign="center" sx={{ fontFamily: 'audiowide' }}>{setting}</Typography>
-                </MenuItem>
-              ))}
+              {
+                session?.user?.email? (
+                  <>
+                    {loggedInLinks.map((link, index) => (
+                      <MenuItem key={index} onClick={handleCloseUserMenu}>
+                        <a href={link.path}>
+                        <Typography textAlign="center" sx={{ fontFamily: 'audiowide' }}>{link.text}</Typography>
+                        </a>
+                      </MenuItem>
+                    ))}
+                  </>
+                ) : (
+                  <>
+                    {loggedOutLinks.map((link, index) => (
+                      <MenuItem key={index} onClick={handleCloseUserMenu}>
+                        <a href={link.path}>
+                        <Typography textAlign="center" sx={{ fontFamily: 'audiowide' }}>{link.text}</Typography>
+                        </a>
+                      </MenuItem>
+                    ))}
+                  </>
+                )
+              }
+              
+              
             </Menu>
-          </Box> */}
+          </Box>
         </Toolbar>
       </Container>
     </AppBar>
