@@ -15,7 +15,7 @@ export default async function handler(req, res) {
     }
   } else if (req.method === "POST") {
     try {
-      const newMediaClient = req.body
+      const newMediaClient = JSON.parse(req.body)
       const client = await clientPromise
       const db = client.db("turn17_media")
       const collection = await db.collection("media_clients")

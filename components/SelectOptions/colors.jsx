@@ -31,9 +31,9 @@ const ColorsOption = () => {
             <h5 style={{ color: 'var(--mb1-1)', textDecoration: 'underline' }}><a href="https://color.adobe.com/explore" target="_blank" rel="nofollow noreferrer noopener">Start with Adobe Colors</a></h5>
             <br />
             <div style={{ display: 'flex', flexDirection: 'row', flexWrap: 'wrap' }}>
-                {colorChoices.map((item) => (
+                {colorChoices.map((item, index) => (
                         <TextField
-                            key={item.index}
+                            key={index}
                             label={item.choice}
                             id="outlined-start-adornment"
                             sx={{ m: 1, width: '25ch' }}

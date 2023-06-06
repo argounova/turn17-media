@@ -2,13 +2,25 @@ import * as React from 'react'
 import { TemplateStyles } from './style'
 import TemplateRow from './TemplateRow'
 import { singlePageTemplates } from './templates'
+import Button from '@mui/material/Button'
 import RadioGroup from '@mui/material/RadioGroup'
 
 const Template = () => {
     const [selectedValue, setSelectedValue] = React.useState('')
-    const handleChange = (e) => {
-        console.log(e.target.value)
-        setSelectedValue(e.target.value)
+    const handleSave = () => {
+        const postData = async () => {
+            const data = {
+                template: selectedValue
+            }
+            const response = await fetch('/api/mediaClients', {
+                method: 'POST',
+                body: JSON.stringify(data),
+            })
+            return response.json()
+        }
+        postData().then((data) => {
+            alert(data.mediaClients + ' template saved!')
+        })
     }
     
     return(
@@ -24,10 +36,16 @@ const Template = () => {
                         templateSummary={item.summary}
                         templateThumb={item.thumbnail}
                         value={item.title}
-                        onChange={handleChange}
+                        onChange={(e) => setSelectedValue(e.target.value)}
                     />
                 ))}
                 </RadioGroup>
+                <Button
+                    onClick={handleSave}
+                    variant='contained'
+                >
+                    Save Selection
+                </Button>
             </div>
         </TemplateStyles>
     )

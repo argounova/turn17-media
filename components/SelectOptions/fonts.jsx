@@ -20,9 +20,9 @@ const FontsOption = () => {
             <br />
             <h5 style={{ color: 'var(--mb1-1)', textDecoration: 'underline' }}><a href="https://fonts.google.com/" target="_blank" rel="nofollow noreferrer noopener">Check out Google Fonts</a></h5>
             <br />
-            {fontChoices.map((item) => (
+            {fontChoices.map((item, index) => (
                 <TextField 
-                    key={item.index}
+                    key={index}
                     label={item.choice}
                     id="outlined-start-adornment"
                     sx={{ m: 1, width: '25ch' }}
