@@ -17,7 +17,7 @@ import '@fontsource/oxygen'
 import BannerHeader from './BannerHeader';
 import { menuItems } from '../constants/topNavigationLinks';
 import { loggedInLinks, loggedOutLinks } from '../constants/userLinks';
-import { useSession, signOut, signIn, signUp } from 'next-auth/react'
+import { useSession, signIn, signOut } from 'next-auth/react'
 
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
@@ -122,7 +122,24 @@ function TopNavigation() {
               onClose={handleCloseUserMenu}
             >
               {
-                session?.user?.email? (
+                session? (
+                  <>
+                  <p>
+                    {session.user.email}
+                  </p>
+                  <MenuItem onClick={handleCloseUserMenu}>
+                    <button onClick={() => signOut()}>Sign out</button>
+                  </MenuItem>
+                  </>
+                ) : (
+                  <MenuItem onClick={handleCloseUserMenu}>
+                    <button onClick={() => signIn()}>Sign in</button>
+                  </MenuItem>
+                )
+              }
+
+              {/* {
+                session? (
                   <>
                     {loggedInLinks.map((link, index) => (
                       <MenuItem key={index} onClick={handleCloseUserMenu}>
@@ -143,7 +160,7 @@ function TopNavigation() {
                     ))}
                   </>
                 )
-              }
+              } */}
               
               
             </Menu>
