@@ -1,5 +1,5 @@
 import User from '../../../models/user'
-import dbConnect from '../../../utils/dbConnect'
+import dbConnect from '../../../lib/dbConnect'
 import handler from '../../../utils/handler'
 
 handler
