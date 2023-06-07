@@ -3,8 +3,8 @@ import { MongoDBAdapter } from "@next-auth/mongodb-adapter"
 import clientPromise from "../../../../lib/mongodb"
 import dbConnect from "../../../../lib/dbConnect"
 import GithubProvider from "next-auth/providers/github"
-// import GoogleProvider from "next-auth/providers/google"
-// import FacebookProvider from "next-auth/providers/facebook"
+import GoogleProvider from "next-auth/providers/google"
+import LinkedInProvider from "next-auth/providers/linkedin"
 // import Auth0Provider from "next-auth/providers/auth0"
 
 // For more information on each option (and a full list of options) go to
@@ -21,14 +21,15 @@ export const authOptions = {
     //   clientSecret: process.env.AUTH0_SECRET,
     //   issuer: process.env.AUTH0_ISSUER,
     // }),
-    // FacebookProvider({
-    //   clientId: process.env.FACEBOOK_ID,
-    //   clientSecret: process.env.FACEBOOK_SECRET,
-    // }),
-    // GoogleProvider({
-    //   clientId: process.env.GOOGLE_ID,
-    //   clientSecret: process.env.GOOGLE_SECRET,
-    // }),
+    LinkedInProvider({
+      clientId: process.env.LINKEDIN_CLIENT_ID,
+      clientSecret: process.env.LINKEDIN_CLIENT_SECRET,
+      token_endpoint_auth_method: "client_secret_post"
+    }),
+    GoogleProvider({
+      clientId: process.env.GOOGLE_ID,
+      clientSecret: process.env.GOOGLE_SECRET,
+    }),
   ],
 //   callbacks: {
 //     async jwt({ token }) {
