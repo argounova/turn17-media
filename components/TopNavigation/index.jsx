@@ -14,10 +14,11 @@ import MenuItem from '@mui/material/MenuItem';
 import Image from 'next/image';
 import '@fontsource/audiowide'
 import '@fontsource/oxygen'
-import BannerHeader from './BannerHeader';
-import { menuItems } from '../constants/topNavigationLinks';
-import { loggedInLinks, loggedOutLinks } from '../constants/userLinks';
+import BannerHeader from '../BannerHeader';
+import { menuItems } from '../../constants/topNavigationLinks';
+import { loggedInLinks, loggedOutLinks } from '../../constants/userLinks';
 import { useSession, signIn, signOut } from 'next-auth/react'
+import { TopNavigationStyles } from './style';
 
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
@@ -41,8 +42,8 @@ function TopNavigation() {
   const { data: session } = useSession()
 
   return (
-    <>
-    <AppBar color="" elevation={0} position='relative' style={{ backgroundColor: 'var(--char5)' }}>
+    <TopNavigationStyles>
+    <AppBar color="" elevation={0}  style={{ backgroundColor: 'var(--char5)' }}>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <Button
@@ -50,7 +51,7 @@ function TopNavigation() {
           >
             <img src="/turn17-logo-main.png" alt="Turn 17 Media Logo" style={{ width: '90px' }} />
           </Button>
-          <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' }, justifyContent: 'center', ml: '-100px' }}>
+          <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' }, justifyContent: 'center', ml: '45px' }}>
             {menuItems.map((page, index) => (
               <Button
                 key={index}
@@ -62,7 +63,7 @@ function TopNavigation() {
             ))}
           </Box>
 
-          <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' }, justifyContent: 'end' }}>
+          <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' }, justifyContent: 'center' }}>
             <IconButton
               size="large"
               aria-label="account of current user"
@@ -78,12 +79,12 @@ function TopNavigation() {
               anchorEl={anchorElNav}
               anchorOrigin={{
                 vertical: 'bottom',
-                horizontal: 'left',
+                horizontal: 'center',
               }}
               keepMounted
               transformOrigin={{
                 vertical: 'top',
-                horizontal: 'left',
+                horizontal: 'center',
               }}
               open={Boolean(anchorElNav)}
               onClose={handleCloseNavMenu}
@@ -100,23 +101,29 @@ function TopNavigation() {
           </Box>
 
           <Box sx={{ flexGrow: 0 }}>
-            <Tooltip title="Open settings">
-              <IconButton onClick={handleOpenUserMenu} sx={{ p: 0, width: '100px' }}>
-                <Avatar alt="Turn 17 User" />
+            {/* <Tooltip title="Open settings"> */}
+            {session? (
+              <p style={{ color: 'var(--char0)', textAlign: 'center' }}>{session.user.name}</p>
+              ) : (<></>)
+            }
+
+              <IconButton onClick={handleOpenUserMenu} sx={{ p: 1, width: '125px' }}>
+                <Avatar alt="Turn 17 User" style={{ backgroundColor: 'var(--mb1-3)' }}/>
+
               </IconButton>
-            </Tooltip>
+
+            {/* </Tooltip> */}
             <Menu
-              sx={{ mt: '45px' }}
               id="menu-appbar"
               anchorEl={anchorElUser}
               anchorOrigin={{
-                vertical: 'top',
-                horizontal: 'right',
+                vertical: 'bottom',
+                horizontal: 'center',
               }}
               keepMounted
               transformOrigin={{
                 vertical: 'top',
-                horizontal: 'right',
+                horizontal: 'center',
               }}
               open={Boolean(anchorElUser)}
               onClose={handleCloseUserMenu}
@@ -124,16 +131,31 @@ function TopNavigation() {
               {
                 session? (
                   <>
-                  <p>
-                    {session.user.email}
-                  </p>
                   <MenuItem onClick={handleCloseUserMenu}>
-                    <button onClick={() => signOut()}>Sign out</button>
+                    <button 
+                      onClick={() => signOut()}
+                      style={{
+                        backgroundColor: 'transparent',
+                        border: 'none',
+                        fontFamily: 'Oxygen',
+                        fontSize: 'var(--p)',
+                        cursor: 'pointer'
+                      }}
+                    >Sign Out</button>
                   </MenuItem>
                   </>
                 ) : (
                   <MenuItem onClick={handleCloseUserMenu}>
-                    <button onClick={() => signIn()}>Sign in</button>
+                    <button 
+                      onClick={() => signIn()}
+                      style={{
+                        backgroundColor: 'transparent',
+                        border: 'none',
+                        fontFamily: 'Oxygen',
+                        fontSize: 'var(--p)',
+                        cursor: 'pointer'
+                      }}  
+                    >SIGN IN</button>
                   </MenuItem>
                 )
               }
@@ -168,7 +190,7 @@ function TopNavigation() {
         </Toolbar>
       </Container>
     </AppBar>
-    </>
+    </TopNavigationStyles>
   );
 }
 export default TopNavigation;
