@@ -3,6 +3,11 @@ import bcrypt from 'bcrypt'
 import validator from 'validator'
 
 const userSchema = new mongoose.Schema({
+    name: {
+        type: String,
+        required: true,
+        unique: true,
+    },
     email: {
         type: String,
         required: true,
@@ -14,16 +19,6 @@ const userSchema = new mongoose.Schema({
         required: [true, 'Please enter your email'],
         minLength: [8, 'Passwords must be at least 8 characters'],
         select: false
-    },
-    role: {
-        type: String,
-        default: 'user',
-        enum: {
-            values: [
-                'user',
-                'admin'
-            ]
-        }
     },
     createdOn: {
         type: Date,
@@ -43,4 +38,5 @@ userSchema.methods.comparePassword = async function(enteredPassword) {
     return await bcrypt.compare(enteredPassword, this.password)
 }
 
-export default mongoose.models.User || mongoose.model('User', userSchema)
+const User = mongoose.models.User || mongoose.model('User', userSchema)
+export default User

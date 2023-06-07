@@ -5,22 +5,15 @@ import dbConnect from "../../../../lib/dbConnect"
 import GithubProvider from "next-auth/providers/github"
 import GoogleProvider from "next-auth/providers/google"
 import LinkedInProvider from "next-auth/providers/linkedin"
-// import Auth0Provider from "next-auth/providers/auth0"
+import CredentialsProvider from "next-auth/providers/credentials"
+import User from "../../../../models/user"
 
-// For more information on each option (and a full list of options) go to
-// https://next-auth.js.org/configuration/options
 export const authOptions = {
-  // https://next-auth.js.org/configuration/providers/oauth
   providers: [
     GithubProvider({
-        clientId: process.env.GITHUB_ID,
-        clientSecret: process.env.GITHUB_SECRET,
+      clientId: process.env.GITHUB_ID,
+      clientSecret: process.env.GITHUB_SECRET,
     }),
-    // Auth0Provider({
-    //   clientId: process.env.AUTH0_ID,
-    //   clientSecret: process.env.AUTH0_SECRET,
-    //   issuer: process.env.AUTH0_ISSUER,
-    // }),
     LinkedInProvider({
       clientId: process.env.LINKEDIN_CLIENT_ID,
       clientSecret: process.env.LINKEDIN_CLIENT_SECRET,
@@ -30,14 +23,48 @@ export const authOptions = {
       clientId: process.env.GOOGLE_ID,
       clientSecret: process.env.GOOGLE_SECRET,
     }),
+    CredentialsProvider({
+      name: 'Credentials',
+      credentials: {
+        email: {
+          label: 'Email',
+          type: 'text'
+        },
+        password: {
+          label: 'Password',
+          type: 'password'
+        }
+      },
+      async authorize(credentials) {
+        await dbConnect()
+        const user = await User.findOne({
+          email: credentials?.email
+        })
+        if (!user) {
+          throw new Error('An account with that email does not exist.')
+        }
+        const comparePassword = await compare(
+          !credentials.password,
+          user.password
+        )
+        if (!comparePassword) {
+          throw new Error('Incorrect password.')
+        }
+        return user
+      }
+    }),
   ],
-//   callbacks: {
-//     async jwt({ token }) {
-//       token.userRole = "admin"
-//       return token
-//     },
-//   },
+  pages: {
+    signIn: '/login'
+  },
   adapter: MongoDBAdapter(clientPromise),
+  session: {
+    strategy: 'jwt'
+  },
+  jwt: {
+    secret: process.env.NEXTAUTH_JWT_SECRET,
+  },
+  secret: process.env.NEXTAUTH_SECRET
 }
 
 export default NextAuth(authOptions)
