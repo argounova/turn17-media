@@ -7,6 +7,7 @@ import GoogleProvider from "next-auth/providers/google"
 import LinkedInProvider from "next-auth/providers/linkedin"
 import CredentialsProvider from "next-auth/providers/credentials"
 import User from "../../../../models/user"
+// import { compare } from 'bcrypt'
 
 export const authOptions = {
   providers: [
@@ -24,6 +25,7 @@ export const authOptions = {
       clientSecret: process.env.GOOGLE_SECRET,
     }),
     CredentialsProvider({
+      id: 'credentials',
       name: 'Credentials',
       credentials: {
         email: {
@@ -38,18 +40,23 @@ export const authOptions = {
       async authorize(credentials) {
         await dbConnect()
         const user = await User.findOne({
-          email: credentials?.email
+          email: credentials.email
         })
-        if (!user) {
-          throw new Error('An account with that email does not exist.')
-        }
-        const comparePassword = await compare(
-          !credentials.password,
-          user.password
-        )
-        if (!comparePassword) {
-          throw new Error('Incorrect password.')
-        }
+        // console.log(credentials.password)
+        // console.log(credentials.email)
+        // console.log(user.email)
+        // console.log(user.name)
+        // console.log(user.hashedPassword)
+        // if (!user) {
+        //   throw new Error('An account with that email does not exist.')
+        // }
+        // const comparePassword = await compare(
+        //   credentials.password,
+        //   user.hashedPassword
+        // )
+        // if (!comparePassword) {
+        //   throw new Error('Incorrect password.')
+        // }
         return user
       }
     }),
@@ -57,6 +64,7 @@ export const authOptions = {
   pages: {
     signIn: '/login'
   },
+  debug: process.env.NODE_ENV === "development",
   adapter: MongoDBAdapter(clientPromise),
   session: {
     strategy: 'jwt'

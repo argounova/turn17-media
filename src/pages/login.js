@@ -1,21 +1,22 @@
-import * as React from 'react';
-import Avatar from '@mui/material/Avatar';
-import Button from '@mui/material/Button';
-import CssBaseline from '@mui/material/CssBaseline';
-import TextField from '@mui/material/TextField';
-import FormControlLabel from '@mui/material/FormControlLabel';
-import Checkbox from '@mui/material/Checkbox';
-import Link from '@mui/material/Link';
-import Paper from '@mui/material/Paper';
-import Box from '@mui/material/Box';
-import Grid from '@mui/material/Grid';
-import GitHubIcon from '@mui/icons-material/GitHub';
-import GoogleIcon from '@mui/icons-material/Google';
-import LinkedInIcon from '@mui/icons-material/LinkedIn';
-import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
-import Typography from '@mui/material/Typography';
-import { createTheme, ThemeProvider } from '@mui/material/styles';
+import { useState } from 'react'
+import Avatar from '@mui/material/Avatar'
+import Button from '@mui/material/Button'
+import CssBaseline from '@mui/material/CssBaseline'
+import TextField from '@mui/material/TextField'
+import FormControlLabel from '@mui/material/FormControlLabel'
+import Checkbox from '@mui/material/Checkbox'
+import Link from '@mui/material/Link'
+import Paper from '@mui/material/Paper'
+import Box from '@mui/material/Box'
+import Grid from '@mui/material/Grid'
+import GitHubIcon from '@mui/icons-material/GitHub'
+import GoogleIcon from '@mui/icons-material/Google'
+import LinkedInIcon from '@mui/icons-material/LinkedIn'
+import LockOutlinedIcon from '@mui/icons-material/LockOutlined'
+import Typography from '@mui/material/Typography'
+import { createTheme, ThemeProvider } from '@mui/material/styles'
 import { signIn, getProviders } from 'next-auth/react'
+import Router from 'next/router'
 
 function Copyright(props) {
   return (
@@ -35,16 +36,61 @@ function Copyright(props) {
 const defaultTheme = createTheme();
 
 export default function SignInSide({ providers }) {
-    console.log('Provider', providers)
+    const [authType, setAuthType] = useState("Login");
+    const oppAuthType = {
+    Login: "Register",
+    Register: "Login",
+    };
+    const [name, setName] = useState("");
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    const data = new FormData(event.currentTarget);
-    console.log({
-      email: data.get('email'),
-      password: data.get('password'),
-    });
-  };
+    const redirectHome = () => {
+        const { pathname } = Router
+        if (pathname === '/login') {
+            // Redirect to profile page if desired
+            Router.push('/')
+        }
+    }
+
+    const registerUser = async() => {
+        const postData = async() => {
+            const data = {
+                name: name,
+                email: email,
+                password: password
+            }
+            const response = await fetch('/api/register', {
+                method: 'POST',
+                body: JSON.stringify(data)
+            })
+            return response.json()
+        }
+        postData()
+        .then((data) => {
+           alert('Thank you for registering ' + name + ' .')
+        })
+        .catch((error) => {
+            console.log(error)
+            alert('Registration unsuccessful')
+        })
+        loginUser()
+    }
+
+    const loginUser = async() => {
+        const res = await signIn('credentials', {
+            email: email,
+            password: password,
+            redirect: false,
+            callbackUrl: `${window.location.origin}`
+        })
+        res.error ? console.log(res.error) : redirectHome()
+    }
+
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        authType === 'Login' ? loginUser() : registerUser()
+    };
 
   return (
     <ThemeProvider theme={defaultTheme}>
@@ -115,30 +161,48 @@ export default function SignInSide({ providers }) {
                     <p style={{ padding: '0px 10px', fontFamily: 'Oxygen' }}>OR</p>
                     <Box width="100%" border="solid" borderBottom={1} rounded="full"></Box>
                 </Box>
-              <TextField
-                margin="normal"
-                required
-                fullWidth
-                id="email"
-                label="Email Address"
-                name="email"
-                autoComplete="email"
-                autoFocus
-              />
-              <TextField
-                margin="normal"
-                required
-                fullWidth
-                name="password"
-                label="Password"
-                type="password"
-                id="password"
-                autoComplete="current-password"
-              />
-              <FormControlLabel
-                control={<Checkbox value="remember" color="primary" />}
-                label="Remember me"
-              />
+                {authType === 'Register' && (
+                    <TextField
+                        margin="normal"
+                        required
+                        fullWidth
+                        id="name"
+                        label="Name"
+                        name="name"
+                        autoComplete="name"
+                        autoFocus
+                        value={name}
+                        onChange={(e) => setName(e.target.value)}
+                    />
+                )}
+                <TextField
+                    margin="normal"
+                    required
+                    fullWidth
+                    id="email"
+                    label="Email Address"
+                    name="email"
+                    autoComplete="email"
+                    autoFocus
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                />
+                <TextField
+                    margin="normal"
+                    required
+                    fullWidth
+                    name="password"
+                    label="Password"
+                    type="password"
+                    id="password"
+                    autoComplete="current-password"
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
+                />
+                {/* <FormControlLabel
+                    control={<Checkbox value="remember" color="primary" />}
+                    label="Remember me"
+                /> */}
               <Button
                 type="submit"
                 fullWidth
@@ -146,18 +210,25 @@ export default function SignInSide({ providers }) {
                 sx={{ mt: 3, mb: 2 }}
                 color='info'
               >
-                Sign In
+                {authType}
               </Button>
               <Grid container>
-                <Grid item xs>
+                {/* <Grid item xs>
                   <Link href="#" variant="body2">
                     Forgot password?
                   </Link>
-                </Grid>
+                </Grid> */}
                 <Grid item>
-                  <Link href="#" variant="body2">
-                    {"Don't have an account? Sign Up"}
-                  </Link>
+                  <Typography component="p" variant="body2">
+                    {authType === "Login"
+                    ? "Not registered yet? "
+                    : "Already have an account? "} 
+                    <Button
+                        onClick={() => setAuthType(oppAuthType[authType])}
+                    >
+                        {oppAuthType[authType]}
+                    </Button>
+                  </Typography>
                 </Grid>
               </Grid>
               <Copyright sx={{ mt: 5 }} />
