@@ -9,6 +9,8 @@ import Options from '../../../components/SelectOptions'
 import Schedule from '../../../components/SelectSchedule'
 import Template from '../../../components/SelectTemplate'
 import Button from '@mui/material/Button';
+import { useSession } from 'next-auth/react'
+
 
 export async function getServerSideProps() {
   try {
@@ -25,6 +27,8 @@ export async function getServerSideProps() {
 }
 
 export default function SinglePage({isConnected}) {
+  const { data: session } = useSession()
+
   return (
     <>
       <Head>

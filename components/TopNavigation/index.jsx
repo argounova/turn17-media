@@ -130,7 +130,6 @@ function TopNavigation() {
             >
               {
                 session? (
-                  <>
                   <MenuItem onClick={handleCloseUserMenu}>
                     <button 
                       onClick={() => signOut()}
@@ -143,7 +142,6 @@ function TopNavigation() {
                       }}
                     >Sign Out</button>
                   </MenuItem>
-                  </>
                 ) : (
                   <MenuItem onClick={handleCloseUserMenu}>
                     <button 

@@ -42,14 +42,9 @@ export const authOptions = {
         const user = await User.findOne({
           email: credentials.email
         })
-        // console.log(credentials.password)
-        // console.log(credentials.email)
-        // console.log(user.email)
-        // console.log(user.name)
-        // console.log(user.hashedPassword)
-        // if (!user) {
-        //   throw new Error('An account with that email does not exist.')
-        // }
+        if (!user) {
+          throw new Error('An account with that email does not exist.')
+        }
         // const comparePassword = await compare(
         //   credentials.password,
         //   user.hashedPassword
@@ -57,6 +52,11 @@ export const authOptions = {
         // if (!comparePassword) {
         //   throw new Error('Incorrect password.')
         // }
+        const p1 = credentials.password
+        const p2 = user.hashedPassword
+        if (p1 != p2) {
+          throw new Error('Incorrect password.')
+        }
         return user
       }
     }),

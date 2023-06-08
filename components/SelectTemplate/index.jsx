@@ -4,22 +4,25 @@ import TemplateRow from './TemplateRow'
 import { singlePageTemplates } from './templates'
 import Button from '@mui/material/Button'
 import RadioGroup from '@mui/material/RadioGroup'
+import { useSession } from 'next-auth/react'
 
 const Template = () => {
+    const { data: session } = useSession()
     const [selectedValue, setSelectedValue] = React.useState('')
     const handleSave = () => {
         const postData = async () => {
             const data = {
+                email: session.user.email,
                 template: selectedValue
             }
-            const response = await fetch('/api/mediaClients', {
-                method: 'POST',
+            const response = await fetch('/api/routes/templateRoute', {
+                method: 'PUT',
                 body: JSON.stringify(data),
             })
             return response.json()
         }
         postData().then((data) => {
-            alert(data.mediaClients + ' template saved!')
+            alert(selectedValue + ' template saved!')
         })
     }
     
