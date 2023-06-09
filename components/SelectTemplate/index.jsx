@@ -9,6 +9,8 @@ import { useSession } from 'next-auth/react'
 const Template = () => {
     const { data: session } = useSession()
     const [selectedValue, setSelectedValue] = React.useState('')
+    const [showComponent, setShowComponent] = React.useState(true)
+
     const handleSave = () => {
         const postData = async () => {
             const data = {
@@ -23,34 +25,58 @@ const Template = () => {
         }
         postData().then((data) => {
             alert(selectedValue + ' template saved!')
+            setShowComponent(false)
         })
     }
     
     return(
-        <TemplateStyles>
-            <h1 style={{ marginTop: '80px' }}>Select a template</h1>
-            <br />
-            <div className='template-container'>
-                <RadioGroup>
-                {singlePageTemplates.map((item, index) => (
-                    <TemplateRow 
-                        key={index}
-                        templateTitle={item.title}
-                        templateSummary={item.summary}
-                        templateThumb={item.thumbnail}
-                        value={item.title}
-                        onChange={(e) => setSelectedValue(e.target.value)}
-                    />
-                ))}
-                </RadioGroup>
-                <Button
-                    onClick={handleSave}
-                    variant='contained'
-                >
-                    Save Template
-                </Button>
-            </div>
-        </TemplateStyles>
+        <>
+        {showComponent? (
+            <TemplateStyles>
+                <h1 style={{ marginTop: '80px' }}>Select a template</h1>
+                <br />
+                <div className='template-container'>
+                    <RadioGroup>
+                    {singlePageTemplates.map((item, index) => (
+                        <TemplateRow 
+                            key={index}
+                            templateTitle={item.title}
+                            templateSummary={item.summary}
+                            templateThumb={item.thumbnail}
+                            value={item.title}
+                            onChange={(e) => setSelectedValue(e.target.value)}
+                        />
+                    ))}
+                    </RadioGroup>
+                    <Button
+                        onClick={handleSave}
+                        variant='contained'
+                    >
+                        Save Template
+                    </Button>
+                </div>
+            </TemplateStyles>
+        ) : (
+            <TemplateStyles>
+                <h1 style={{ marginTop: '80px' }}>Select a template</h1>
+                <br />
+                <div className='template-container'>
+                    <h4>
+                        Template saved.
+                    </h4>
+                    <br />
+                    <Button
+                        onClick={() => setShowComponent(true)}
+                        variant='contained'
+                        fullWidth
+                    >
+                        Edit Template
+                    </Button>
+                </div>
+            </TemplateStyles>
+        )}
+        
+        </>
     )
 }
 

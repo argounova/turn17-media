@@ -1,6 +1,5 @@
 import Box from '@mui/material/Box';
 import styles from '@/styles/BannerHeader.module.css'
-import Oxygen from '@fontsource/oxygen'
 
 function BannerHeader({ tag1, tag2, subtag, subtext1, subtext2 }) {
     return(

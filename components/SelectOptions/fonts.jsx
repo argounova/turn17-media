@@ -17,6 +17,7 @@ export const fonts = [
 
 const FontsOption = () => {
     const { data: session } = useSession()
+    const [showComponent, setShowComponent] = useState(true)
     const [bypass, setBypass] = useState()
     const [font, setFont] = useState(fonts)
     let fontChoices = []
@@ -47,42 +48,59 @@ const FontsOption = () => {
         }
         postData().then((data) => {
             alert('Font choices saved!')
+            setShowComponent(false)
         })
     }
 
 
     return(
         <>
-            <h2>Fonts</h2>
-            <br />
-            <p>Further customization comes in the form of choosing up to two fonts.  Keep in mind that each font has the ability to be italic, multiple weights and any size or color giving you a broad spectrum of creativity.</p>
-            <br />
-            <h5 style={{ color: 'var(--mb1-1)', textDecoration: 'underline' }}><a href="https://fonts.google.com/" target="_blank" rel="nofollow noreferrer noopener">Check out Google Fonts</a></h5>
-            <br />
-            {fonts.map((item, index) => (
-                <TextField 
-                    key={index}
-                    label={item.choice}
-                    id="outlined-start-adornment"
-                    sx={{ m: 1, width: '25ch' }}
-                    name='fontChoice'
-                    onChange={updateState(index)}
-                />
-            ))}
-            <br />
-            <FormControlLabel 
-                sx={{ fontFamily: 'Oxygen' }} 
-                control=
-                {<Checkbox 
-                    onChange={(e) => setBypass(e.target.checked)}
-                />} 
-                label="Check here to bypass this option and discuss colors later." />
-            <Button
-                onClick={handleSave}
-                variant='contained'
-            >
-                Save Fonts
-            </Button>
+            {showComponent? (
+                <>
+                    <h2>Fonts</h2>
+                    <br />
+                    <p>Further customization comes in the form of choosing up to two fonts.  Keep in mind that each font has the ability to be italic, multiple weights and any size or color giving you a broad spectrum of creativity.</p>
+                    <br />
+                    <h5 style={{ color: 'var(--mb1-1)', textDecoration: 'underline' }}><a href="https://fonts.google.com/" target="_blank" rel="nofollow noreferrer noopener">Check out Google Fonts</a></h5>
+                    <br />
+                    {fonts.map((item, index) => (
+                        <TextField 
+                            key={index}
+                            label={item.choice}
+                            id="outlined-start-adornment"
+                            sx={{ m: 1, width: '25ch' }}
+                            name='fontChoice'
+                            onChange={updateState(index)}
+                        />
+                    ))}
+                    <br />
+                    <FormControlLabel 
+                        sx={{ fontFamily: 'Oxygen' }} 
+                        control=
+                        {<Checkbox 
+                            onChange={(e) => setBypass(e.target.checked)}
+                        />} 
+                        label="Check here to bypass this option and discuss colors later." />
+                    <Button
+                        onClick={handleSave}
+                        variant='contained'
+                    >
+                        Save Fonts
+                    </Button>
+                </>
+            ) : (
+                <>
+                    <h4>Fonts saved.</h4>
+                    <br />
+                    <Button
+                        onClick={() => setShowComponent(true)}
+                        variant='contained'
+                        fullWidth
+                    >
+                        Edit Fonts
+                    </Button>
+                </>
+            )}
         </>
     )
 }

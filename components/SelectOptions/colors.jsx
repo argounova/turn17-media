@@ -27,6 +27,7 @@ export const colors = [
 
 const ColorsOption = () => {
     const { data: session } = useSession()
+    const [showComponent, setShowComponent] = useState(true)
     const [bypass, setBypass] = useState()
     const [color, setColor] = useState(colors)
     let colorChoices = []
@@ -57,57 +58,74 @@ const ColorsOption = () => {
         }
         postData().then((data) => {
             alert('Color choices saved!')
+            setShowComponent(false)
         })
     }
 
     return(
         <>
-            <h2>Colors</h2>
-            <br />
-            <p>Arguably the most impactful element of your website is the color palette as this sets the overall tone and personality.  It can be difficult to narrow down all of the colors in the rainbow to only five but a cohesive site typically won&apos;t have more than that.</p>
-            <br />
-            <h5 style={{ color: 'var(--mb1-1)', textDecoration: 'underline' }}><a href="https://color.adobe.com/explore" target="_blank" rel="nofollow noreferrer noopener">Start with Adobe Colors</a></h5>
-            <br />
-            <div style={{ display: 'flex', flexDirection: 'row', flexWrap: 'wrap' }}>
-                {colors.map((item, index) => (
-                        <TextField
-                            key={index}
-                            label={item.choice}
-                            id="outlined-start-adornment"
-                            sx={{ m: 1, width: '25ch' }}
-                            name='colorChoice'
-                            InputProps={{
-                                startAdornment: <InputAdornment position="start">#</InputAdornment>,
-                            }}
-                            onChange={updateState(index)}
-                        />
-                ))}
-            </div>
-            <br />
-            <p>Choose up to five colors.</p>
-            <br />
-            <p>If using Adobe Colors:</p>
-            <ul>
-                <li style={{ marginLeft: '30px' }}>Select a color palette</li>
-                <li style={{ marginLeft: '30px' }}>Note the six digit hex code for each color</li>
-                <li style={{ marginLeft: '30px' }}>Copy and paste the six digit hex code here</li>
-            </ul>
-            <br />
-            <p>Your choices are not set in stone and more colors can be added upon request.</p>
-            <br />
-            <FormControlLabel 
-                sx={{ fontFamily: 'Oxygen' }} 
-                control=
-                    {<Checkbox 
-                        onChange={(e) => setBypass(e.target.checked)}
-                    />} 
-                label="Check here to bypass this option and discuss colors later." />
-            <Button
-                onClick={handleSave}
-                variant='contained'
-            >
-                Save Colors
-            </Button>
+        {showComponent? (
+            <>
+                <h2>Colors</h2>
+                <br />
+                <p>Arguably the most impactful element of your website is the color palette as this sets the overall tone and personality.  It can be difficult to narrow down all of the colors in the rainbow to only five but a cohesive site typically won&apos;t have more than that.</p>
+                <br />
+                <h5 style={{ color: 'var(--mb1-1)', textDecoration: 'underline' }}><a href="https://color.adobe.com/explore" target="_blank" rel="nofollow noreferrer noopener">Start with Adobe Colors</a></h5>
+                <br />
+                <div style={{ display: 'flex', flexDirection: 'row', flexWrap: 'wrap' }}>
+                    {colors.map((item, index) => (
+                            <TextField
+                                key={index}
+                                label={item.choice}
+                                id="outlined-start-adornment"
+                                sx={{ m: 1, width: '25ch' }}
+                                name='colorChoice'
+                                InputProps={{
+                                    startAdornment: <InputAdornment position="start">#</InputAdornment>,
+                                }}
+                                onChange={updateState(index)}
+                            />
+                    ))}
+                </div>
+                <br />
+                <p>Choose up to five colors.</p>
+                <br />
+                <p>If using Adobe Colors:</p>
+                <ul>
+                    <li style={{ marginLeft: '30px' }}>Select a color palette</li>
+                    <li style={{ marginLeft: '30px' }}>Note the six digit hex code for each color</li>
+                    <li style={{ marginLeft: '30px' }}>Copy and paste the six digit hex code here</li>
+                </ul>
+                <br />
+                <p>Your choices are not set in stone and more colors can be added upon request.</p>
+                <br />
+                <FormControlLabel 
+                    sx={{ fontFamily: 'Oxygen' }} 
+                    control=
+                        {<Checkbox 
+                            onChange={(e) => setBypass(e.target.checked)}
+                        />} 
+                    label="Check here to bypass this option and discuss colors later." />
+                <Button
+                    onClick={handleSave}
+                    variant='contained'
+                >
+                    Save Colors
+                </Button>
+            </>
+        ) : (
+            <>
+                <h4>Colors saved.</h4>
+                <br />
+                <Button
+                    onClick={() => setShowComponent(true)}
+                    variant='contained'
+                    fullWidth
+                >
+                    Edit Colors
+                </Button>
+            </>
+        )}
         </>
     )
 }
