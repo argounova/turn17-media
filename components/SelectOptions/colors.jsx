@@ -1,9 +1,13 @@
+import { useState } from 'react'
+import { useSession } from 'next-auth/react'
+import Button from '@mui/material/Button'
 import InputAdornment from '@mui/material/InputAdornment';
 import TextField from '@mui/material/TextField';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import Checkbox from '@mui/material/Checkbox';
 
-export const colorChoices = [
+
+export const colors = [
     {
         choice: 'Color 1',
     },
@@ -22,6 +26,40 @@ export const colorChoices = [
 ]
 
 const ColorsOption = () => {
+    const { data: session } = useSession()
+    const [bypass, setBypass] = useState()
+    const [color, setColor] = useState(colors)
+    let colorChoices = []
+
+    const updateState = (index) => (e) => {
+        colorChoices = color.map((item, i) => {
+            if (index === i) {
+                return { ...item, [e.target.name]: e.target.value }
+            } else {
+                return item
+            }
+        })
+        setColor(colorChoices)
+    }
+
+    const handleSave = () => {
+        const postData = async () => {
+            const data = {
+                email: session.user.email,
+                colorChoices: color,
+                colorBypass: bypass
+            }
+            const response = await fetch('/api/routes/colorsRoute', {
+                method: 'PUT',
+                body: JSON.stringify(data),
+            })
+            return response.json()
+        }
+        postData().then((data) => {
+            alert('Color choices saved!')
+        })
+    }
+
     return(
         <>
             <h2>Colors</h2>
@@ -31,15 +69,17 @@ const ColorsOption = () => {
             <h5 style={{ color: 'var(--mb1-1)', textDecoration: 'underline' }}><a href="https://color.adobe.com/explore" target="_blank" rel="nofollow noreferrer noopener">Start with Adobe Colors</a></h5>
             <br />
             <div style={{ display: 'flex', flexDirection: 'row', flexWrap: 'wrap' }}>
-                {colorChoices.map((item, index) => (
+                {colors.map((item, index) => (
                         <TextField
                             key={index}
                             label={item.choice}
                             id="outlined-start-adornment"
                             sx={{ m: 1, width: '25ch' }}
+                            name='colorChoice'
                             InputProps={{
                                 startAdornment: <InputAdornment position="start">#</InputAdornment>,
                             }}
+                            onChange={updateState(index)}
                         />
                 ))}
             </div>
@@ -55,7 +95,19 @@ const ColorsOption = () => {
             <br />
             <p>Your choices are not set in stone and more colors can be added upon request.</p>
             <br />
-            <FormControlLabel sx={{ fontFamily: 'Oxygen' }} control={<Checkbox />} label="Check here to bypass this option and discuss colors later." />
+            <FormControlLabel 
+                sx={{ fontFamily: 'Oxygen' }} 
+                control=
+                    {<Checkbox 
+                        onChange={(e) => setBypass(e.target.checked)}
+                    />} 
+                label="Check here to bypass this option and discuss colors later." />
+            <Button
+                onClick={handleSave}
+                variant='contained'
+            >
+                Save Colors
+            </Button>
         </>
     )
 }

@@ -1,8 +1,12 @@
+import { useState } from 'react'
+import { useSession } from 'next-auth/react';
+import Button from '@mui/material/Button'
 import TextField from '@mui/material/TextField';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import Checkbox from '@mui/material/Checkbox';
 
-export const fontChoices = [
+
+export const fonts = [
     {
         choice: 'Font Choice 1',
     },
@@ -12,6 +16,41 @@ export const fontChoices = [
 ]
 
 const FontsOption = () => {
+    const { data: session } = useSession()
+    const [bypass, setBypass] = useState()
+    const [font, setFont] = useState(fonts)
+    let fontChoices = []
+
+    const updateState = (index) => (e) => {
+        fontChoices = font.map((item, i) => {
+            if (index === i) {
+                return { ...item, [e.target.name]: e.target.value }
+            } else {
+                return item
+            }
+        })
+        setFont(fontChoices)
+    }
+
+    const handleSave = () => {
+        const postData = async () => {
+            const data = {
+                email: session.user.email,
+                fontChoices: font,
+                fontBypass: bypass
+            }
+            const response = await fetch('/api/routes/fontsRoute', {
+                method: 'PUT',
+                body: JSON.stringify(data)
+            })
+            return response.json()
+        }
+        postData().then((data) => {
+            alert('Font choices saved!')
+        })
+    }
+
+
     return(
         <>
             <h2>Fonts</h2>
@@ -20,16 +59,30 @@ const FontsOption = () => {
             <br />
             <h5 style={{ color: 'var(--mb1-1)', textDecoration: 'underline' }}><a href="https://fonts.google.com/" target="_blank" rel="nofollow noreferrer noopener">Check out Google Fonts</a></h5>
             <br />
-            {fontChoices.map((item, index) => (
+            {fonts.map((item, index) => (
                 <TextField 
                     key={index}
                     label={item.choice}
                     id="outlined-start-adornment"
                     sx={{ m: 1, width: '25ch' }}
+                    name='fontChoice'
+                    onChange={updateState(index)}
                 />
             ))}
             <br />
-            <FormControlLabel sx={{ fontFamily: 'Oxygen' }} control={<Checkbox />} label="Check here to bypass this option and discuss colors later." />
+            <FormControlLabel 
+                sx={{ fontFamily: 'Oxygen' }} 
+                control=
+                {<Checkbox 
+                    onChange={(e) => setBypass(e.target.checked)}
+                />} 
+                label="Check here to bypass this option and discuss colors later." />
+            <Button
+                onClick={handleSave}
+                variant='contained'
+            >
+                Save Fonts
+            </Button>
         </>
     )
 }

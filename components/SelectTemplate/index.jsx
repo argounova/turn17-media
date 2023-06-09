@@ -47,7 +47,7 @@ const Template = () => {
                     onClick={handleSave}
                     variant='contained'
                 >
-                    Save Selection
+                    Save Template
                 </Button>
             </div>
         </TemplateStyles>
