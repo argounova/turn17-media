@@ -53,7 +53,7 @@ export default function SinglePage({isConnected}) {
           variant="contained" 
           className={styles.submitBtn}  
         >
-        submit info and pay deposit
+        pay deposit
       </Button>
       </main>
       <Footer />

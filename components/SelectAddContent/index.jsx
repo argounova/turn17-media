@@ -1,3 +1,5 @@
+import React, { useState } from "react"
+import { useSession } from 'next-auth/react'
 import { Box, Grid } from '@mui/material'
 import { ContentStyles } from './style'
 import DropDownInput from './DropDownInput'
@@ -5,6 +7,40 @@ import DropDownTextArea from './DropDownText'
 import dropDownTextQuestions from './dropDownTextQuestions'
 
 const Content = () => {
+    const { data: session } = useSession()
+    const [content, setContent] = useState(dropDownTextQuestions)
+    let contentAreas = []
+
+    console.log(content)
+
+    const updateState = (index) => (e) => {
+        contentAreas = content.map((item, i) => {
+            if (index === i) {
+                return { ...item, [e.target.name]: e.target.value }
+            } else {
+                return item
+            }
+        })
+        setContent(contentAreas)
+    }
+
+    const handleSave = () => {
+        const postData = async () => {
+            const data = {
+                email: session.user.email,
+                content: content,
+            }
+            const response = await fetch('/api/routes/contentRoute', {
+                method: 'PUT',
+                body: JSON.stringify(data),
+            })
+            return response.json()
+        }
+        postData().then((data) => {
+            alert('Content saved!')
+        })
+    }
+
     return(
         <ContentStyles>
             <h1>Add content and additional info</h1>
@@ -31,6 +67,9 @@ const Content = () => {
                             <DropDownTextArea 
                                 key={index}
                                 question={item.question}
+                                name="content"
+                                onChange={updateState(index)}
+                                onClick={handleSave}
                             />
                         ))}
                     </Box>

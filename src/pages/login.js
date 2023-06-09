@@ -68,7 +68,7 @@ export default function SignInSide({ providers }) {
         }
         postData()
         .then((data) => {
-           alert('Thank you for registering ' + name + ' .')
+           alert('Thank you for registering ' + name + '.')
         })
         .catch((error) => {
             console.log(error)
