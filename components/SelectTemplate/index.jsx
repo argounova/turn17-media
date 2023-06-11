@@ -24,7 +24,6 @@ const Template = () => {
             return response.json()
         }
         postData().then((data) => {
-            alert(selectedValue + ' template saved!')
             setShowComponent(false)
         })
     }

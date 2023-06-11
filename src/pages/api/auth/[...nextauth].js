@@ -64,7 +64,7 @@ export const authOptions = {
   pages: {
     signIn: '/login'
   },
-  debug: process.env.NODE_ENV === "development",
+  debug: process.env.NODE_ENV !== "production",
   adapter: MongoDBAdapter(clientPromise),
   session: {
     strategy: 'jwt'

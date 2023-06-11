@@ -1,20 +1,33 @@
-import { Box, Grid } from '@mui/material'
+import { useState } from 'react'
+import { Box, Button, Grid } from '@mui/material'
 import CalendlyScheduler from './calendlyScheduler'
 import Faq from '../Faq/faqItem'
 import { ScheduleStyles } from './style'
 import faqs from './faqs'
+import PayDeposit from '../PayDeposit'
+import { useRouter } from 'next/router'
+
 
 
 const Schedule = () => {
+    const { query } = useRouter()
+    const status = query.status
+    const [success, setSuccess] = useState(false)
+    const paymentSuccessful = () => {
+        if (status === 'success') {
+            setSuccess(true)
+        }
+    }
+  
     return(
         <ScheduleStyles>
-            <h1>Schedule your project</h1>
+            <h1>Pay deposit and schedule your project</h1>
             <br />
             <div className='schedule-container'>
                 <div>
                     <div className='para-div'>
                         <p>
-                        Single page websites have an approximate build time of six business days.  In theory, your site can be completed and launched in that time frame.  This assumes a domain is secured, hosting is established and site approvals by the client are handled in a timely manner.  However, life happens and we get that.  We will absolutely work with you on scheduling.  This topic will be addressed in greater detail at our first 1x1 and we invite you to browse the FAQs below.
+                        Our websites have a minimum build time of 7-14 business days.  It can take longer.  You have 24 hours from the time you submit your deposit to cancel and receive a refund.  After 24 hours, deposits are non-refundable.  Once your deposit is paid, please schedule your first developer meeting.  
                         </p>
                     </div>
                     <Grid container justifyContent="flex-start">
@@ -30,6 +43,7 @@ const Schedule = () => {
                                 width: '100%'
                             }}
                         >
+                            <PayDeposit />
                             {faqs.map((each) => (
                                 <Faq 
                                     key={each.id}
@@ -40,9 +54,16 @@ const Schedule = () => {
                         </Box>
                     </Grid>
                 </div>
-                <div className='calendly-container'>
-                    <CalendlyScheduler />
-                </div>
+                {status? (
+                    <div className='calendly-container'>
+                        <CalendlyScheduler />
+                    </div>
+                ) : (
+                    <div className='calendly-container' style={{ opacity: 0.5, pointerEvents: "none" }} disabled>
+                        <CalendlyScheduler />
+                    </div>
+                )}
+                    
             </div>
         </ScheduleStyles>
     )

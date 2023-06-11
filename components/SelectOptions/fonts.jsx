@@ -47,7 +47,6 @@ const FontsOption = () => {
             return response.json()
         }
         postData().then((data) => {
-            alert('Font choices saved!')
             setShowComponent(false)
         })
     }

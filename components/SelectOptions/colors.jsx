@@ -57,7 +57,6 @@ const ColorsOption = () => {
             return response.json()
         }
         postData().then((data) => {
-            alert('Color choices saved!')
             setShowComponent(false)
         })
     }

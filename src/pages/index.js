@@ -1,4 +1,5 @@
 import Head from 'next/head'
+import { useRouter } from 'next/router'
 import clientPromise from '../../lib/mongodb'
 import { Inter } from 'next/font/google'
 import styles from '@/styles/Home.module.css'
@@ -12,6 +13,7 @@ import Button from '../../components/Button/index'
 import Footer from '../../components/Footer/Footer'
 
 const inter = Inter({ subsets: ['latin'] })
+
 
 export async function getServerSideProps() {
   try {
@@ -28,6 +30,9 @@ export async function getServerSideProps() {
 }
 
 export default function Home({isConnected}) {
+  const { query } = useRouter()
+  const status = query.status
+  console.log(status)
   return (
     <>
       <Head>

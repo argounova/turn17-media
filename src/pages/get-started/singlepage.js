@@ -49,12 +49,6 @@ export default function SinglePage({isConnected}) {
         <Options />
         <Content />
         <Schedule />
-        <Button 
-          variant="contained" 
-          className={styles.submitBtn}  
-        >
-        pay deposit
-      </Button>
       </main>
       <Footer />
     </>

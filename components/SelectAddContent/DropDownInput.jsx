@@ -37,7 +37,7 @@ const DropDownInput = ({ question }) => {
         return response.json()
     }
     postData().then((data) => {
-        alert('Navigation links saved!')
+      toggleInfo()
     })
   }
 
