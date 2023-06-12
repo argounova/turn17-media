@@ -22,9 +22,6 @@ export default function FeatureTextCard({title, description}) {
           </Typography>
         </CardContent>
       </CardActionArea>
-      <CardActions>
-        <Button size="small" href='/basics'>Learn More</Button>
-      </CardActions>
     </Card>
   );
 }

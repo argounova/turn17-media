@@ -4,8 +4,8 @@ import Grid from '@mui/material/Unstable_Grid2';
 import { Stack } from '@mui/material';
 import FeaturePhotoCard from './FeaturePhotoCard';
 import FeatureTextCard from './FeatureTextCard';
-import cardImageColors from '../public/images/colors.jpg';
-import cardImagePayments from '../public/images/payments.jpg';
+import specSite from '../public/images/spec-site-card-bw.jpg';
+import gtSite from '../public/images/gt-site-card-bw.jpg';
 
 export default function MainFeatures() {
   return (
@@ -18,30 +18,34 @@ export default function MainFeatures() {
     >
         <Grid>
           <FeaturePhotoCard 
-            cardImage={cardImageColors}
+            cardImage={specSite}
             altText='card image colors'
-            title='Customization'
-            description='Select from hundreds of color palettes and fonts.'
+            title='Spec Class Website'
+            description='Minimalistic in design, professional by nature.'
           />
         </Grid>
         <Grid>
             <Stack gap={2}>
                 <FeatureTextCard 
-                    title='Pages'
-                    description='Currently offering 1-3 page custom websites.'
+                    title='Pricing'
+                    description='Flat-rate structure with no hidden fees.'
                 />
                 <FeatureTextCard 
-                    title='Photography'
-                    description='We are happy to find and connect you with local photographers.'
+                    title='Build Time'
+                    description='Efficient development means your site goes live sooner.'
+                />
+                <FeatureTextCard 
+                    title='Satisfaction'
+                    description='Client happiness is paramount.'
                 />
             </Stack>
         </Grid>
         <Grid>
           <FeaturePhotoCard 
-            cardImage={cardImagePayments}
+            cardImage={gtSite}
             altText='card image payments'
-            title='Payments (Coming Soon)'
-            description='Accept payments from anywhere.'
+            title='GT Class Website'
+            description='Multiple pages, highly customizable.'
           />
         </Grid>
       </Grid>
