@@ -1,3 +1,5 @@
+import { useState } from 'react'
+import { useRouter } from 'next/router'
 import { Button } from '@mui/material'
 import { loadStripe } from '@stripe/stripe-js'
 import axios from 'axios'
@@ -12,6 +14,14 @@ const deposit = {
 }
 
 const PayDeposit = () => {
+  const { query } = useRouter()
+  const status = query.status
+  const [success, setSuccess] = useState(false)
+  const paymentSuccessful = () => {
+      if (status === 'success') {
+          setSuccess(true)
+      }
+  }
     
     const handleCheckout = async () => {
         console.log(deposit)
@@ -28,14 +38,27 @@ const PayDeposit = () => {
     }
 
     return(
-        <Button 
+      <>
+        {status? (
+          <Button 
+            fullWidth
+            variant='contained'
+            color='warning'
+            sx={{ fontSize: 'var(--h4)' }}
+            disabled    
+          >Deposit Submitted
+          </Button>
+        ) : (
+          <Button 
             fullWidth
             variant='contained'
             color='warning'
             sx={{ fontSize: 'var(--h4)' }}    
             onClick={handleCheckout}
-        >Pay Deposit
-        </Button>
+          >Pay Deposit
+          </Button>
+        )}
+      </>
     )
 }
 

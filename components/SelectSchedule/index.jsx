@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { Box, Button, Grid } from '@mui/material'
 import CalendlyScheduler from './calendlyScheduler'
 import Faq from '../Faq/faqItem'
@@ -6,22 +6,33 @@ import { ScheduleStyles } from './style'
 import faqs from './faqs'
 import PayDeposit from '../PayDeposit'
 import { useRouter } from 'next/router'
-
+import { motion } from 'framer-motion';
 
 
 const Schedule = () => {
     const { query } = useRouter()
     const status = query.status
     const [success, setSuccess] = useState(false)
+    const ref = useRef(null)
+    
     const paymentSuccessful = () => {
         if (status === 'success') {
             setSuccess(true)
+            scrollToElement()
         }
     }
+
+    const scrollToElement = () => {
+        ref.current?.scrollIntoView({ behavior: 'smooth' })
+    }
+
+    useEffect(() => {
+        paymentSuccessful()
+    }, [])
   
     return(
         <ScheduleStyles>
-            <h1>Pay deposit and schedule your project</h1>
+            <h1 ref={ref}>Pay deposit and schedule your project</h1>
             <br />
             <div className='schedule-container'>
                 <div>
@@ -55,8 +66,21 @@ const Schedule = () => {
                     </Grid>
                 </div>
                 {status? (
-                    <div className='calendly-container'>
-                        <CalendlyScheduler />
+                    <div className='calendly-container' >
+                        <motion.div 
+                        style={{ border: 'solid 5px var(--mb1-3)', marginLeft: '10px', backgroundColor: '#fff' }}
+                            animate={{
+                            scale: [1, 1.05, 1.05, 1.05, 1],
+                            }}
+                            transition={{
+                                duration: 2,
+                                ease: "easeInOut",
+                                times: [0, 0.2, 0.5, 0.8, 1],
+                                repeat: 3,
+                                repeatDelay: 1
+                            }}>
+                            <CalendlyScheduler />
+                        </motion.div>
                     </div>
                 ) : (
                     <div className='calendly-container' style={{ opacity: 0.5, pointerEvents: "none" }} disabled>
