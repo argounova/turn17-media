@@ -29,7 +29,7 @@ export default function FeaturePhotoCard({cardImage, altText, title, description
         </CardContent>
       </CardActionArea>
       <CardActions>
-        <Button size="small" color="primary">
+        <Button size="small" color="primary" href='/get-started/singlepage'>
           Discover
         </Button>
       </CardActions>

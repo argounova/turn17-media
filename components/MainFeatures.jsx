@@ -20,19 +20,23 @@ export default function MainFeatures() {
           <FeaturePhotoCard 
             cardImage={cardImageColors}
             altText='card image colors'
-            title='Customization'
-            description='Select from hundreds of color palettes, fonts, and more.'
+            title='Spec Class Website'
+            description='Minimalistic in design, professional by nature.'
           />
         </Grid>
         <Grid>
             <Stack gap={2}>
                 <FeatureTextCard 
-                    title='Pages'
-                    description='Single, 2-5 or any custom number of pages.'
+                    title='Pricing'
+                    description='Flat-rate structure with no hidden fees.'
                 />
                 <FeatureTextCard 
-                    title='Photography'
-                    description='We can connect you with a local, trusted photographer.  Up to 2 photo shoots included at no additional cost depending on the site you choose.'
+                    title='Build Time'
+                    description='Efficient development means your site goes live sooner.'
+                />
+                <FeatureTextCard 
+                    title='Satisfaction'
+                    description='Client happiness is paramount.'
                 />
             </Stack>
         </Grid>
@@ -40,8 +44,8 @@ export default function MainFeatures() {
           <FeaturePhotoCard 
             cardImage={cardImagePayments}
             altText='card image payments'
-            title='Payments (Coming Soon)'
-            description='Processed via Stripe or Shopify, accept payments from anywhere.'
+            title='GT Class Website'
+            description='Multi page and highly customizable.'
           />
         </Grid>
       </Grid>
