@@ -1,13 +1,10 @@
-import * as React from 'react'
+import { useState, useEffect } from 'react'
 import styles from '@/styles/my-profile.module.css'
 import Head from 'next/head'
-import clientPromise from '../../lib/mongodb'
 import TopNavigation from '../../components/TopNavigation'
 import Footer from '../../components/Footer/Footer'
 import { useSession } from 'next-auth/react'
 import {
-  AppBar,
-  Avatar,
   Box,
   Button,
   Collapse,
@@ -26,31 +23,32 @@ import {
 } from '@mui/material'
 
 
-export async function getServerSideProps() {
-  try {
-    const client = await clientPromise
-    const db = client.db("turn17_media")
-    const userSelections = await db
-      .collection("selections")
-      .find({
-        "email" : "laurelbrick@gmail.com"
-      })
-      .sort({ "_id" : -1 })
-      .limit(10)
-      .toArray()
-    return {
-      props: { userSelections: JSON.parse(JSON.stringify(userSelections)) },
-    }
-  } catch (e) {
-    console.error(e)
-    return {
-      props: { isConnected: false }
-    }
-  }
-}
-
-const MyProfile = ({ userSelections }) => {
+const MyProfile = () => {
   const { data: session } = useSession()
+  const email = session?.user.email
+
+  const [data, setData] = useState(null)
+  const [isLoading, setLoading] = useState(false)
+ 
+  useEffect(() => {
+    setLoading(true)
+    fetch('/api/routes/profile-data', {
+      method: 'GET',
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: email
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        setData(data)
+        setLoading(false)
+        console.log(data)
+      })
+  }, [])
+ 
+  if (isLoading) return <p>Loading...</p>
+  if (!data) return <p>No profile data</p>
 
   return (
     <>
@@ -63,11 +61,15 @@ const MyProfile = ({ userSelections }) => {
       <TopNavigation />
       <Container sx={{ minHeight: '50vh', mt: 20 }} maxWidth='xl'>
           <h2>Welcome, {session?.user.name}</h2>
-          {userSelections.map((selection, index) => (
+          {/* <h4>Email: {data.userSelections[0].email}</h4> */}
+          {/* {userSelections.map((selection, index) => (
             <div key={index}>
               <h4>My current project: Spec Class Website</h4>
               <Box sx={{ width: '40%' }}>
                 <List component="nav" aria-label="mailbox folders">
+                  <ListItem>
+                    <ListItemText />
+                  </ListItem>
                   <ListItem >
                     <ListItemText primary={`Template Selection: ${selection.template}`} />
                   </ListItem>
@@ -89,10 +91,20 @@ const MyProfile = ({ userSelections }) => {
                   <ListItem >
                     <ListItemText primary={`Nav Links: ${selection.navLinks.map(element => ` ${element.navLink}`)}`} />
                   </ListItem>
+                  <Divider />
+                  <ListItem sx={{ flexDirection: 'column', alignItems: 'flex-start' }}>
+                    <ListItemText primary='Content' />
+                    {selection.contentArea.map((element, index) => (
+                      <ListItemText key={index} primary={`${element.contentItem}`} />
+                    ))}
+                  
+                    
+
+                  </ListItem>
                 </List>
               </Box>
             </div>
-          ))}
+          ))} */}
           
           
       </Container>

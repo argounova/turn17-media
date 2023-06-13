@@ -9,11 +9,11 @@ import dropDownTextQuestions from './dropDownTextQuestions'
 const Content = () => {
     const { data: session } = useSession()
     const [showComponent, setShowComponent] = useState(true)
-    const [content, setContent] = useState(dropDownTextQuestions)
+    const [contentItem, setContent] = useState(dropDownTextQuestions)
     let contentAreas = []
 
     const updateState = (index) => (e) => {
-        contentAreas = content.map((item, i) => {
+        contentAreas = contentItem.map((item, i) => {
             if (index === i) {
                 return { ...item, [e.target.name]: e.target.value }
             } else {
@@ -27,7 +27,7 @@ const Content = () => {
         const postData = async () => {
             const data = {
                 email: session.user.email,
-                content: content,
+                contentItem: contentItem,
             }
             const response = await fetch('/api/routes/contentRoute', {
                 method: 'PUT',
@@ -69,7 +69,7 @@ const Content = () => {
                                         <DropDownTextArea 
                                             key={index}
                                             question={item.question}
-                                            name="content"
+                                            name="contentItem"
                                             onChange={updateState(index)}
                                             onClick={handleSave}
                                         />

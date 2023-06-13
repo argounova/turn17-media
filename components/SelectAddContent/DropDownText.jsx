@@ -74,7 +74,7 @@ const DropDownTextArea = ({ question, onChange, onClick }) => {
             minRows={4}
             id="outlined-start-adornment"
             sx={{ mt: 1 }}
-            name="content"
+            name="contentItem"
             onChange={onChange}
           />
           <Button
