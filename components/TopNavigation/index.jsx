@@ -14,9 +14,7 @@ import MenuItem from '@mui/material/MenuItem';
 import Image from 'next/image';
 import '@fontsource/audiowide'
 import '@fontsource/oxygen'
-import BannerHeader from '../BannerHeader';
 import { menuItems } from '../../constants/topNavigationLinks';
-import { loggedInLinks, loggedOutLinks } from '../../constants/userLinks';
 import { useSession, signIn, signOut } from 'next-auth/react'
 import { TopNavigationStyles } from './style';
 
@@ -101,18 +99,13 @@ function TopNavigation() {
           </Box>
 
           <Box sx={{ flexGrow: 0 }}>
-            {/* <Tooltip title="Open settings"> */}
-            {session? (
+            {session && (
               <p style={{ color: 'var(--char0)', textAlign: 'center' }}>{session.user.name}</p>
-              ) : (<></>)
+              )
             }
-
               <IconButton onClick={handleOpenUserMenu} sx={{ p: 1, width: '125px' }}>
                 <Avatar alt="Turn 17 User" style={{ backgroundColor: 'var(--mb1-3)' }}/>
-
               </IconButton>
-
-            {/* </Tooltip> */}
             <Menu
               id="menu-appbar"
               anchorEl={anchorElUser}
@@ -129,60 +122,19 @@ function TopNavigation() {
               onClose={handleCloseUserMenu}
             >
               {
-                session? (
-                  <MenuItem onClick={handleCloseUserMenu}>
-                    <button 
-                      onClick={() => signOut()}
-                      style={{
-                        backgroundColor: 'transparent',
-                        border: 'none',
-                        fontFamily: 'Oxygen',
-                        fontSize: 'var(--p)',
-                        cursor: 'pointer'
-                      }}
-                    >Sign Out</button>
-                  </MenuItem>
-                ) : (
-                  <MenuItem onClick={handleCloseUserMenu}>
-                    <button 
-                      onClick={() => signIn()}
-                      style={{
-                        backgroundColor: 'transparent',
-                        border: 'none',
-                        fontFamily: 'Oxygen',
-                        fontSize: 'var(--p)',
-                        cursor: 'pointer'
-                      }}  
-                    >SIGN IN</button>
-                  </MenuItem>
+                session && (
+                    <MenuItem>
+                      <Button sx={{ fontFamily: 'Oxygen' }} href='/my-profile'>My Profile</Button>
+                      <Button sx={{ fontFamily: 'Oxygen' }} onClick={signOut}>Sign Out</Button>
+                    </MenuItem>
                 )
               }
-
-              {/* {
-                session? (
-                  <>
-                    {loggedInLinks.map((link, index) => (
-                      <MenuItem key={index} onClick={handleCloseUserMenu}>
-                        <a href={link.path}>
-                        <Typography textAlign="center" sx={{ fontFamily: 'audiowide' }}>{link.text}</Typography>
-                        </a>
-                      </MenuItem>
-                    ))}
-                  </>
-                ) : (
-                  <>
-                    {loggedOutLinks.map((link, index) => (
-                      <MenuItem key={index} onClick={handleCloseUserMenu}>
-                        <a href={link.path}>
-                        <Typography textAlign="center" sx={{ fontFamily: 'audiowide' }}>{link.text}</Typography>
-                        </a>
-                      </MenuItem>
-                    ))}
-                  </>
-                )
-              } */}
-              
-              
+              <MenuItem>
+                <Button sx={{ fontFamily: 'Oxygen' }} onClick={signIn}>Login</Button>
+              </MenuItem>
+              <MenuItem>
+                <Button sx={{ fontFamily: 'Oxygen' }} href='/signup'>Sign Up</Button>
+              </MenuItem>
             </Menu>
           </Box>
         </Toolbar>

@@ -62,7 +62,8 @@ export const authOptions = {
     }),
   ],
   pages: {
-    signIn: '/login'
+    signIn: '/login',
+    signOut: '/'
   },
   debug: process.env.NODE_ENV !== "production",
   adapter: MongoDBAdapter(clientPromise),

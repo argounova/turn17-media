@@ -1,17 +1,22 @@
 export const loggedInLinks = [
     {
-      path: "/profile",
+      path: "/my-profile",
       text: "Profile",
     },
     {
       path: "/",
       text: "Logout",
+      onClick: "signOut"
     },
   ]
 
 export const loggedOutLinks = [
     {
         path: "/login",
-        text: "Login"
-    }
+        text: "Login",
+    },
+    {
+        path: "/signup",
+        text: "Sign Up"
+    },
 ]
