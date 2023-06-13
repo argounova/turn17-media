@@ -1,26 +1,26 @@
 import * as React from 'react';
-import AppBar from '@mui/material/AppBar';
-import Box from '@mui/material/Box';
-import Toolbar from '@mui/material/Toolbar';
-import IconButton from '@mui/material/IconButton';
-import Typography from '@mui/material/Typography';
-import Menu from '@mui/material/Menu';
+import { TopNavigationStyles } from './style';
+import { useSession, signIn, signOut } from 'next-auth/react'
+import { menuItems } from '../../constants/topNavigationLinks';
+import {
+  AppBar,
+  Avatar,
+  Box,
+  Button,
+  Container,
+  IconButton,
+  Menu,
+  MenuItem,
+  Toolbar
+} from '@mui/material'
 import MenuIcon from '@mui/icons-material/Menu';
-import Container from '@mui/material/Container';
-import Avatar from '@mui/material/Avatar';
-import Button from '@mui/material/Button';
-import Tooltip from '@mui/material/Tooltip';
-import MenuItem from '@mui/material/MenuItem';
-import Image from 'next/image';
 import '@fontsource/audiowide'
 import '@fontsource/oxygen'
-import { menuItems } from '../../constants/topNavigationLinks';
-import { useSession, signIn, signOut } from 'next-auth/react'
-import { TopNavigationStyles } from './style';
 
-const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
 function TopNavigation() {
+  const { data: session } = useSession()
+
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
 
@@ -36,8 +36,6 @@ function TopNavigation() {
   const handleCloseUserMenu = () => {
     setAnchorElUser(null);
   };
-
-  const { data: session } = useSession()
 
   return (
     <TopNavigationStyles>
@@ -60,7 +58,6 @@ function TopNavigation() {
               </Button>
             ))}
           </Box>
-
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' }, justifyContent: 'center' }}>
             <IconButton
               size="large"
@@ -97,7 +94,6 @@ function TopNavigation() {
               ))}
             </Menu>
           </Box>
-
           <Box sx={{ flexGrow: 0 }}>
             {session && (
               <p style={{ color: 'var(--char0)', textAlign: 'center' }}>{session.user.name}</p>
@@ -122,19 +118,18 @@ function TopNavigation() {
               onClose={handleCloseUserMenu}
             >
               {
-                session && (
-                    <MenuItem>
-                      <Button sx={{ fontFamily: 'Oxygen' }} href='/my-profile'>My Profile</Button>
-                      <Button sx={{ fontFamily: 'Oxygen' }} onClick={signOut}>Sign Out</Button>
+                session? (
+                    <MenuItem sx={{ flexDirection: 'column', alignItems: 'flex-start' }}>
+                      <Button sx={{ fontFamily: 'Oxygen', color: 'var(--char5)' }} href='/my-profile'>My Profile</Button>
+                      <Button sx={{ fontFamily: 'Oxygen', color: 'var(--char5)' }} onClick={signOut}>Sign Out</Button>
+                    </MenuItem>
+                ) : (
+                    <MenuItem sx={{ flexDirection: 'column', alignItems: 'flex-start' }}>
+                      <Button sx={{ fontFamily: 'Oxygen', color: 'var(--char5)' }} onClick={signIn}>Login</Button>
+                      <Button sx={{ fontFamily: 'Oxygen', color: 'var(--char5)' }} href='/signup'>Sign Up</Button>
                     </MenuItem>
                 )
               }
-              <MenuItem>
-                <Button sx={{ fontFamily: 'Oxygen' }} onClick={signIn}>Login</Button>
-              </MenuItem>
-              <MenuItem>
-                <Button sx={{ fontFamily: 'Oxygen' }} href='/signup'>Sign Up</Button>
-              </MenuItem>
             </Menu>
           </Box>
         </Toolbar>

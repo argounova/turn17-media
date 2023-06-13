@@ -1,10 +1,29 @@
+import * as React from 'react'
+import styles from '@/styles/my-profile.module.css'
 import Head from 'next/head'
 import clientPromise from '../../lib/mongodb'
-import styles from '@/styles/Home.module.css'
 import TopNavigation from '../../components/TopNavigation'
-import Button from '../../components/Button/index'
 import Footer from '../../components/Footer/Footer'
 import { useSession } from 'next-auth/react'
+import {
+  AppBar,
+  Avatar,
+  Box,
+  Button,
+  Collapse,
+  Container,
+  Divider,
+  IconButton,
+  List,
+  ListItem,
+  ListItemButton,
+  ListItemIcon,
+  ListItemText,
+  ListSubheader,
+  Menu,
+  MenuItem,
+  Toolbar
+} from '@mui/material'
 
 
 export async function getServerSideProps() {
@@ -32,7 +51,6 @@ export async function getServerSideProps() {
 
 const MyProfile = ({ userSelections }) => {
   const { data: session } = useSession()
-  console.log(userSelections)
 
   return (
     <>
@@ -43,20 +61,42 @@ const MyProfile = ({ userSelections }) => {
         <link rel="icon" href="/turn17-media-tab-logo.jpg" />
       </Head>
       <TopNavigation />
-      <main>
-        <div style={{ minHeight: '60vh', marginTop: '102px', display: 'flex', flexDirection: 'column', alignItems: 'flex-end', padding: '20px' }}>
+      <Container sx={{ minHeight: '50vh', mt: 20 }} maxWidth='xl'>
           <h2>Welcome, {session?.user.name}</h2>
           {userSelections.map((selection, index) => (
             <div key={index}>
-            <p>Template selection: {selection.template}</p>
-            <p>Email: {selection.email}</p>
+              <h4>My current project: Spec Class Website</h4>
+              <Box sx={{ width: '40%' }}>
+                <List component="nav" aria-label="mailbox folders">
+                  <ListItem >
+                    <ListItemText primary={`Template Selection: ${selection.template}`} />
+                  </ListItem>
+                  <Divider />
+                  <ListItem>
+                    <ListItemText primary={`Color Choices: ${selection.colorChoices.map(element => ` ${element.colorChoice}`)}`} />
+                  </ListItem>
+                  <ListItem>
+                    <ListItemText primary={`Color choices bypassed? ${selection.colorBypass}`} />
+                  </ListItem>
+                  <Divider />
+                  <ListItem >
+                    <ListItemText primary={`Font Choices: ${selection.fontChoices.map(element => ` ${element.fontChoice}`)}`} />
+                  </ListItem>
+                  <ListItem>
+                    <ListItemText primary={`Font choices bypassed? ${selection.fontBypass}`} />
+                  </ListItem>
+                  <Divider />
+                  <ListItem >
+                    <ListItemText primary={`Nav Links: ${selection.navLinks.map(element => ` ${element.navLink}`)}`} />
+                  </ListItem>
+                </List>
+              </Box>
             </div>
           ))}
           
           
-        </div>
-        <Footer />
-      </main>
+      </Container>
+      <Footer />
     </>
   )
 }
