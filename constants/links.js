@@ -11,10 +11,10 @@ export const menuItems = [
     //   path: "/gallery",
     //   text: "gallery",
     // },
-    {
-      path: "/contact",
-      text: "contact",
-    },
+    // {
+    //   path: "/contact",
+    //   text: "contact",
+    // },
     {
       path: "/",
       text: "T17 Racing",

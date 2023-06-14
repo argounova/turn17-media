@@ -10,6 +10,7 @@ import DownArrow from '../../components/DownArrow'
 import Parallax from '../../components/Parallax/Parallax'
 import FinishedSiteEx from '../../components/FinishedSiteEx'
 import Button from '../../components/Button/index'
+import Contact from '../../components/Contact'
 import Footer from '../../components/Footer/Footer'
 
 const inter = Inter({ subsets: ['latin'] })
@@ -62,6 +63,7 @@ export default function Home({isConnected}) {
             arrow={true}
           />
         </div>
+        <Contact />
         <Footer />
       </main>
     </>
