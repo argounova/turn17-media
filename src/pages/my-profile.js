@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import { hasToken } from '../../utils/userAuth'
 import styles from '@/styles/my-profile.module.css'
 import Head from 'next/head'
 import TopNavigation from '../../components/TopNavigation'
@@ -23,22 +24,29 @@ import {
 } from '@mui/material'
 
 
+export async function getServerSideProps(context) {
+  const token = await hasToken(context.req)
+  if(!token) {
+    return {
+      redirect: {
+        destination: '/',
+        permanent: false
+      }
+    }
+  }
+  return { props: {} }
+}
+
 const MyProfile = () => {
   const { data: session } = useSession()
-  const email = session?.user.email
+  console.log(session?.user.name)
 
   const [data, setData] = useState(null)
   const [isLoading, setLoading] = useState(false)
  
   useEffect(() => {
     setLoading(true)
-    fetch('/api/routes/profile-data', {
-      method: 'GET',
-      headers: {
-        "Content-Type": "application/json"
-      },
-      body: email
-    })
+    fetch('/api/routes/profile-data')
       .then((res) => res.json())
       .then((data) => {
         setData(data)
