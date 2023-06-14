@@ -63,7 +63,7 @@ const Content = () => {
                                     }} 
                                 >
                                     <DropDownInput 
-                                        question='Single page sites still offer a navigation menu.  What should we name these links?  Provide up to four and remember that “Home” is redundant so consider links such as “About”, “Contact”, “Gallery”.'
+                                        question='What are the names of your navigation links?  Provide up to four and remember that “Home” is redundant so consider links such as “About”, “Contact”, “Gallery”.'
                                     />
                                     {dropDownTextQuestions.map((item, index) => (
                                         <DropDownTextArea 

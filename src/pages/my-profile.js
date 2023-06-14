@@ -29,7 +29,7 @@ export async function getServerSideProps(context) {
   if(!token) {
     return {
       redirect: {
-        destination: '/',
+        destination: '/invalid',
         permanent: false
       }
     }

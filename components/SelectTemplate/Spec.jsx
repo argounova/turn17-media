@@ -1,7 +1,7 @@
 import * as React from 'react'
 import { TemplateStyles } from './style'
 import TemplateRow from './TemplateRow'
-import { singlePageTemplates } from './templates'
+import { specTemplates } from './templates'
 import Button from '@mui/material/Button'
 import RadioGroup from '@mui/material/RadioGroup'
 import { useSession } from 'next-auth/react'
@@ -36,7 +36,7 @@ const Template = () => {
                 <br />
                 <div className='template-container'>
                     <RadioGroup>
-                    {singlePageTemplates.map((item, index) => (
+                    {specTemplates.map((item, index) => (
                         <TemplateRow 
                             key={index}
                             templateTitle={item.title}

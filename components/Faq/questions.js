@@ -1,8 +1,8 @@
 const questions = [
     {
         id: '1',
-        question: 'Is the price above my final and total cost?',
-        answer: 'Yes.  We do not collect any additional fees or taxes.  Please note that you may be required to pay taxes on electronically delivered software in your home state.  Check your local regulations for details.',
+        question: 'No hidden fees, huh?',
+        answer: 'We do not collect any additional fees or taxes (add-ons for GT class sites are separate and discussed ahead of time).  Please note that you may be required to pay taxes on electronically delivered software in your home state.  Check your local regulations for details.',
     },
     {
         id: '2',
@@ -11,18 +11,18 @@ const questions = [
     },
     {
         id: '3',
-        question: 'Can I really have a website up and running in as little as six to ten business days?',
+        question: 'Can I really have a website up and running in as little as eight to ten business days?',
         answer: 'Yes!  But (there is always a but)...keep in mind that the estimated time to completion, or ETC, listed is for design and development only.  Other considerations such as securing a domain, setting up hosting and providing Turn17 Media with photos/content can add time.  If you happen to have everything else in place then there is no reason your site cannot go live at the end of development.',
     },
     {
         id: '4',
         question: 'Is a domain and hosting included?',
-        answer: 'Yes, the price above includes a domain and six months of free hosting.  Certain restrictions apply such as a cap on domain cost, available bandwith, etc.',
+        answer: 'Yes, the price above includes a domain and 6-12 months of free hosting.  Certain restrictions apply such as a cap on domain cost, available bandwith, etc.',
     },
     {
         id: '5',
         question: 'What if I change my mind?',
-        answer: 'Congratulations, you are human!  A change of mind (or heart) is understandable and not entirely unexpected.  Whether you want different colors/fonts or feel the need to switch from a single page to a multi page website, we got you.  Your happiness is paramount and we will work with you on whatever the issue.  Greater detail surrounding refunds or cancellations will be available before submitting your deposit.',
+        answer: 'Congratulations, you are human!  A change of mind (or heart) is understandable and not entirely unexpected.  Whether you want different colors/fonts or feel the need to switch from a Spec site to a GT site, we got you.  Your happiness is paramount and we will work with you on whatever the issue.',
     },
     {
         id: '6',

@@ -7,10 +7,10 @@ export const menuItems = [
       path: "/basics",
       text: "services",
     },
-    {
-      path: "/gallery",
-      text: "gallery",
-    },
+    // {
+    //   path: "/gallery",
+    //   text: "gallery",
+    // },
     {
       path: "/contact",
       text: "contact",
