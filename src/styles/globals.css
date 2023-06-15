@@ -57,7 +57,7 @@
     --h1: 50px;
     --h2: 36px;
     --h3: 32px;
-    --h4: 29px;
+    --h4: 26px;
     --h5: 30px;
     --h6: 45px;
   }
@@ -125,7 +125,7 @@ body {
 
 body {
   background: rgb(242,242,242);
-  background: linear-gradient(180deg, rgba(242,242,242,1) 45%, rgba(73,156,166,1) 100%);
+  background: linear-gradient(180deg, rgba(242,242,242,1) 20%, rgba(58,134,148,1) 58%);
 }
 
 a {

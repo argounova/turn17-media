@@ -8,7 +8,7 @@ import BannerHeader from '../../components/BannerHeader'
 import MainFeatures from '../../components/MainFeatures'
 import DownArrow from '../../components/DownArrow'
 import Parallax from '../../components/Parallax/Parallax'
-import FinishedSiteEx from '../../components/FinishedSiteEx'
+import FinishedSiteEx from '../../components/FinishedSiteExample'
 import Button from '../../components/Button/index'
 import Contact from '../../components/Contact'
 import Footer from '../../components/Footer/Footer'
@@ -57,15 +57,10 @@ export default function Home({isConnected}) {
           <Parallax />
           <DownArrow />
           <FinishedSiteEx />
-          <Button
-            href='/basics'
-            text='Get Started'
-            arrow={true}
-          />
+          <Contact />
         </div>
-        <Contact />
-        <Footer />
       </main>
+      <Footer />
     </>
   )
 }

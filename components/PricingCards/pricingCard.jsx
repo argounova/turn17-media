@@ -38,7 +38,7 @@ export default function PricingCard({ title, subtitle, price, priceDetail, etc, 
                 </Typography>
             </CardActions>
             <hr style={{ backgroundColor: 'var(--mb1-4)', border: 'none', height: '2px', margin: '20px' }}/>
-            <Box style={{ display: 'flex', flexDirection: 'column', backgroundColor: 'var(--char5)', padding: '20px' }}>
+            <Box style={{ display: 'flex', flexDirection: 'column', backgroundColor: 'var(--black)', padding: '20px' }}>
                 <Typography variant="h4" sx={{ color: 'var(--mb1-4)', mb: 1 }}>
                     Standard Equipment:
                 </Typography>

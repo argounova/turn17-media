@@ -1,11 +1,12 @@
 import { motion } from "framer-motion"
+import { SiteExample } from "./style";
 import Image from "next/image";
-import finishedSiteEx from "../public/images/flsite.png"
-import styles from "@/styles/FinishedSiteEx.module.css"
+import finishedSiteEx from "../../public/images/flsite.png"
+import Button from "../Button";
 
 export default function FinishedSiteEx() {
     return(
-        <>
+        <SiteExample>
             <motion.div
                     initial={{ opacity: 0 }}
                     whileInView={{ opacity: 1 }}
@@ -16,7 +17,7 @@ export default function FinishedSiteEx() {
             >
                 <div>
                     <h2
-                        className={styles.common}
+                        className='common'
                         style={{
                             borderTopLeftRadius: '10px',
                             borderTopRightRadius: '10px',
@@ -27,7 +28,7 @@ export default function FinishedSiteEx() {
                     </h2>
                 </div>
                 <Image 
-                    className={styles.common}
+                    className='common'
                     src={finishedSiteEx}
                     alt='finished site example'
                     style={{
@@ -36,6 +37,11 @@ export default function FinishedSiteEx() {
                     }}
                 />
             </motion.div>
-        </>
+            <Button
+                href='/basics'
+                text='Get Started'
+                arrow={true}
+            />
+        </SiteExample>
     )
 }

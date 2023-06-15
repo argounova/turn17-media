@@ -123,9 +123,7 @@
     margin-bottom: 0.5rem;
   }
 
-  .center {
-    padding: 1rem 0;
-  }
+  
 
   .center::before {
     transform: none;

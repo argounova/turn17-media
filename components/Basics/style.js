@@ -12,6 +12,7 @@ export const BasicsStyles = styled.section`
       0 8px 8px hsl(0deg 0% 0% / 0.075), 0 16px 16px hsl(0deg 0% 0% / 0.075);
     display: flex;
     flex-direction: column;
+    margin-bottom: 50px;
   }
   
   nav {

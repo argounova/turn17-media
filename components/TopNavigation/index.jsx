@@ -39,7 +39,7 @@ function TopNavigation() {
 
   return (
     <TopNavigationStyles>
-    <AppBar color="" elevation={0}  style={{ backgroundColor: 'var(--char5)' }}>
+    <AppBar color="" elevation={0}  style={{ backgroundColor: 'var(--black)' }}>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <Button

@@ -31,7 +31,7 @@ const Footer = () => {
         </FooterMenuStyles>
           <FooterMenuStyles className="footer__menu products__menu">
             <h5>
-              <Link href="/services/all" style={{ color: '#000' }}>
+              <Link href="/services/all" style={{ color: 'var(--char2)' }}>
                 Services
               </Link>
             </h5>
@@ -101,8 +101,8 @@ const Footer = () => {
       </div>
       <CopyrightStyles>
         <div className="container container__tight">
-          <p style={{ color: 'var(--char5)' }}>
-            Designed & developed by {metadata.developerName}
+          <p>
+            Designed & developed by {metadata.developerName}, LLC
           </p>
         </div>
       </CopyrightStyles>
