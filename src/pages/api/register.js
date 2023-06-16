@@ -1,13 +1,12 @@
 import clientPromise from "../../../lib/mongodb"
 import User from "../../../models/user"
-// import bcrypt from 'bcrypt'
+import bcrypt from 'bcrypt'
 
 export default async function handler(req, res) {
   if (req.method === "POST") {
     try {
         const { name, email, password } = JSON.parse(req.body)
-        const hashedPassword = password
-        // const hashedPassword = await bcrypt.hash(password, 12)
+        const hashedPassword = await bcrypt.hash(password, 10)
         const newUser = new User({
             name,
             email,

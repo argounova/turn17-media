@@ -7,7 +7,7 @@ import GoogleProvider from "next-auth/providers/google"
 import LinkedInProvider from "next-auth/providers/linkedin"
 import CredentialsProvider from "next-auth/providers/credentials"
 import User from "../../../../models/user"
-// import { compare } from 'bcrypt'
+import bcrypt from 'bcrypt'
 
 export const authOptions = {
   providers: [
@@ -45,16 +45,11 @@ export const authOptions = {
         if (!user) {
           throw new Error('An account with that email does not exist.')
         }
-        // const comparePassword = await compare(
-        //   credentials.password,
-        //   user.hashedPassword
-        // )
-        // if (!comparePassword) {
-        //   throw new Error('Incorrect password.')
-        // }
-        const p1 = credentials.password
-        const p2 = user.hashedPassword
-        if (p1 != p2) {
+        const comparePassword = await bcrypt.compare(
+          credentials.password,
+          user.hashedPassword
+        )
+        if (!comparePassword) {
           throw new Error('Incorrect password.')
         }
         return user
