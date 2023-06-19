@@ -13,8 +13,8 @@ const steps = [
     },
     {
         step: '3',
-        title: 'Pay deposit',
-        subtitle: 'A 20% deposit gets your project started.  Balance due on completion.',
+        title: 'Pay and schedule',
+        subtitle: '50% deposit gets your project started.  Balance due on completion.',
         bgColor: 'var(--mb1-4)'
     },
     // {

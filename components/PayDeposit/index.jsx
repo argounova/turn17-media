@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { useRouter } from 'next/router'
 import { Button } from '@mui/material'
 import { loadStripe } from '@stripe/stripe-js'
@@ -22,6 +22,10 @@ const PayDeposit = () => {
           setSuccess(true)
       }
   }
+
+  useEffect(() => {
+    paymentSuccessful()
+  }, [])
     
     const handleCheckout = async () => {
         console.log(deposit)

@@ -5,7 +5,7 @@ import BannerHeader from '../../components/BannerHeader'
 import Footer from '../../components/Footer/Footer'
 import Content from '../../components/SelectAddContent'
 import Options from '../../components/SelectOptions'
-import Template from '../../components/SelectTemplate/Spec'
+import SiteSelector from '../../components/SelectSite'
 import { useSession } from 'next-auth/react'
 import { hasToken } from '../../utils/userAuth'
 
@@ -43,7 +43,7 @@ export default function SinglePage() {
         // subtext2='While nothing here is set in stone, this is the foundation for your site'
       />
       <main className={styles.main}>
-        <Template />
+        <SiteSelector />
         <Options />
         <Content />
       </main>

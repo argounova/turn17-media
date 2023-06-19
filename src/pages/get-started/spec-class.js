@@ -6,7 +6,7 @@ import Footer from '../../../components/Footer/Footer'
 import Content from '../../../components/SelectAddContent'
 import Options from '../../../components/SelectOptions'
 import Schedule from '../../../components/SelectSchedule'
-import Template from '../../../components/SelectTemplate/Spec'
+import Template from '../../../components/SelectTemplate'
 import Button from '@mui/material/Button';
 import { useSession } from 'next-auth/react'
 import { hasToken } from '../../../utils/userAuth'
