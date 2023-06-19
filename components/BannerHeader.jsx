@@ -5,7 +5,7 @@ function BannerHeader({ tag1, tag2, subtag, subtext1, subtext2 }) {
     return(
         <Box className={styles.bannerHeader}>
             <img 
-                src="/images/turn17media-header-background.png"
+                src="/images/header-image.png"
                 alt='turn17media background'
                 style={{
                 width: '100vw',

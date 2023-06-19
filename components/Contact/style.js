@@ -10,8 +10,10 @@ export const ContactStyles = styled.div`
 
     @media (min-width: 821px) {
         flex-direction: row;
-        justify-content: flex-end;
-        background-image: url(https://turn17media-main.s3.amazonaws.com/contact-background.jpg); 
+        justify-content: center;
+        background-image: url(https://turn17media-main.s3.amazonaws.com/track-abstract.png); 
+        background-repeat: no-repeat;
+        background-size: cover;
 
     }
 
@@ -19,7 +21,7 @@ export const ContactStyles = styled.div`
         display: flex; 
         flex-direction: column; 
         align-items: center;
-        background-color: var(--char1);
+        background-color: var(--white);
         opacity: 0.98; 
         width: 100%;
         height: 400px;

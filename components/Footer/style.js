@@ -3,7 +3,7 @@ import styled from "@emotion/styled"
 export const FooterStyles = styled.footer`
   &.section {
     padding: 0px;
-    background-color: var(--black);
+    background-color: var(--char5);
 
     .container {
       display: flex;

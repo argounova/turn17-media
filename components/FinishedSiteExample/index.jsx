@@ -2,7 +2,23 @@ import { motion } from "framer-motion"
 import { SiteExample } from "./style";
 import Image from "next/image";
 import finishedSiteEx from "../../public/images/flsite.png"
-import Button from "../Button";
+// import Button from "../Button";
+import { Button } from "@mui/material";
+
+// const draw = {
+//     hidden: { pathLength: 0, opacity: 0 },
+//     visible: (i) => {
+//       const delay = 1 + i * 0.5;
+//       return {
+//         pathLength: 1,
+//         opacity: 1,
+//         transition: {
+//           pathLength: { delay, type: "spring", duration: 1.5, bounce: 0 },
+//           opacity: { delay, duration: 0.01 }
+//         }
+//       };
+//     }
+//   };
 
 export default function FinishedSiteEx() {
     return(
@@ -12,6 +28,7 @@ export default function FinishedSiteEx() {
                     whileInView={{ opacity: 1 }}
                     transition={{ duration: 2.5 }}
                     style={{
+                        marginTop: '2%',
                         marginBottom: '2%'
                     }}
             >
@@ -38,10 +55,39 @@ export default function FinishedSiteEx() {
                 />
             </motion.div>
             <Button
-                href='/basics'
-                text='Get Started'
-                arrow={true}
-            />
+                    href='/signup'
+                    variant='contained'
+                    className='btn'
+            >Sign up or Login to get started</Button>
+            <motion.svg className='btn-anim'
+                width="600"
+                height="600"
+                viewBox="0 0 600 600"
+            >
+                <motion.rect
+                    initial={{ pathLength: 0 }}
+                    animate={{ pathLength: 1 }}
+                    width="450"
+                    height="100"
+                    x="75"
+                    y="250"
+                    rx="10"
+                    stroke="var(--mb1-3)"
+                    strokeWidth='10px'
+                    // variants={draw}
+                    transition={{
+                        duration: 2,
+                        ease: "easeInOut",
+                        repeat: Infinity,
+                        repeatType: "loop",
+                        repeatDelay: 1
+                    }}
+                    fill="none"      
+                              
+                >
+               
+                </motion.rect>
+            </motion.svg>
         </SiteExample>
     )
 }
