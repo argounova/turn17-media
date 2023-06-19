@@ -100,7 +100,7 @@ function TopNavigation() {
               )
             }
               <IconButton onClick={handleOpenUserMenu} sx={{ p: 1, width: '125px' }}>
-                <Avatar alt="Turn 17 User" style={{ backgroundColor: 'var(--mb1-3)' }}/>
+                <Avatar alt="Turn 17 User" style={{ backgroundColor: 'var(--mb1-3)' }} src={`${session?.user.image}`} />
               </IconButton>
             <Menu
               id="menu-appbar"
@@ -120,7 +120,7 @@ function TopNavigation() {
               {
                 session? (
                     <MenuItem sx={{ flexDirection: 'column', alignItems: 'flex-start' }}>
-                      <Button sx={{ fontFamily: 'Oxygen', color: 'var(--char5)' }} href='/my-profile'>My Profile</Button>
+                      <Button sx={{ fontFamily: 'Oxygen', color: 'var(--char5)' }} href='/dashboard'>Dashboard</Button>
                       <Button sx={{ fontFamily: 'Oxygen', color: 'var(--char5)' }} onClick={signOut}>Sign Out</Button>
                     </MenuItem>
                 ) : (

@@ -41,20 +41,15 @@ const PayDeposit = () => {
       <>
         {status? (
           <Button 
-            fullWidth
             variant='contained'
-            color='warning'
-            sx={{ fontSize: 'var(--h4)' }}
             disabled    
           >Deposit Submitted
           </Button>
         ) : (
           <Button 
-            fullWidth
             variant='contained'
-            color='warning'
-            sx={{ fontSize: 'var(--h4)' }}    
             onClick={handleCheckout}
+            style={{ backgroundColor: 'var(--mb2-2)', color: 'var(--char5)', width: '200px' }}
           >Pay Deposit
           </Button>
         )}

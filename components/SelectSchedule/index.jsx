@@ -1,10 +1,14 @@
 import { useEffect, useRef, useState } from 'react'
-import { Box, Button, Grid } from '@mui/material'
+import { 
+    Box, 
+    Button, 
+    Container,
+    Grid,
+} from '@mui/material'
 import CalendlyScheduler from './calendlyScheduler'
 import Faq from '../Faq/faqItem'
 import { ScheduleStyles } from './style'
 import faqs from './faqs'
-import PayDeposit from '../PayDeposit'
 import { useRouter } from 'next/router'
 import { motion } from 'framer-motion';
 
@@ -32,29 +36,24 @@ const Schedule = () => {
   
     return(
         <ScheduleStyles>
-            <h1 ref={ref}>Pay deposit and schedule your project</h1>
-            <br />
-            <div className='schedule-container'>
-                <div>
-                    <div className='para-div'>
-                        <p>
-                        Our websites have a minimum build time of 7-14 business days.  It can take longer.  You have 24 hours from the time you submit your deposit to cancel and receive a refund.  After 24 hours, deposits are non-refundable.  Once your deposit is paid, please schedule your first developer meeting.  
-                        </p>
-                    </div>
+            <Container sx={{ mt: 3, display: 'flex', justifyContent: 'space-between' }} maxWidth='xl'>
+                <Box style={{ display: 'flex', flexDirection: 'column' }} gap={2}>
+                    <p style={{ width: '80%', color: 'var(--char3)' }}>
+                    Our websites have a minimum build time of 7-14 business days.  It can take longer.  You have 24 hours from the time you submit your deposit to cancel and receive a refund.  After 24 hours, deposits are non-refundable.  Once your deposit is paid, please schedule your first developer meeting.  
+                    </p>
                     <Grid container justifyContent="flex-start">
                         <Box
                             sx={{
                                 p: {
-                                    xs: 2,
+                                    xs: 0,
                                     xl: 0,
                                 },
                                 display: 'grid',
                                 gridTemplateColumns: { xs: '1fr' },
                                 gap: 2,
-                                width: '100%'
+                                width: '80%'
                             }}
                         >
-                            <PayDeposit />
                             {faqs.map((each) => (
                                 <Faq 
                                     key={each.id}
@@ -64,7 +63,8 @@ const Schedule = () => {
                             ))}
                         </Box>
                     </Grid>
-                </div>
+                </Box>
+                <Box>
                 {status? (
                     <div className='calendly-container' >
                         <motion.div 
@@ -87,8 +87,8 @@ const Schedule = () => {
                         <CalendlyScheduler />
                     </div>
                 )}
-                    
-            </div>
+                </Box>
+            </Container>
         </ScheduleStyles>
     )
 }

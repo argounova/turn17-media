@@ -6,8 +6,8 @@ export const FaqStyles = styled.section`
     border-radius: 6px;
     width: 100%;
     background-color: transparent;
-    border: 2px solid rgba(0, 0, 0, 1);
-    color: var(--char5);
+    border: 2px solid var(--mb1-1);
+    color: var(--mb1-1);
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -18,7 +18,7 @@ export const FaqStyles = styled.section`
     transition: border-color 0.3s ease;
 
     &:hover {
-      border-color: var(--primary);
+      border-color: var(--mb1-3);
     }
 
     .trigger {
@@ -29,7 +29,7 @@ export const FaqStyles = styled.section`
       font-size: 35px;
       justify-content: center;
       align-items: center;
-      color: var(--primary);
+      color: var(--mb1-1);
       transform-origin: center;
       transition: transform 0.6s ease;
     }
