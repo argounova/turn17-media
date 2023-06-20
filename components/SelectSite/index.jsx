@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { BasicsStyles } from "./style" 
 import { useState } from "react"
-import { siteTemplates, tabs } from './templates'
+import { tabs } from './templates'
 import { motion, AnimatePresence } from "framer-motion"
 import { useSession } from 'next-auth/react'
 import { 
@@ -13,11 +13,9 @@ import {
 import TemplateRow from './TemplateRow'
 
 
-
 export default function Selector() {
   const { data: session } = useSession()
   const [selectedTab, setSelectedTab] = useState(tabs[0])
-  const [tabColor, setTabColor] = useState(tabs[0].color)
   const [selectedValue, setSelectedValue] = useState('')
   const [showComponent, setShowComponent] = useState(true)
 
@@ -81,13 +79,13 @@ export default function Selector() {
                 <Container>
                   <Box>
                     <RadioGroup>
-                      {siteTemplates.map((item, index) => (
+                      {selectedTab.sites.map((site, index) => (
                         <TemplateRow 
                           key={index}
-                          templateTitle={selectedTab.primaryText1}
-                          templateSummary={selectedTab.secondaryText2}
-                          templateThumb={item.thumbnail}
-                          value={item.title}
+                          templateTitle={site.title}
+                          templateSummary={site.description}
+                          templateThumb={site.thumbnail}
+                          value={site.title}
                           onChange={(e) => setSelectedValue(e.target.value)}
                         />
                       ))}
