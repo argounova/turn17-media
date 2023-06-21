@@ -26,7 +26,7 @@ export async function getServerSideProps(context) {
   return { props: {} }
 }
 
-const userDashboard = () => {
+const UserDashboard = () => {
   const { data: session } = useSession()
 
   return (
@@ -68,4 +68,4 @@ const userDashboard = () => {
   )
 }
 
-export default userDashboard
+export default UserDashboard
