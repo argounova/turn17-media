@@ -25,6 +25,7 @@ const Schedule = () => {
 
     useEffect(() => {
         paymentSuccessful()
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
   
     return(

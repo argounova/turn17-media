@@ -25,6 +25,7 @@ const PayDeposit = () => {
 
   useEffect(() => {
     paymentSuccessful()
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
     
     const handleCheckout = async () => {

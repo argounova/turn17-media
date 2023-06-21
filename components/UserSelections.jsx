@@ -12,6 +12,7 @@ const UserSelections = () => {
     // const { data } = useSWR('/api/routes/userData', fetcher)
     useEffect(() => {
         getData()
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
 
     const getData = async () => {

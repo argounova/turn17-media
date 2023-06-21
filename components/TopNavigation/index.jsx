@@ -20,7 +20,6 @@ import '@fontsource/oxygen'
 
 function TopNavigation() {
   const { data: session } = useSession()
-  console.log(session?.user.email)
 
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
