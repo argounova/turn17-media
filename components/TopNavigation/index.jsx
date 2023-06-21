@@ -20,6 +20,7 @@ import '@fontsource/oxygen'
 
 function TopNavigation() {
   const { data: session } = useSession()
+  console.log(session?.user.email)
 
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
@@ -120,7 +121,7 @@ function TopNavigation() {
               {
                 session? (
                     <MenuItem sx={{ flexDirection: 'column', alignItems: 'flex-start' }}>
-                      <Button sx={{ fontFamily: 'Oxygen', color: 'var(--char5)' }} href='/dashboard'>Dashboard</Button>
+                      <Button sx={{ fontFamily: 'Oxygen', color: 'var(--char5)' }} href={'/dashboard/' + session?.user.name}>Dashboard</Button>
                       <Button sx={{ fontFamily: 'Oxygen', color: 'var(--char5)' }} onClick={signOut}>Sign Out</Button>
                     </MenuItem>
                 ) : (
