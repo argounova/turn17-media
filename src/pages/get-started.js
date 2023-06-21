@@ -6,9 +6,7 @@ import Footer from '../../components/Footer/Footer'
 import Content from '../../components/SelectAddContent'
 import Options from '../../components/SelectOptions'
 import SiteSelector from '../../components/SelectSite'
-import { useSession } from 'next-auth/react'
 import { hasToken } from '../../utils/userAuth'
-
 
 
 export async function getServerSideProps(context) {
@@ -25,8 +23,6 @@ export async function getServerSideProps(context) {
 }
 
 export default function SinglePage() {
-  const { data: session } = useSession()
-
   return (
     <>
       <Head>

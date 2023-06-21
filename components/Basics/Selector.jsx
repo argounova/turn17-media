@@ -7,7 +7,6 @@ import Button from "../Button"
 
 export default function Selector() {
   const [selectedTab, setSelectedTab] = useState(tabs[0])
-  const [tabColor, setTabColor] = useState(tabs[0].color)
 
   return (
     <BasicsStyles className="window">

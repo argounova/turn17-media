@@ -1,7 +1,6 @@
 import * as React from 'react'
 import { ContactStyles } from './style'
 import { 
-    Box,
     Button,
     TextField 
 } from '@mui/material'

@@ -1,7 +1,4 @@
 import Head from 'next/head'
-import { useRouter } from 'next/router'
-import clientPromise from '../../lib/mongodb'
-import { Inter } from 'next/font/google'
 import styles from '@/styles/Home.module.css'
 import TopNavigation from '../../components/TopNavigation'
 import BannerHeader from '../../components/BannerHeader'
@@ -9,31 +6,11 @@ import MainFeatures from '../../components/MainFeatures'
 import DownArrow from '../../components/DownArrow'
 import Parallax from '../../components/Parallax/Parallax'
 import FinishedSiteEx from '../../components/FinishedSiteExample'
-import Button from '../../components/Button/index'
 import Contact from '../../components/Contact'
 import Footer from '../../components/Footer/Footer'
 
-const inter = Inter({ subsets: ['latin'] })
 
-
-export async function getServerSideProps() {
-  try {
-    await clientPromise
-    return {
-      props: { isConnected: true },
-    }
-  } catch (e) {
-    console.error(e)
-    return {
-      props: { isConnected: false },
-    }
-  }
-}
-
-export default function Home({isConnected}) {
-  const { query } = useRouter()
-  const status = query.status
-  console.log(status)
+export default function Home() {
   return (
     <>
       <Head>
@@ -50,7 +27,7 @@ export default function Home({isConnected}) {
         subtext1='Understand what you&apos;re getting and how much it will cost from day one.'
         subtext2='A secure, professional website doesn&apos;t need to be complicated.'
       />
-      <main className={`${styles.main} ${inter.className}`}>
+      <main className={styles.main}>
         <div className={styles.center}>
           <MainFeatures />
           <DownArrow />

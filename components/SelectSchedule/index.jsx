@@ -1,7 +1,6 @@
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { 
     Box, 
-    Button, 
     Container,
     Grid,
 } from '@mui/material'
@@ -17,17 +16,11 @@ const Schedule = () => {
     const { query } = useRouter()
     const status = query.status
     const [success, setSuccess] = useState(false)
-    const ref = useRef(null)
     
     const paymentSuccessful = () => {
         if (status === 'success') {
             setSuccess(true)
-            scrollToElement()
         }
-    }
-
-    const scrollToElement = () => {
-        ref.current?.scrollIntoView({ behavior: 'smooth' })
     }
 
     useEffect(() => {
