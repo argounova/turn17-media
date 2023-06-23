@@ -14,8 +14,8 @@ export const SiteExample = styled.div`
         z-index: 10;
         background-color: var(--mb1-2);
         color: var(--char5);
-        height: 50px;
         width: 75%;
+        max-width: 340px;
         font-size: var(--p);
         text-align: center;
 

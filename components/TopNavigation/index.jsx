@@ -13,6 +13,7 @@ import {
   MenuItem,
   Toolbar
 } from '@mui/material'
+import Image from 'next/image';
 import MenuIcon from '@mui/icons-material/Menu';
 import '@fontsource/audiowide'
 import '@fontsource/oxygen'
@@ -45,7 +46,7 @@ function TopNavigation() {
           <Button
             href="/"
           >
-            <img src="/turn17-logo-main.png" alt="Turn 17 Media Logo" style={{ width: '90px' }} />
+            <Image src="/turn17-logo-main.png" alt="Turn 17 Media Logo" width={90} height={90} />
           </Button>
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' }, justifyContent: 'center', ml: '45px' }}>
             {menuItems.map((page, index) => (

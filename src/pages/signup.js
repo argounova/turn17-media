@@ -1,7 +1,6 @@
 import { useState } from 'react'
 import Avatar from '@mui/material/Avatar'
 import Button from '@mui/material/Button'
-import CssBaseline from '@mui/material/CssBaseline'
 import TextField from '@mui/material/TextField'
 import Link from '@mui/material/Link'
 import Paper from '@mui/material/Paper'
@@ -15,6 +14,7 @@ import Typography from '@mui/material/Typography'
 import { createTheme, ThemeProvider } from '@mui/material/styles'
 import { signIn, getProviders } from 'next-auth/react'
 import Router from 'next/router'
+import Image from 'next/image'
 
 function Copyright(props) {
   return (
@@ -91,7 +91,7 @@ export default function SignInSide({ providers }) {
   return (
     <ThemeProvider theme={defaultTheme}>
       <Grid container component="main" sx={{ height: '100vh' }}>
-        <CssBaseline />
+        {/* <CssBaseline /> */}
         <Grid
           item
           xs={false}
@@ -103,7 +103,29 @@ export default function SignInSide({ providers }) {
             backgroundSize: 'cover',
             backgroundPosition: 'center',
           }}
-        />
+        >
+          <Box
+            sx={{
+              my: 8,
+              mx: 4,
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: { xs: 'flex-start', md: 'center' },
+              color: 'var(--char1)',
+            }}
+          >
+            <Button href="/">
+              <Image src="/turn17-logo-main.png" alt="Turn 17 Media Logo" width={120} height={120} />
+            </Button>
+            <h1>Registration is required to continue.</h1>
+            <h3>Creating an account allows you to:</h3>
+            <ul>
+              <li>Save, view and edit the information you submit for your new site.</li>
+              <li>Schedule your free consultation and subsequent developer meetings.</li>
+              <li>Pay your deposit.</li>
+            </ul>
+          </Box>
+        </Grid>
         <Grid item xs={12} sm={8} md={5} component={Paper} elevation={6} square>
           <Box
             sx={{
