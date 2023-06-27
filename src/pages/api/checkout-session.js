@@ -17,8 +17,8 @@ export default async function CheckoutSession(req, res) {
         payment_method_types: ['card'],
         line_items: [lineItems],
         mode: 'payment',
-        success_url: redirectURL + '/get-started/singlepage/?status=success',
-        cancel_url: redirectURL + '?status=cancel',
+        success_url: redirectURL + '/success?session_id={CHECKOUT_SESSION_ID}',
+        cancel_url: redirectURL + '/cancel',
       });
       
       res.json({ id: session.id });

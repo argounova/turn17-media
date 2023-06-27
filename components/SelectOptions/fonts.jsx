@@ -18,7 +18,7 @@ export const fonts = [
 const FontsOption = () => {
     const { data: session } = useSession()
     const [showComponent, setShowComponent] = useState(true)
-    const [bypass, setBypass] = useState()
+    const [bypass, setBypass] = useState(false)
     const [font, setFont] = useState(fonts)
     let fontChoices = []
 
