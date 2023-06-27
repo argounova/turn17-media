@@ -1,10 +1,9 @@
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import { useSession } from 'next-auth/react'
 import {
     Box,
     Button,
 } from '@mui/material'
-// import useSWR from 'swr'
 
  
 const UserSelections = () => {
@@ -13,24 +12,16 @@ const UserSelections = () => {
     const [index, setIndex] = useState('')
     const [showSelections, setShowSelections] = useState(false)
     const userEmail = session?.user.email
-    // const fetcher = (...args) => fetch(...args).then(res => res.json())
-    // const { data } = useSWR('/api/routes/userData', fetcher)
-    useEffect(() => {
-        getData()
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [])
-
-    const getData = async () => {
-        const data = await(
-            await fetch('/api/routes/userData')
-        ).json()
-        setUserData(data)
-        findUser(userData)
-    }
-
-    const findUser = (userData) => {
-        const searchIndex = userData.findIndex((user) => user.email === userEmail)
-        setIndex(searchIndex)
+    
+    const getData = () => {
+        fetch('/api/routes/userData')
+        .then(response => response.json())
+        .then(data => {
+            const index = data.findIndex((user) => user.email === userEmail)
+            setUserData(data)
+            setIndex(index)
+            toggleSelections()
+        })
     }
 
     const toggleSelections = () => {
@@ -40,14 +31,20 @@ const UserSelections = () => {
     return (
     <Box>
         <Button
-            onClick={toggleSelections}
+            onClick={getData}
         >
             Display/Hide Current Project
         </Button>
         {showSelections && userData && (
             <>
-                <h4>This is  your current project</h4>
-                <h4>{userData[index].email}</h4>
+                <h4>Current project:</h4>
+                <br />
+                <p>{userData[index].email}</p>
+                <p>{userData[index].template}</p>
+                <p>{userData[index].colorChoices[0].colorChoice}</p>
+                <p>{userData[index].fontChoices[0].fontChoice}</p>
+                <p>{userData[index].navLinks[0].navLink}</p>
+                <p>{userData[index].contentArea[0].contentItem}</p>
             </>
         )}
         {showSelections && !userData && (

@@ -27,7 +27,7 @@ export default async function handler(req, res) {
       const update = JSON.parse(req.body)
       const client = await clientPromise
       const db = client.db("turn17_media")
-      await db.collection("selections").updateOne(
+      await db.collection("users").updateOne(
         { "email" : update.email },
         { $set: { "navLinks" : update.navLinks }},
         { upsert: true }

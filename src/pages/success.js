@@ -30,7 +30,7 @@ export default function Success() {
 
   useEffect(() => {
     trueDeposit()
-  })
+  }, [])
 
   return (
     <>
