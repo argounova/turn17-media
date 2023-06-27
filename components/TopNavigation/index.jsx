@@ -101,7 +101,13 @@ function TopNavigation() {
               )
             }
               <IconButton onClick={handleOpenUserMenu} sx={{ p: 1, width: '125px' }}>
-                <Avatar alt="Turn 17 User" style={{ backgroundColor: 'var(--mb1-3)' }} src={`${session?.user.image}`} />
+                {session? (
+                  <Avatar alt={`${session?.user.name}`} style={{ backgroundColor: 'var(--mb1-3)' }} src={`${session?.user.image}`} />
+                ) : (
+                  <Avatar style={{ backgroundColor: 'var(--mb1-3)' }} />
+                )}
+
+
               </IconButton>
             <Menu
               id="menu-appbar"

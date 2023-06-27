@@ -2,16 +2,16 @@ const questions = [
     {
         id: '1',
         question: 'No hidden fees, huh?',
-        answer: 'We do not collect any additional fees or taxes (add-ons for GT class sites are separate and discussed ahead of time).  Please note that you may be required to pay taxes on electronically delivered software in your home state.  Check your local regulations for details.',
+        answer: 'We do not collect any additional fees or taxes (add-ons for Spec and GT class sites are separate and discussed ahead of time).  Please note that you may be required to pay taxes on electronically delivered software in your home state.  Check your local regulations for details.',
     },
     {
         id: '2',
         question: 'Is a single page website enough for me?',
-        answer: 'You might be surprised at how much content can reasonbly fit on a single page site.  Modals (or pop-ups) cover things like photo galleries, contact or sign-up forms, and more.  There is technically no limit to how far down you can scroll on one page and features like a navigation menu and links to other parts of the same page are included.',
+        answer: 'You might be surprised at how much content can reasonbly fit on a single page site.  Modals (or pop-ups) can cover things like contact or sign-up forms.  There is technically no limit to how far down you can scroll on one page and features like a navigation menu and links to other parts of the same page are included.',
     },
     {
         id: '3',
-        question: 'Can I really have a website up and running in as little as eight to ten business days?',
+        question: 'Can I really have a website up and running in as little as 14 business days?',
         answer: 'Yes!  But (there is always a but)...keep in mind that the estimated time to completion, or ETC, listed is for design and development only.  Other considerations such as securing a domain, setting up hosting and providing Turn17 Media with photos/content can add time.  If you happen to have everything else in place then there is no reason your site cannot go live at the end of development.',
     },
     {

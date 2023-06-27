@@ -65,15 +65,16 @@ export default function SignInSide({ providers }) {
         postData()
         .then((data) => {
            alert('Thank you for registering ' + name + '.')
+           loginUser()
         })
         .catch((error) => {
             console.log(error)
             alert('Registration unsuccessful')
         })
-        loginUser()
     }
 
     const loginUser = async() => {
+      console.log('Logging in...')
         const res = await signIn('credentials', {
             email: email,
             password: password,

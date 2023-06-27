@@ -9,10 +9,12 @@ function BannerHeader({ tag1, tag2, subtag, subtext1, subtext2 }) {
   return(
     <Container disableGutters maxWidth sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', mb: -8 }}>
       <Image 
-        src="/images/wm.png"
+        src={`/images/banner-header-image.jpg`}
         width={2500}
         height={666}
         alt='turn17media background'
+        priority
+        unoptimized={true}
       />
       <Box className={styles.bannerHeaderContent}>
         <h1 style={{ color: 'var(--white)', letterSpacing: '0.2rem' }}>{tag1}</h1>

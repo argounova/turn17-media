@@ -44,11 +44,14 @@ const UserSelections = () => {
         >
             Display/Hide Current Project
         </Button>
-        {showSelections && (
+        {showSelections && userData && (
             <>
-                <h3>This is  your current project</h3>
+                <h4>This is  your current project</h4>
                 <h4>{userData[index].email}</h4>
             </>
+        )}
+        {showSelections && !userData && (
+            <h4>Unable to fetch project</h4>
         )}
     </Box>
     )

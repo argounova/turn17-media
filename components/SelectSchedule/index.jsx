@@ -33,7 +33,7 @@ const Schedule = () => {
             <Container sx={{ mt: 3, display: 'flex', justifyContent: 'space-between' }} maxWidth='xl'>
                 <Box style={{ display: 'flex', flexDirection: 'column' }} gap={2}>
                     <p style={{ width: '80%', color: 'var(--char3)' }}>
-                    Our websites have a minimum build time of 7-14 business days.  It can take longer.  You have 24 hours from the time you submit your deposit to cancel and receive a refund.  After 24 hours, deposits are non-refundable.  Once your deposit is paid, please schedule your first developer meeting.  
+                    Our websites have a minimum build time of 14 business days.  It can take longer.  You have 24 hours from the time you submit your deposit to cancel and receive a refund.  After 24 hours, deposits are non-refundable.  Once your deposit is paid, please schedule your first developer meeting.  
                     </p>
                     <Grid container justifyContent="flex-start">
                         <Box

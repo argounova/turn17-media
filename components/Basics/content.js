@@ -14,7 +14,7 @@ export const tabs = [
         secondaryText4: "A 20% deposit is required to initialize your project.  Please note that deposits are non-refundable after 24 hours from the point you click Submit.",
         primaryText5: "Schedule your first developer meeting.",
         secondaryText5: "We aim for a minimum of three developer meetings during the build.  Typically we would connect before and during development and then a final time before launch.  While you can connect with your developer via email at any point during this process, we feel there is nothing like getting together over Zoom to make sure everyone is on the same page.", 
-        href: "/get-started",         
+        href: "/pricing",         
     },
     { 
         name: "GT Class", 
@@ -31,7 +31,7 @@ export const tabs = [
         secondaryText4: "A 20% deposit is required to initialize your project.  Please note that deposits are non-refundable after 24 hours from the point you click Submit.",
         primaryText5: "Schedule your first developer meeting.",
         secondaryText5: "We aim for a minimum of three developer meetings during the build.  Typically we would connect before and during development and then a final time before launch.  While you can connect with your developer via email at any point during this process, we feel there is nothing like getting together over Zoom to make sure everyone is on the same page.",
-        href: "/get-started" 
+        href: "/pricing" 
     },
     // { 
     //     name: "Custom", 

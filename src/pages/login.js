@@ -15,6 +15,7 @@ import Typography from '@mui/material/Typography'
 import { createTheme, ThemeProvider } from '@mui/material/styles'
 import { signIn, getProviders } from 'next-auth/react'
 import Router from 'next/router'
+import Image from 'next/image'
 
 function Copyright(props) {
   return (
@@ -65,21 +66,21 @@ export default function SignInSide({ providers }) {
         postData()
         .then((data) => {
            alert('Thank you for registering ' + name + '.')
+           loginUser()
         })
         .catch((error) => {
             console.log(error)
             alert('Registration unsuccessful')
         })
-        loginUser()
     }
 
     const loginUser = async() => {
+      console.log('Logging in...')
         const res = await signIn('credentials', {
             email: email,
             password: password,
             redirect: false,
-            // callbackUrl: `${window.location.origin}`
-            callbackUrl: '/dashboard'
+            callbackUrl: `${window.location.origin}`
         })
         res.error ? alert('Login unsuccessful') : redirectHome()
     }
@@ -104,7 +105,22 @@ export default function SignInSide({ providers }) {
             backgroundSize: 'cover',
             backgroundPosition: 'center',
           }}
-        />
+        >
+          <Box
+            sx={{
+              my: 8,
+              mx: 4,
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: { xs: 'flex-start', md: 'center' },
+              color: 'var(--char1)',
+            }}
+          >
+            <Button href="/">
+              <Image src="/turn17-logo-main.png" alt="Turn 17 Media Logo" width={250} height={250} />
+            </Button>
+          </Box>
+        </Grid>
         <Grid item xs={12} sm={8} md={5} component={Paper} elevation={6} square>
           <Box
             sx={{

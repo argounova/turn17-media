@@ -7,7 +7,7 @@ import Typography from '@mui/material/Typography';
 
 export default function PricingCard({ title, subtitle, price, priceDetail, etc, message, btnText, href, se1, se2, se3, se4, se5 }) {
     return(
-        <Card sx={{ minWidth: 275, minHeight: 400, display: 'flex', flexDirection: 'column', justifyContent: 'space-between', background: 'linear-gradient(131deg, rgba(58,134,148,1) 18%, rgba(73,156,166,1) 100%)' }}>
+        <Card raised sx={{ minWidth: 275, minHeight: 400, display: 'flex', flexDirection: 'column', justifyContent: 'space-between', background: 'linear-gradient(131deg, rgba(58,134,148,1) 18%, rgba(73,156,166,1) 100%)' }}>
                 <div style={{ height: '15%', margin: '20px' }}>
                     <Typography variant="h4" sx={{ fontFamily: 'Oxygen' }}>
                     {title}

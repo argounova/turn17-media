@@ -31,10 +31,11 @@ export default function Basics({isConnected}) {
       </Head>
       <TopNavigation />
       <BannerHeader 
-        tag1='How does this all work?'
+        tag1='We offer two primary foundations.'
+        tag2='Start with a single page or multi-page site.'
         subtag='Complex understanding'
         subtext1='Here you&apos;ll find an overview of how the process works.'
-        subtext2='Click Get Started to learn more.'
+        subtext2='This is a jumping-off point.  Your site will be tailor-made for your application.'
       />
       <main className={styles.main}>
           <BasicsCards />
