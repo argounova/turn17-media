@@ -4,6 +4,7 @@ import {
     Button,
     TextField 
 } from '@mui/material'
+import Image from 'next/image'
 import emailjs from '@emailjs/browser'
 
 export default function Contact() {
@@ -36,7 +37,7 @@ export default function Contact() {
                 Contact  
             </p>
             <br />
-            <img src="/turn17-logo-main.png" alt="Turn 17 Media Logo" style={{ width: '250px' }} />
+            <Image src="/turn17-logo-main.png" alt="Turn 17 Media Logo" width={250} height={250} />
         </div>
         { !showSuccess && !showFail && (
             <div className='contact-form'>
@@ -105,7 +106,7 @@ export default function Contact() {
             </p>
             <br />
             <p style={{ fontSize: 'var(--h4)', color: 'var(--char0)' }}>
-                Don't hesitate to reach out with any questions.  We are happy to help.  
+                Don&#39;t hesitate to reach out with any questions.  We are happy to help.  
             </p>
         </div>     
     </ContactStyles>
