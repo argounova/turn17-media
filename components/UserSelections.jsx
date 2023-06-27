@@ -1,5 +1,9 @@
 import { useState, useEffect } from 'react'
 import { useSession } from 'next-auth/react'
+import {
+    Box,
+    Button,
+} from '@mui/material'
 // import useSWR from 'swr'
 
  
@@ -7,6 +11,7 @@ const UserSelections = () => {
     const { data: session } = useSession()
     const [userData, setUserData] = useState([])
     const [index, setIndex] = useState('')
+    const [showSelections, setShowSelections] = useState(false)
     const userEmail = session?.user.email
     // const fetcher = (...args) => fetch(...args).then(res => res.json())
     // const { data } = useSWR('/api/routes/userData', fetcher)
@@ -20,21 +25,32 @@ const UserSelections = () => {
             await fetch('/api/routes/userData')
         ).json()
         setUserData(data)
-        console.log(data)
-        console.log(userData)
-        findUser(data)
+        findUser(userData)
     }
 
-    const findUser = (data) => {
-        const searchIndex = data.findIndex((user) => user.email === userEmail)
+    const findUser = (userData) => {
+        const searchIndex = userData.findIndex((user) => user.email === userEmail)
         setIndex(searchIndex)
-        console.log(index)
+    }
+
+    const toggleSelections = () => {
+        setShowSelections(showSelections => !showSelections)
     }
 
     return (
-    <div>
-
-    </div>
+    <Box>
+        <Button
+            onClick={toggleSelections}
+        >
+            Display/Hide Current Project
+        </Button>
+        {showSelections && (
+            <>
+                <h3>This is  your current project</h3>
+                <h4>{userData[index].email}</h4>
+            </>
+        )}
+    </Box>
     )
 }
 
