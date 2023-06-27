@@ -80,7 +80,7 @@ export default function SignInSide({ providers }) {
             redirect: false,
             callbackUrl: `${window.location.origin}`
         })
-        res.error ? console.log(res.error) : redirectHome()
+        res.error ? alert('Login unsuccessful') : redirectHome()
     }
 
     const handleSubmit = (event) => {
