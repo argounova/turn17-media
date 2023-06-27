@@ -78,7 +78,8 @@ export default function SignInSide({ providers }) {
             email: email,
             password: password,
             redirect: false,
-            callbackUrl: `${window.location.origin}`
+            // callbackUrl: `${window.location.origin}`
+            callbackUrl: '/dashboard'
         })
         res.error ? alert('Login unsuccessful') : redirectHome()
     }
