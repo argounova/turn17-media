@@ -17,6 +17,7 @@ import CalendlyScheduler from './CalendlyScheduler/calendlyScheduler'
 const UserSelections = () => {
   const { data: session } = useSession()
   const [userData, setUserData] = useState([])
+  const [dataAvail, setDataAvail] = useState(null)
   const [index, setIndex] = useState('')
   const [showSelections, setShowSelections] = useState(false)
   const userEmail = session?.user.email
@@ -28,6 +29,8 @@ const UserSelections = () => {
       const index = data.findIndex((user) => user.email === userEmail)
       setUserData(data)
       setIndex(index)
+      const avail = data[index].dataAvailable
+      setDataAvail(avail)
       toggleSelections()
     })
   }
@@ -38,10 +41,10 @@ const UserSelections = () => {
 
   return (
     <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-      <Button onClick={getData} variant='contained' color='secondary' sx={{ maxWidth: '400px', height: '100px', margin: '20px' }}>
+      <Button onClick={getData} variant='contained' color='secondary' sx={{ width: '400px', height: '75px', margin: '20px' }}>
         Display/Hide Current Project
       </Button>
-      {showSelections && userData && (
+      {showSelections && dataAvail && (
         <>
           <h4 style={{ textAlign: 'center' }}>Current Project</h4>
           <br />
@@ -199,6 +202,15 @@ const UserSelections = () => {
           </Box>
         </>
       )}
+      {showSelections && !dataAvail && (
+        <>
+        <h1>No current projects...</h1>
+        <h4>Click below to get started!</h4>
+        <br />
+        <Button variant='contained' style={{ backgroundColor: 'var(--mb1-3)', fontSize: 'var(--p)', width: '400px', height: '75px' }} href='/get-started'>New Project</Button>
+        </>
+      )}
+        
     </Box>
   )
 }
