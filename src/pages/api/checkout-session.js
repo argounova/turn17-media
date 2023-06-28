@@ -6,7 +6,7 @@ export default async function CheckoutSession(req, res) {
     const redirectURL =
     process.env.NODE_ENV === 'development'
       ? 'http://localhost:3000'
-      : 'https://www.turn17media.com'
+      : 'https://turn17-media-git-development-turn17-media.vercel.app'
 
     const lineItems = {
         price: deposit.stripeId,

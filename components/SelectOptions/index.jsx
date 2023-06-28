@@ -1,6 +1,6 @@
 import { OptionsStyles } from "./style"
-import ColorsOption from "./Colors"
-import FontsOption from "./Fonts"
+import ColorsOption from "./colors"
+import FontsOption from "./fonts"
 import LinksOption from "./Links"
 import Divider from '@mui/material/Divider'
 
