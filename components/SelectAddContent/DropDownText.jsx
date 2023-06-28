@@ -7,7 +7,7 @@ import TextField from '@mui/material/TextField';
 
 
 const DropDownTextArea = ({ question, onChange, onClick }) => {
-  const [showInfo, setInfo] = useState(false)
+  const [showInfo, setInfo] = useState(true)
 
   const faqVariants = {
     open: {
@@ -25,11 +25,15 @@ const DropDownTextArea = ({ question, onChange, onClick }) => {
   }
   return (
     <ContentStyles className={showInfo ? `${"faq-open"}` : `${"faq-closed"}`}>
-      <button className="question" onClick={toggleInfo}>
+      <button 
+        className="question" 
+        // onClick={toggleInfo} 
+        
+      >
         {question}
-        <div className="trigger">
+        {/* <div className="trigger">
           <Chevron />
-        </div>
+        </div> */}
       </button>
       {showInfo && (
         <motion.div
@@ -47,13 +51,13 @@ const DropDownTextArea = ({ question, onChange, onClick }) => {
             name="contentItem"
             onChange={onChange}
           />
-          <Button
+          {/* <Button
             onClick={onClick}
             variant='contained'
             sx={{ m: 1, width: '150px' }}
           >
             Save Content
-          </Button>
+          </Button> */}
         </motion.div>
       )}
     </ContentStyles>

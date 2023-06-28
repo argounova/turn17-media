@@ -29,7 +29,7 @@ export default async function handler(req, res) {
       const db = client.db("turn17_media")
       await db.collection("users").updateOne(
         { "email" : update.email },
-        { $set: { "contentArea" : update.contentItem }},
+        { $set: { "contentArea" : update.contentItem, "submissionComplete" : update.submissionComplete }},
         { upsert: true }
       )
       res.status(200).json({ update })

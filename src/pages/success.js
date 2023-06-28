@@ -12,10 +12,10 @@ export default function Success() {
 
   const trueDeposit = () => {
     const postData = async () => {
-      const queryParameters = new URLSearchParams(window.location.search)
+    const queryParameters = new URLSearchParams(window.location.search)
     const id = queryParameters.get('session_id')
     const data = {
-      email: session?.user.email,
+      email: session.user.email,
       depositId: id,
       depositPaid: true,
     }

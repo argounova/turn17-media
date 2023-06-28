@@ -39,11 +39,11 @@ export default function FinishedSiteEx() {
         />
       </motion.div>
       <Button
-        href='/signup'
+        href='/basics'
         variant='contained'
         className='btn'
       >
-        Get Started
+        Learn More
       </Button>
       <motion.svg className='btn-anim'
         width="600"

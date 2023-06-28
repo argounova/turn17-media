@@ -76,7 +76,7 @@ export default function Selector() {
                 <br />
                 <hr />
                 <br />
-                <Container>
+                <Container disableGutters>
                   <Box>
                     <RadioGroup>
                       {selectedTab.sites.map((site, index) => (
@@ -92,14 +92,13 @@ export default function Selector() {
                     </RadioGroup>
                   </Box>
                 </Container>
-
-                <div className="button-div">
-                    <Button
-                      onClick={handleSave}
-                      variant='contained'
-                      style={{ backgroundColor: 'var(--mb1-3)', color: 'var(--char5)' }}
-                    >Save Selection</Button>
-                </div>
+                <br />
+                <Button
+                  onClick={handleSave}
+                  variant='contained'
+                >
+                  Save Selection
+                </Button>
               </motion.div>
             </AnimatePresence>
           </main>

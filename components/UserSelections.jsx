@@ -38,7 +38,7 @@ const UserSelections = () => {
 
   return (
     <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-      <Button onClick={getData} variant='contained' sx={{ maxWidth: '400px', margin: '20px' }}>
+      <Button onClick={getData} variant='contained' color='secondary' sx={{ maxWidth: '400px', height: '100px', margin: '20px' }}>
         Display/Hide Current Project
       </Button>
       {showSelections && userData && (
@@ -72,7 +72,7 @@ const UserSelections = () => {
                   </Typography>
                   <Divider />
                   {userData[index].colorChoices.map((color) => (
-                    <Typography mt={1} sx={{ fontWeight: 'bold' }}>
+                    <Typography mt={1} sx={{ fontWeight: 'bold' }} key={color.index}>
                       {color.colorChoice}
                     </Typography>
                   ))}
@@ -85,7 +85,7 @@ const UserSelections = () => {
                   </Typography>
                   <Divider />
                   {userData[index].fontChoices.map((font) => (
-                    <Typography mt={1} sx={{ fontWeight: 'bold' }}>
+                    <Typography mt={1} sx={{ fontWeight: 'bold' }} key={font.index}>
                       {font.fontChoice}
                     </Typography>
                   ))}
@@ -98,14 +98,14 @@ const UserSelections = () => {
                   </Typography>
                   <Divider />
                   {userData[index].navLinks.map((link) => (
-                    <Typography mt={1} sx={{ fontWeight: 'bold' }}>
+                    <Typography mt={1} sx={{ fontWeight: 'bold' }} key={link.index}>
                       {link.navLink}
                     </Typography>
                   ))}
                 </CardContent>
               </Card>
               {userData[index].contentArea.map((content) => (
-                <Card>
+                <Card key={content.index}>
                   <CardContent>
                     <Typography gutterBottom >
                       {content.question}
@@ -148,15 +148,25 @@ const UserSelections = () => {
                   ) : (
                     <PayDeposit />
                   )}
-                  <Button variant='contained' style={{ backgroundColor: 'var(--mb1-1)', width: '200px' }}>View Invoice</Button>
+                  <Button variant='contained' style={{ backgroundColor: 'var(--mb1-1)', width: '200px' }} disabled>View Invoice</Button>
                   <p>Status: Not started</p>
                   <p>Current completion date: 00/00/2023</p>
                   <p style={{ color: 'yellowgreen' }}>ON TRACK</p>
                 </Box>
                 <Box style={{ display: 'flex', alignItems: 'center', width: '100%' }} gap={2} mt={10}>
-                  <Button variant='contained' style={{ backgroundColor: 'var(--mb1-4)', color: 'var(--char5)', fontSize: 'var(--p)', width: '250px', height: '100px' }} href='/get-started'>New Project</Button>
-                  <Button variant='contained' style={{ fontSize: 'var(--p)', width: '250px', height: '100px' }} disabled>Edit Project</Button>
-                  <Button variant='contained' style={{ fontSize: 'var(--p)', width: '250px', height: '100px' }} disabled>Cancel Project</Button>
+                  {userData[index].submissionComplete? (
+                    <>
+                      <Button variant='contained' style={{ fontSize: 'var(--p)', width: '250px', height: '100px' }} disabled >New Project</Button>
+                      <Button variant='contained' color='warning' style={{ fontSize: 'var(--p)', width: '250px', height: '100px' }}>Edit Project</Button>
+                      <Button variant='contained' color='error' style={{ fontSize: 'var(--p)', width: '250px', height: '100px' }}>Cancel Project</Button>
+                    </>
+                  ) : (
+                    <>
+                      <Button variant='contained' style={{ backgroundColor: 'var(--mb1-3)', fontSize: 'var(--p)', width: '250px', height: '100px' }} href='/get-started'>New Project</Button>
+                      <Button variant='contained' style={{ fontSize: 'var(--p)', width: '250px', height: '100px' }} disabled>Edit Project</Button>
+                      <Button variant='contained' style={{ fontSize: 'var(--p)', width: '250px', height: '100px' }} disabled>Cancel Project</Button>
+                    </>
+                  )}
                 </Box>
               </CardContent>
             </Card>

@@ -1,11 +1,13 @@
 import { useState } from 'react'
 import { useSession } from 'next-auth/react'
-import Button from '@mui/material/Button'
-import InputAdornment from '@mui/material/InputAdornment';
-import TextField from '@mui/material/TextField';
-import FormControlLabel from '@mui/material/FormControlLabel';
-import Checkbox from '@mui/material/Checkbox';
-
+import {
+    Button,
+    Checkbox,
+    FormControlLabel,
+    InputAdornment,
+    TextField
+} from '@mui/material'
+  
 
 export const colors = [
     {
@@ -120,6 +122,7 @@ const ColorsOption = () => {
                     onClick={() => setShowComponent(true)}
                     variant='contained'
                     fullWidth
+                    style={{ backgroundColor: 'var(--mb1-1)', color: 'var(--char1)' }}
                 >
                     Edit Colors
                 </Button>

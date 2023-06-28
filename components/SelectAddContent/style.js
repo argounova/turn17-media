@@ -38,12 +38,8 @@ export const ContentStyles = styled.div`
     font-size: var(--p);
     font-family: Oxygen;
     text-align: start;
-    cursor: pointer;
+    cursor: arrow;
     transition: border-color 0.3s ease;
-
-    &:hover {
-      border-color: var(--mb1-3);
-    }
 
     .trigger {
       display: inline-flex;

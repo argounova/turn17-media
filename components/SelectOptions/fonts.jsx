@@ -95,6 +95,7 @@ const FontsOption = () => {
                         onClick={() => setShowComponent(true)}
                         variant='contained'
                         fullWidth
+                        style={{ backgroundColor: 'var(--mb1-1)', color: 'var(--char1)' }}
                     >
                         Edit Fonts
                     </Button>

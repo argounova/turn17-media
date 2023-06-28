@@ -1,6 +1,7 @@
 import { OptionsStyles } from "./style"
-import ColorsOption from "./colors"
-import FontsOption from "./fonts"
+import ColorsOption from "./Colors"
+import FontsOption from "./Fonts"
+import LinksOption from "./Links"
 import Divider from '@mui/material/Divider'
 
 
@@ -15,6 +16,10 @@ const Options = () => {
                 <Divider style={{ width: '100%' }}/>
                 <br />
                 <FontsOption />
+                <br />
+                <Divider style={{ width: '100%' }}/>
+                <br />
+                <LinksOption />
             </div>
         </OptionsStyles>
     )
