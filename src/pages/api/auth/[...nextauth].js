@@ -56,6 +56,14 @@ export const authOptions = {
       }
     }),
   ],
+  callbacks: {
+    async session({ session, token, user }) {
+      session.accessToken = token.accessToken
+      session.user.id = token.id
+      
+      return session
+    }
+  },
   pages: {
     signIn: '/login',
     signOut: '/'

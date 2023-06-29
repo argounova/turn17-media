@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import Head from 'next/head'
 import TopNavigation from '../../components/TopNavigation'
 import BannerHeader from '../../components/BannerHeader'
@@ -8,7 +8,22 @@ import { useSession } from 'next-auth/react'
 
 
 export default function Success() {
-  const { data: session } = useSession()
+  const { data: session, status, update } = useSession()
+
+  useEffect(() => {
+    const interval = setInterval(() => update(), 1000)
+    return () => clearInterval(interval)
+  }, [update])
+
+  useEffect(() => {
+    const visibilityHandler = () => document.visibilityState === "visible" && update()
+    window.addEventListener("visibilitychange", visibilityHandler, false)
+    return () => window.removeEventListener("visibilitychange", visibilityHandler, false)
+  }, [update])
+
+  useEffect(() => {
+    trueDeposit()
+  })
 
   const trueDeposit = () => {
     const postData = async () => {
@@ -28,9 +43,7 @@ export default function Success() {
     postData().then((data) => console.log(data))
   }
 
-  useEffect(() => {
-    trueDeposit()
-  }, [])
+  
 
   return (
     <>

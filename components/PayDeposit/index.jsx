@@ -7,7 +7,7 @@ const stripePromise = loadStripe(
 );
 
 const deposit = {
-  stripeId: 'price_1NHbkUCCfVRJgqGQPLB6pQfc',
+  stripeId: 'price_1NOQsKCCfVRJgqGQpvux2Iwc',
   quantity: 1,
 }
 

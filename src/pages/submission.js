@@ -15,10 +15,9 @@ export default function Submission() {
       </Head>
       <TopNavigation />
       <BannerHeader 
-        tag1='Your project has been successfully submitted.'
+        tag1='Your quote has been successfully submitted.'
         tag2='You will receive an email confirmation within 24 hours.'
-        subtext1='View your submission in your dashboard.'
-        subtext2='You can also pay your deposit or cancel your project there.'
+        subtext1='You can view your submission in your dashboard.'
       />
       <Footer />
     </>
