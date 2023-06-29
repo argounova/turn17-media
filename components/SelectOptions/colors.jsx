@@ -71,8 +71,6 @@ const ColorsOption = () => {
                 <br />
                 <p>Arguably the most impactful element of your website is the color palette as this sets the overall tone and personality.  It can be difficult to narrow down all of the colors in the rainbow to only five but a cohesive site typically won&apos;t have more than that.</p>
                 <br />
-                <h5 style={{ color: 'var(--mb1-1)', textDecoration: 'underline' }}><a href="https://color.adobe.com/explore" target="_blank" rel="nofollow noreferrer noopener">Start with Adobe Colors</a></h5>
-                <br />
                 <div style={{ display: 'flex', flexDirection: 'row', flexWrap: 'wrap' }}>
                     {colors.map((item, index) => (
                             <TextField
@@ -90,6 +88,8 @@ const ColorsOption = () => {
                 </div>
                 <br />
                 <p>Choose up to five colors.</p>
+                <br />
+                <p style={{ color: 'var(--mb1-1)', textDecoration: 'underline' }}><a href="https://color.adobe.com/explore" target="_blank" rel="nofollow noreferrer noopener">Checkout Adobe Colors for inspiration</a></p>
                 <br />
                 <p>If using Adobe Colors:</p>
                 <ul>

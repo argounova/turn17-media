@@ -39,6 +39,7 @@ export const BasicsStyles = styled.section`
     flex-grow: 1;
     user-select: none;
     padding: 10px;
+    width: 100%;
   }
 
   

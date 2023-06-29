@@ -2,7 +2,7 @@ export const tabs = [
     {
         name: "Spec Class",
         title: "Single page site.",
-        subtitle: "Please provide links for up to three websites that inspire you.  We will discuss them in greater detail at the first developer meeting.",
+        subtitle: "Please provide links for up to three websites that inspire you.",
         sites: [
             { 
                 title: 'Spitfire',
@@ -24,7 +24,7 @@ export const tabs = [
     {
         name: "GT Class",
         title: "Multi-page site.",
-        subtitle: "Please provide links for up to three websites that inspire you.  We will discuss them in greater detail at the first developer meeting.",
+        subtitle: "Please provide links for up to three websites that inspire you.",
         sites: [
             { 
                 title: 'Porsche',

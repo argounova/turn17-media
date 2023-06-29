@@ -2,10 +2,11 @@ import * as React from 'react';
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Unstable_Grid2';
 import { Stack } from '@mui/material';
+import AdCard from './AdCard';
 import FeaturePhotoCard from './FeaturePhotoCard';
 import FeatureTextCard from './FeatureTextCard';
-import specSite from '../public/images/spec-site-card-bw.jpg';
-import gtSite from '../public/images/gt-site-card-bw.jpg';
+import specSite from '../../public/images/spec-site-card-bw.jpg';
+import gtSite from '../../public/images/gt-site-card-bw.jpg';
 
 export default function MainFeatures() {
   return (
@@ -16,6 +17,13 @@ export default function MainFeatures() {
         justifyContent='center'
         alignItems='center'    
     >
+      <Grid>
+        <AdCard 
+          title='Free Quotes'
+          description='Start a quote today!'
+          linkTo='/signup'
+        />
+      </Grid>
         <Grid>
           <FeaturePhotoCard 
             cardImage={specSite}
@@ -51,6 +59,13 @@ export default function MainFeatures() {
             title='GT Class Website'
             description='Multiple pages, highly customizable.'
             linkTo='/basics'
+          />
+        </Grid>
+        <Grid>
+          <AdCard 
+            title='Free Consultation'
+            description='Schedule now!'
+            linkTo='/free-consultation'
           />
         </Grid>
       </Grid>

@@ -60,8 +60,6 @@ const FontsOption = () => {
                     <br />
                     <p>Further customization comes in the form of choosing up to two fonts.  Keep in mind that each font has the ability to be italic, multiple weights and any size or color giving you a broad spectrum of creativity.</p>
                     <br />
-                    <h5 style={{ color: 'var(--mb1-1)', textDecoration: 'underline' }}><a href="https://fonts.google.com/" target="_blank" rel="nofollow noreferrer noopener">Check out Google Fonts</a></h5>
-                    <br />
                     {fonts.map((item, index) => (
                         <TextField 
                             key={index}
@@ -72,6 +70,8 @@ const FontsOption = () => {
                             onChange={updateState(index)}
                         />
                     ))}
+                    <br />
+                    <p style={{ color: 'var(--mb1-1)', textDecoration: 'underline' }}><a href="https://fonts.google.com/" target="_blank" rel="nofollow noreferrer noopener">Check out Google Fonts for ideas</a></p>
                     <br />
                     <FormControlLabel 
                         sx={{ fontFamily: 'Oxygen' }} 

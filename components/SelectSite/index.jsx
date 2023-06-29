@@ -101,6 +101,7 @@ export default function Selector() {
                 animate={{ y: 0, opacity: 1 }}
                 exit={{ y: -10, opacity: 0 }}
                 transition={{ duration: 0.2 }}
+                style={{ width: '90%' }}
               >
                 <br />
                 <h1>{selectedTab.title}</h1>

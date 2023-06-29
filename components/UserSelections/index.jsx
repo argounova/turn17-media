@@ -50,7 +50,7 @@ const UserSelections = () => {
     <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
       <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
         <Button href='/get-started' variant='contained' className='btn-new'>
-          Start New Project
+          Start a Free Quote
         </Button>
         <Button onClick={getData} variant='contained' className='btn-showhide'>
           Current Project

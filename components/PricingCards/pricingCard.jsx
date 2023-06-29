@@ -51,7 +51,7 @@ export default function PricingCard({ title, subtitle, price, priceDetail, etc, 
                             arrow={false}
                             text='Sign Up'
                         />
-                        <p style={{ color: 'var(--char5a)', fontSize: '1.25rem', fontWeight: '700' }}>to getting started</p>
+                        <p style={{ color: 'var(--char5a)', fontSize: '1.25rem', fontWeight: '700' }}>to start a free quote</p>
                     </Stack>
                 )}
                 

@@ -120,8 +120,9 @@ export default function SignInSide({ providers }) {
             <h1>Registration is required to continue.</h1>
             <h3>Creating an account allows you to:</h3>
             <ul>
-              <li>Save, view and edit the information you submit for your new site.</li>
-              <li>Schedule your free consultation and subsequent developer meetings.</li>
+              <li>Submit a free online quote.</li>
+              <li>View the information you submit for your new site.</li>
+              <li>Schedule your developer meetings.</li>
               <li>Pay your deposit.</li>
             </ul>
           </Box>
