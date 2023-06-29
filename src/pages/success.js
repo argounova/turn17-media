@@ -10,8 +10,12 @@ import { useSession } from 'next-auth/react'
 export default function Success() {
   const { data: session, status, update } = useSession()
 
+  const delay = ms => new Promise(
+    resolve => setTimeout(resolve, ms)
+  )
+
   useEffect(() => {
-    const interval = setInterval(() => update(), 1000)
+    const interval = setInterval(() => update(), 10000)
     return () => clearInterval(interval)
   }, [update])
 
@@ -27,6 +31,7 @@ export default function Success() {
 
   const trueDeposit = () => {
     const postData = async () => {
+    await delay(1000)
     const queryParameters = new URLSearchParams(window.location.search)
     const id = queryParameters.get('session_id')
     const data = {
