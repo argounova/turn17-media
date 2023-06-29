@@ -6,11 +6,15 @@ export const ContentStyles = styled.div`
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    width: 95vw;
+    width: 90vw;
     height: fit-content;
     margin-bottom: 30px;
+    padding: 15px 5px;
     background-color: var(--white);
-    box-shadow: 1px 3px 3px var(--char3);
+    box-shadow: 0 1px 1px hsl(0deg 0% 0% / 0.075),
+    0 2px 2px hsl(0deg 0% 0% / 0.075), 0 4px 4px hsl(0deg 0% 0% / 0.075),
+    0 8px 8px hsl(0deg 0% 0% / 0.075), 0 16px 16px hsl(0deg 0% 0% / 0.075);
+    border-radius: 5px;
 
     p {
       padding: 16px;

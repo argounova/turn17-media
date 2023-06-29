@@ -1,8 +1,8 @@
 export const tabs = [
     {
         name: "Spec Class",
-        title: "The single page website.",
-        subtitle: "Feature rich, the one page site is surprisingly versatile.  Navigation, modals and pop-up galleries help the single webpage to feel technically complex and professional.",
+        title: "Single page site.",
+        subtitle: "Please provide links for up to three websites that inspire you.  We will discuss them in greater detail at the first developer meeting.",
         sites: [
             { 
                 title: 'Spitfire',
@@ -23,8 +23,8 @@ export const tabs = [
     },
     {
         name: "GT Class",
-        title: "More square footage.",
-        subtitle: "When you simply need more space now or room to grow in the future, a multi page website is the clear choice.  Incorporate blogs, dedicated gallery or product pages and much more.",
+        title: "Multi-page site.",
+        subtitle: "Please provide links for up to three websites that inspire you.  We will discuss them in greater detail at the first developer meeting.",
         sites: [
             { 
                 title: 'Porsche',

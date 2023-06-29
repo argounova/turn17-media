@@ -1,15 +1,15 @@
 const dropDownTextQuestions = [
     {
-        question: 'Now that we know where we are going, what do we see when we get there?  Add “About Me” or “About the Company” content here.',
+        question: 'Add "About Me", "About the Company", "Mission Statement" or similar content here.',
     },
     {
-        question: 'We live in a visual world with photos at the heart.  Add the URLs to your online-hosted images here.  Images must be hosted online!  We can help so bypass this step if you are not ready.  ',
+        question: 'If you know some of the images you intend to use and they are hosted online already, add the URLs here.  Bypass this step if you are not ready.',
     },
     {
-        question: 'Tell us a little more about your goals and purpose for this site.  We have dealt with the icing, now we need the cake.  Bio, profile or portfolio?  Are you offering services or selling products?',
+        question: 'Tell us a little more about your goals and purpose for this site.',
     },
     {
-        question: 'The purpose of your site almost certainly affects the layout.  Are you content with how the template is structured or would you like to make adjustments?',
+        question: 'Any additional information, comments or questions can go here.',
     },
 ]
 

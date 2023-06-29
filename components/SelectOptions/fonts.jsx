@@ -79,7 +79,7 @@ const FontsOption = () => {
                         {<Checkbox 
                             onChange={(e) => setBypass(e.target.checked)}
                         />} 
-                        label="Check here to bypass this option and discuss colors later." />
+                        label="Check here to bypass this option and discuss fonts later." />
                     <Button
                         onClick={handleSave}
                         variant='contained'

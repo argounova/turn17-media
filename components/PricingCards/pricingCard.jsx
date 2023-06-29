@@ -5,8 +5,11 @@ import CardActions from '@mui/material/CardActions';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import CustomBtn from '../Button';
+import { useSession } from 'next-auth/react';
 
 export default function PricingCard({ title, subtitle, price, priceDetail, etc, message, btnText, href, se1, se2, se3, se4, se5 }) {
+    const { data: session } = useSession()
+
     return(
         <Card raised sx={{ minWidth: 275, minHeight: 400, display: 'flex', flexDirection: 'column', justifyContent: 'space-between', background: 'linear-gradient(131deg, rgba(58,134,148,1) 18%, rgba(73,156,166,1) 100%)' }}>
                 <div style={{ height: '15%', margin: '20px' }}>
@@ -33,20 +36,25 @@ export default function PricingCard({ title, subtitle, price, priceDetail, etc, 
                     
                 </Box>
             <CardActions sx={{ p: 0, ml: 2, mb: 2, display: 'flex', flexDirection: 'column', alignItems: 'flex-start' }}>
-                <Stack direction='row' gap={1} mt={1}>
-                    <CustomBtn 
-                        href='/login'
-                        arrow={false}
-                        text='Login'
-                    />
-                    <p style={{ color: 'var(--char5)', fontSize: '1.25rem', fontWeight: '700' }}>or</p>
-                    <CustomBtn 
-                        href='/signup'
-                        arrow={false}
-                        text='Sign Up'
-                    />
-                    <p style={{ color: 'var(--char5a)', fontSize: '1.25rem', fontWeight: '700' }}>to getting started</p>
-                </Stack>
+                {session? (
+                    <Button href='/get-started' variant='contained' color='inherit'>Get Started</Button>
+                ) : (
+                    <Stack direction='row' gap={1} mt={1}>
+                        <CustomBtn 
+                            href='/login'
+                            arrow={false}
+                            text='Login'
+                        />
+                        <p style={{ color: 'var(--char5)', fontSize: '1.25rem', fontWeight: '700' }}>or</p>
+                        <CustomBtn 
+                            href='/signup'
+                            arrow={false}
+                            text='Sign Up'
+                        />
+                        <p style={{ color: 'var(--char5a)', fontSize: '1.25rem', fontWeight: '700' }}>to getting started</p>
+                    </Stack>
+                )}
+                
             </CardActions>
             <hr style={{ backgroundColor: 'var(--mb1-4)', border: 'none', height: '2px', margin: '20px' }}/>
             <Box style={{ display: 'flex', flexDirection: 'column', backgroundColor: 'var(--black)', padding: '20px' }}>

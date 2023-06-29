@@ -5,7 +5,7 @@ export const tabs = [
         title: "Single page website.",
         subtitle: "Feature rich and surprisingly versatile.  Navigation, modals and pop-up galleries help the single webpage to feel technically complex and professional.",
         primaryText1: "Example websites.",
-        secondaryText1: "View our example site.  Alternatively, provide up to three links to sites that inspire you.  This is where we start to develop an overall style.",
+        secondaryText1: "Provide up to three links to sites that inspire you.  This is where we start to develop an overall style.",
         primaryText2: "Custom options.",
         secondaryText2: "Colors, fonts, navigation menu, layout, and more are a few of the things you can provide.", 
         primaryText3: "Hosting and domains.",

@@ -1,8 +1,7 @@
 import styled from "@emotion/styled"
 
 export const BasicsStyles = styled.section`
-  width: 95vw;
-  max-width: 90vw;
+  width: 90vw;
   border-radius: 5px;
   background: white;
   overflow: hidden;
@@ -34,6 +33,7 @@ export const BasicsStyles = styled.section`
   
   main {
     display: flex;
+    flex-direction: column;
     justify-content: flex-start;
     align-items: center;
     flex-grow: 1;

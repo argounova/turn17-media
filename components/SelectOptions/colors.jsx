@@ -30,7 +30,7 @@ export const colors = [
 const ColorsOption = () => {
     const { data: session } = useSession()
     const [showComponent, setShowComponent] = useState(true)
-    const [bypass, setBypass] = useState()
+    const [bypass, setBypass] = useState(false)
     const [color, setColor] = useState(colors)
     let colorChoices = []
 

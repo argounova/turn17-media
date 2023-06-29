@@ -8,7 +8,7 @@ import Divider from '@mui/material/Divider'
 const Options = () => {
     return(
         <OptionsStyles>
-            <h1>Choose your options</h1>
+            <h1>Customize</h1>
             <br />
             <div className='options-container'>
                 <ColorsOption />

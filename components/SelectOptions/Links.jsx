@@ -26,7 +26,7 @@ const links = [
 const LinksOption = () => {
   const { data: session } = useSession()
   const [showComponent, setShowComponent] = useState(true)
-  const [bypass, setBypass] = useState()
+  const [bypass, setBypass] = useState(false)
   const [navLink, setNavLink] = useState(links)
   let navLinkChoices = []
 

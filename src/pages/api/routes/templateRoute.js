@@ -29,7 +29,11 @@ export default async function handler(req, res) {
       const db = client.db("turn17_media")
       await db.collection("users").updateOne(
         { "email" : update.email },
-        { $set: { "template" : update.template } },
+        { $set: { 
+          "siteType" : update.siteType,
+          "siteExamples" : update.siteExs,
+          "siteExampleBypass" : update.siteExBypass
+        } },
         { upsert: true }
       )
       res.status(200).json({ update })

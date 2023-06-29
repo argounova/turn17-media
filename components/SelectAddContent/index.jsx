@@ -46,10 +46,10 @@ const Content = () => {
   return(
     <>
       <ContentStyles>
-        <h1>Add content and additional info</h1>
+        <h1>Additional Info</h1>
         <br />
         <div className='content-container'>
-          <p>Listed below is a series of selections that can be made to add information about you and your company as well as any content that might make its way to the website &#40;i.e., “About” paragraph, contact info, navigation links&#41;.  As with Colors and Fonts, this information can be edited later and even bypassed at this time.  However, the more you can provide and the more accurate the information, the better our foundation for getting started.</p>
+          <p>This section deals primarily with written content on your website.</p>
           <Grid container justifyContent="flex-start">
             <Box
               sx={{
