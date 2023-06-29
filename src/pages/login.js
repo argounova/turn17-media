@@ -45,8 +45,7 @@ export default function SignInSide({ providers }) {
     const redirectHome = () => {
         const { pathname } = Router
         if (pathname === '/login') {
-            // Redirect to profile page if desired
-            Router.push('/')
+            Router.push('/dashboard/loggedin')
         }
     }
 

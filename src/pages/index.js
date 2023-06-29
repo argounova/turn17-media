@@ -21,7 +21,7 @@ export default function Home() {
       </Head>
       <TopNavigation />
       <BannerHeader 
-        tag1='Motorsports & automotive websites.'
+        tag1='Motorsports & Automotive websites.'
         tag2='By car people, for car people.'
         subtag='If you have to ask, you can&apos;t afford it'
         subtext1='Understand what you&apos;re getting and how much it will cost from the beginning.'

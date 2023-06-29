@@ -1,5 +1,4 @@
 import Head from 'next/head'
-import DashboardFAQs from '../../../components/DashboardFAQs'
 import TopNavigation from '../../../components/TopNavigation'
 import Footer from '../../../components/Footer/Footer'
 import UserSelections from '../../../components/UserSelections'
@@ -36,7 +35,7 @@ const UserDashboard = () => {
         <link rel="icon" href="/turn17-media-tab-logo.jpg" />
       </Head>
       <TopNavigation />
-      <Container sx={{ mt: 20, display: 'flex', justifyContent: 'space-between', flexDirection: 'column' }} maxWidth='xl'>
+      <Container sx={{ mt: 20, display: 'flex', justifyContent: 'space-between', flexDirection: 'column', minHeight: '50vh' }} maxWidth='xl'>
         <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
           <h2>Welcome, {session?.user.name}</h2>   
           <Box>
@@ -44,7 +43,6 @@ const UserDashboard = () => {
           </Box>      
         </Box>
       </Container>
-      <DashboardFAQs />
       <Footer />
     </>
   )

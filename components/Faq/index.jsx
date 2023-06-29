@@ -7,7 +7,6 @@ import questions from './questions';
 export default function FaQuestions() {
     return(
         <>
-        <h1 style={{ textAlign: 'center', fontFamily: 'Oxygen' }}>FAQ</h1>
         <Grid container justifyContent="center">
             <Box
             sx={{

@@ -10,9 +10,9 @@ const pricingStructure = [
         btnText: 'Get Started',
         href: '/get-started',
         se1: 'Free domain for one year (up to $30 value)',
-        se2: 'Free hosting for 6 months',
+        se2: 'Free hosting for 3 months',
         se3: '30 days of tech support',
-        se4: '6 alterations within 12 months',
+        se4: '-',
         se5: '-',
     },
     {
@@ -26,9 +26,9 @@ const pricingStructure = [
         btnText: 'Get Started',
         href: '/get-started',
         se1: 'Free domain for one year (up to $50 value)',
-        se2: 'Free hosting for one year',
+        se2: 'Free hosting for 6 months',
         se3: '60 days of tech support',
-        se4: '12 alterations within 12 months',
+        se4: 'Care package for 1 month',
         se5: 'Free email for 3 months',
     },
     // {

@@ -6,7 +6,7 @@ import pricingStructure from "./pricingStructure"
 
 export default function PricingCards() {
     return(
-        <Grid container justifyContent="center">
+        <Grid container justifyContent="center" sx={{ mt: -20 }}>
             <Box
             sx={{
                 p: 6,

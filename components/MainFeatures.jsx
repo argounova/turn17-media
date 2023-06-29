@@ -22,6 +22,7 @@ export default function MainFeatures() {
             altText='card image colors'
             title='Spec Class Website'
             description='Minimalistic in design, professional by nature.'
+            linkTo='/basics'
           />
         </Grid>
         <Grid>
@@ -29,14 +30,17 @@ export default function MainFeatures() {
                 <FeatureTextCard 
                     title='Pricing'
                     description='Flat-rate structure with no hidden fees.'
+                    linkTo='/pricing'
                 />
                 <FeatureTextCard 
                     title='Build Time'
                     description='Efficient development means your site goes live sooner.'
+                    linkTo='/basics'
                 />
                 <FeatureTextCard 
                     title='Satisfaction'
                     description='Client happiness is paramount.'
+                    linkTo='/basics'
                 />
             </Stack>
         </Grid>
@@ -46,6 +50,7 @@ export default function MainFeatures() {
             altText='card image payments'
             title='GT Class Website'
             description='Multiple pages, highly customizable.'
+            linkTo='/basics'
           />
         </Grid>
       </Grid>

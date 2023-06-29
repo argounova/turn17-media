@@ -35,7 +35,7 @@ export default function SinglePage() {
       <BannerHeader 
         tag1='Let the Journey Begin'
         // subtag='Hidden fees'
-        subtext1='Consider this an in-depth jumping off point.  Provide as much info as possible.'
+        subtext1='Consider this an in-depth jumping off point.'
         // subtext2='While nothing here is set in stone, this is the foundation for your site'
       />
       <main className={styles.main}>

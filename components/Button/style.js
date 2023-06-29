@@ -35,7 +35,7 @@ export const Styles = styled.button`
   @media (hover: hover) {
     &:hover {
       cursor: pointer;
-      color: var(--primary);
+      color: var(--char5);
 
       &::after {
         left: 100%;

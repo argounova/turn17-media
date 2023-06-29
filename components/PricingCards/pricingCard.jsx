@@ -1,9 +1,10 @@
 import * as React from 'react';
-import { Box } from '@mui/material';
+import { Box, Stack } from '@mui/material';
 import Card from '@mui/material/Card';
 import CardActions from '@mui/material/CardActions';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
+import CustomBtn from '../Button';
 
 export default function PricingCard({ title, subtitle, price, priceDetail, etc, message, btnText, href, se1, se2, se3, se4, se5 }) {
     return(
@@ -32,10 +33,20 @@ export default function PricingCard({ title, subtitle, price, priceDetail, etc, 
                     
                 </Box>
             <CardActions sx={{ p: 0, ml: 2, mb: 2, display: 'flex', flexDirection: 'column', alignItems: 'flex-start' }}>
-                <Button href={href} color="inherit" variant="contained">{btnText}</Button>
-                <Typography variant="p" sx={{ fontSize: 14, fontFamily: 'Oxygen', mt: 1 }} color="text.secondary">
-                    {message}
-                </Typography>
+                <Stack direction='row' gap={1} mt={1}>
+                    <CustomBtn 
+                        href='/login'
+                        arrow={false}
+                        text='Login'
+                    />
+                    <p style={{ color: 'var(--char5)', fontSize: '1.25rem', fontWeight: '700' }}>or</p>
+                    <CustomBtn 
+                        href='/signup'
+                        arrow={false}
+                        text='Sign Up'
+                    />
+                    <p style={{ color: 'var(--char5a)', fontSize: '1.25rem', fontWeight: '700' }}>to getting started</p>
+                </Stack>
             </CardActions>
             <hr style={{ backgroundColor: 'var(--mb1-4)', border: 'none', height: '2px', margin: '20px' }}/>
             <Box style={{ display: 'flex', flexDirection: 'column', backgroundColor: 'var(--black)', padding: '20px' }}>

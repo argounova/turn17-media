@@ -3,7 +3,7 @@ import Link from "next/link"
 import { MdArrowForward as Arrow } from "react-icons/md"
 import { Styles } from "./style"
 
-const Button = ({ text, to, href, arrow }) => {
+const CustomBtn = ({ text, to, href, arrow }) => {
   return (
     <Styles>
       <Link href={href} style={{ textDecoration: 'none' }}>
@@ -16,4 +16,4 @@ const Button = ({ text, to, href, arrow }) => {
   )
 }
 
-export default Button
+export default CustomBtn
