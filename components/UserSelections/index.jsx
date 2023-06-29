@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useRef, useState } from 'react'
 import { useSession } from 'next-auth/react'
 import { motion } from 'framer-motion';
 import {
@@ -10,8 +10,9 @@ import {
   Grid,
   Typography,
 } from '@mui/material'
-import PayDeposit from './PayDeposit'
-import CalendlyScheduler from './CalendlyScheduler/calendlyScheduler'
+import PayDeposit from '../PayDeposit'
+import CalendlyScheduler from '../CalendlyScheduler/calendlyScheduler'
+import { DashboardStyles } from './style';
 
  
 const UserSelections = () => {
@@ -21,6 +22,7 @@ const UserSelections = () => {
   const [index, setIndex] = useState('')
   const [showSelections, setShowSelections] = useState(false)
   const userEmail = session?.user.email
+  const depositEl = useRef(null)
   
   const getData = () => {
     fetch('/api/routes/userData')
@@ -39,14 +41,29 @@ const UserSelections = () => {
     setShowSelections(showSelections => !showSelections)
   }
 
+  const scrollToDeposit = () => {
+    depositEl.current?.scrollIntoView({ behavior: 'smooth' })
+  }
+
   return (
+    <DashboardStyles>
     <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-      <Button onClick={getData} variant='contained' color='secondary' sx={{ width: '400px', height: '75px', margin: '20px' }}>
-        Display/Hide Current Project
-      </Button>
+      <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+        <Button href='/get-started' variant='contained' className='btn-new'>
+          Start New Project
+        </Button>
+        <Button onClick={getData} variant='contained' className='btn-showhide'>
+          Current Project
+        </Button>
+      </Box>
       {showSelections && dataAvail && (
         <>
-          <h4 style={{ textAlign: 'center' }}>Current Project</h4>
+          <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', width: '100%' }}>
+            <h4 style={{ textAlign: 'center' }}>Current Project</h4>
+            <Button onClick={scrollToDeposit} variant='contained' className='btn-paydeposit'>
+              Pay Deposit and Schedule
+            </Button>
+          </Box>
           <br />
           <Grid container>
             <Box
@@ -122,6 +139,7 @@ const UserSelections = () => {
               ))}
             </Box>
           </Grid>
+          <div ref={depositEl} style={{ height: '100px' }}/>
           <Box
             sx={{
               p: 2,
@@ -156,8 +174,9 @@ const UserSelections = () => {
                   <p>Current completion date: 00/00/2023</p>
                   <p style={{ color: 'yellowgreen' }}>ON TRACK</p>
                 </Box>
-                <Box style={{ display: 'flex', alignItems: 'center', width: '100%' }} gap={2} mt={10}>
-                  {userData[index].submissionComplete? (
+                <Box style={{ display: 'flex', justifyContent: 'flex-end', width: '100%' }} gap={2} mt={10}>
+                  <p>Email info@turn17media.com for any questions or concerns</p>
+                  {/* {userData[index].submissionComplete? (
                     <>
                       <Button variant='contained' style={{ fontSize: 'var(--p)', width: '250px', height: '100px' }} disabled >New Project</Button>
                       <Button variant='contained' color='warning' style={{ fontSize: 'var(--p)', width: '250px', height: '100px' }}>Edit Project</Button>
@@ -169,7 +188,7 @@ const UserSelections = () => {
                       <Button variant='contained' style={{ fontSize: 'var(--p)', width: '250px', height: '100px' }} disabled>Edit Project</Button>
                       <Button variant='contained' style={{ fontSize: 'var(--p)', width: '250px', height: '100px' }} disabled>Cancel Project</Button>
                     </>
-                  )}
+                  )} */}
                 </Box>
               </CardContent>
             </Card>
@@ -204,14 +223,15 @@ const UserSelections = () => {
       )}
       {showSelections && !dataAvail && (
         <>
-        <h1>No current projects...</h1>
-        <h4>Click below to get started!</h4>
+        <h2>No current projects...</h2>
+        {/* <h4>Click below to get started!</h4>
         <br />
-        <Button variant='contained' style={{ backgroundColor: 'var(--mb1-3)', fontSize: 'var(--p)', width: '400px', height: '75px' }} href='/get-started'>New Project</Button>
+        <Button variant='contained' style={{ backgroundColor: 'var(--mb1-3)', fontSize: 'var(--p)', width: '400px', height: '75px' }} href='/get-started'>New Project</Button> */}
         </>
       )}
         
     </Box>
+    </DashboardStyles>
   )
 }
 
