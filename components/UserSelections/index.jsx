@@ -82,7 +82,7 @@ const UserSelections = () => {
                   </Typography>
                   <Divider />
                   <Typography mt={1} sx={{ fontWeight: 'bold' }}>
-                    {userData[index].template}
+                    {userData[index].siteType}
                   </Typography>
                 </CardContent>
               </Card>

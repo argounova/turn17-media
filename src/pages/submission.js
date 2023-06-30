@@ -17,7 +17,7 @@ export default function Submission() {
       <BannerHeader 
         tag1='Your quote has been successfully submitted.'
         tag2='You will receive an email confirmation within 24 hours.'
-        subtext1='You can view your submission in your dashboard.'
+        subtext1='You can view your submission in your dashboard by clicking CURRENT PROJECT.'
       />
       <Footer />
     </>
