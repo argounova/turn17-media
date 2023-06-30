@@ -14,25 +14,28 @@ import Link from 'next/link'
 const FeaturePhotoCard = ({ cardImage, altText, title, description, linkTo }) => {
   return (
     <Card sx={{ 
-      maxWidth: 345,
+      width: '100%',
+      height: 375,
       backgroundColor: 'var(--char1)' 
       }}>
       <Link href={`${linkTo}`}>
-        <CardActionArea>
+        <CardActionArea sx={{ height: 200 }}>
           <Image 
             src={cardImage}
             alt={altText}
-            width={345}
+            // height={200}
+            // width={400}
+            fill={true}
           />
-          <CardContent>
-            <Typography gutterBottom variant="h5" component="div">
+        </CardActionArea>
+        <CardContent>
+            <Typography gutterBottom variant="h5" align='left'>
               {title}
             </Typography>
             <Typography variant="body2" color="text.secondary" align='left'>
               {description}
             </Typography>
           </CardContent>
-        </CardActionArea>
       </Link>
       <CardActions>
         <Link href={`${linkTo}`}>

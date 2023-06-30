@@ -49,7 +49,7 @@ const UserSelections = () => {
   return (
     <DashboardStyles>
     <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-      <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+      <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center', flexWrap: 'wrap' }}>
         <Button href='/get-started' variant='contained' className='btn-new'>
           Start a Free Quote
         </Button>

@@ -11,13 +11,13 @@ import Link from 'next/link'
 const FeatureTextCard = ({ title, description, linkTo }) => {
   return (
     <Card sx={{ 
-      maxWidth: 345,
+      width: '100%',
       backgroundColor: 'var(--mb1-2)'
     }}>
       <Link href={`${linkTo}`}>
         <CardActionArea>
           <CardContent>
-            <Typography gutterBottom variant="h5" component="div">
+            <Typography gutterBottom variant="h5" component="div" align='left'>
               {title}
             </Typography>
             <Typography variant="body2" color='var(--char0)' align='left'>

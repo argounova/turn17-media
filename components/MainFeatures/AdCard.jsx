@@ -1,9 +1,6 @@
 import * as React from 'react'
 import { 
   Box,
-  Card,
-  CardActionArea,
-  CardContent,
   Typography
 } from '@mui/material'
 import Link from 'next/link'

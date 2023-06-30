@@ -4,7 +4,7 @@ export const DashboardStyles = styled.div`
 
 
 .btn-new {
-    width: 400px;
+    width: 380px;
     height: 75px;
     margin: 20px;
     background-color: var(--mb1-3);
@@ -17,7 +17,7 @@ export const DashboardStyles = styled.div`
 }
 
 .btn-showhide {
-    width: 400px;
+    width: 380px;
     height: 75px;
     margin: 20px;
     background-color: var(--mb2-2);
