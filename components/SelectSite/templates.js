@@ -2,6 +2,7 @@ export const tabs = [
     {
         name: "Spec Class",
         title: "Single page site.",
+        cost: 800,
         subtitle: "Please provide links for up to three websites that inspire you.",
         sites: [
             { 
@@ -24,6 +25,7 @@ export const tabs = [
     {
         name: "GT Class",
         title: "Multi-page site.",
+        cost: 1300,
         subtitle: "Please provide links for up to three websites that inspire you.",
         sites: [
             { 

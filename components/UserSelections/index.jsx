@@ -78,7 +78,7 @@ const UserSelections = () => {
               <Card>
                 <CardContent>
                   <Typography gutterBottom>
-                    Template Selection
+                    Site Selection & Examples
                   </Typography>
                   <Divider />
                   <Typography mt={1} sx={{ fontWeight: 'bold' }}>
@@ -154,7 +154,14 @@ const UserSelections = () => {
               <CardContent sx={{ display: 'flex', justifyContent: 'space-between', flexDirection: 'column', alignItems: 'center', width: '100%' }}>
                 <Box style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-end', width: '100%' }} gap={2}>
                   <h4>Balance Due</h4>
-                  <h4>$0.00</h4>
+                  {userData[index].depositPaid? (
+                    (userData[index].siteType == 'Spec Class')?
+                      <h4>${`${userData[index].siteCost - 400}`}.00 </h4>
+                      :
+                      <h4>${`${userData[index].siteCost - 650}`}.00 </h4>
+                  ) :(
+                    <h4>$0.00</h4>
+                  )}
                   {userData[index].depositPaid? (
                     <Button variant='contained' style={{ width: '200px' }}>Pay Balance</Button>
                   ) : (
@@ -172,20 +179,10 @@ const UserSelections = () => {
                         :
                         <PayGTDeposit />
                   )}
-                  {/* {userData[index].depositPaid && (userData[index].siteType == 'GT Class')? (
-                    <Button 
-                    variant='contained'
-                    disabled
-                    style={{ width: '200px' }}
-                    >Pay Deposit
-                    </Button>
-                  ) : (
-                    <PayGTDeposit />
-                  )} */}
                   <Button variant='contained' style={{ backgroundColor: 'var(--mb1-1)', width: '200px' }} disabled>View Invoice</Button>
-                  <p>Status: Not started</p>
-                  <p>Current completion date: 00/00/2023</p>
-                  <p style={{ color: 'yellowgreen' }}>ON TRACK</p>
+                  <p>Status: {userData[index].status}</p>
+                  <p>Current completion date: {userData[index].etc}</p>
+                  <p style={{ color: 'yellowgreen' }}>{userData[index].onTrack}</p>
                 </Box>
                 <Box style={{ display: 'flex', justifyContent: 'flex-end', width: '100%' }} gap={2} mt={10}>
                   <p>Email info@turn17media.com for any questions or concerns</p>

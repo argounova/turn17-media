@@ -54,8 +54,12 @@ export default function Selector() {
         const data = {
             email: session.user.email,
             siteType: selectedTab.name,
+            siteCost: selectedTab.cost,
             siteExs: siteEx,
-            siteExBypass: bypass
+            siteExBypass: bypass,
+            projectStatus: 'Not started',
+            etc: '00/00/2023',
+            onTrack: 'ON TRACK'
         }
         const response = await fetch('/api/routes/templateRoute', {
             method: 'PUT',

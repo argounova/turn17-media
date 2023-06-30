@@ -32,7 +32,11 @@ export default async function handler(req, res) {
         { $set: { 
           "siteType" : update.siteType,
           "siteExamples" : update.siteExs,
-          "siteExampleBypass" : update.siteExBypass
+          "siteExampleBypass" : update.siteExBypass,
+          "siteCost" : update.siteCost,
+          "status" : update.projectStatus,
+          "etc" : update.etc,
+          "onTrack" : update.onTrack
         } },
         { upsert: true }
       )
