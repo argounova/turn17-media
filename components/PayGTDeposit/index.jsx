@@ -7,11 +7,11 @@ const stripePromise = loadStripe(
 );
 
 const deposit = {
-  stripeId: 'price_1NOQsKCCfVRJgqGQpvux2Iwc',
+  stripeId: 'price_1NOQsKCCfVRJgqGQBaiKDF4Q',
   quantity: 1,
 }
 
-const PayDeposit = () => {
+const PayGTDeposit = () => {
     
   const handleCheckout = async () => {
     const stripe = await stripePromise;
@@ -30,10 +30,10 @@ const PayDeposit = () => {
     <Button 
       variant='contained'
       onClick={handleCheckout}
-      style={{ backgroundColor: 'var(--mb2-2)', color: 'var(--char5)', width: '200px' }}
+      style={{ backgroundColor: 'var(--mb2-1)', color: 'var(--char5)', width: '200px' }}
     >Pay Deposit
     </Button>
   )
 }
 
-export default PayDeposit
+export default PayGTDeposit

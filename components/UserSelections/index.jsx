@@ -1,6 +1,6 @@
 import { useRef, useState } from 'react'
 import { useSession } from 'next-auth/react'
-import { motion } from 'framer-motion';
+import { motion } from 'framer-motion'
 import {
   Box,
   Button,
@@ -10,9 +10,10 @@ import {
   Grid,
   Typography,
 } from '@mui/material'
-import PayDeposit from '../PayDeposit'
+import PayGTDeposit from '../PayGTDeposit'
+import PaySpecDeposit from '../PaySpecDeposit'
 import CalendlyScheduler from '../CalendlyScheduler/calendlyScheduler'
-import { DashboardStyles } from './style';
+import { DashboardStyles } from './style'
 
  
 const UserSelections = () => {
@@ -166,9 +167,21 @@ const UserSelections = () => {
                     style={{ width: '200px' }}
                     >Pay Deposit
                     </Button>
-                  ) : (
-                    <PayDeposit />
+                  ) : ( (userData[index].siteType == 'Spec Class')?
+                        <PaySpecDeposit />
+                        :
+                        <PayGTDeposit />
                   )}
+                  {/* {userData[index].depositPaid && (userData[index].siteType == 'GT Class')? (
+                    <Button 
+                    variant='contained'
+                    disabled
+                    style={{ width: '200px' }}
+                    >Pay Deposit
+                    </Button>
+                  ) : (
+                    <PayGTDeposit />
+                  )} */}
                   <Button variant='contained' style={{ backgroundColor: 'var(--mb1-1)', width: '200px' }} disabled>View Invoice</Button>
                   <p>Status: Not started</p>
                   <p>Current completion date: 00/00/2023</p>
