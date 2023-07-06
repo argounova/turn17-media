@@ -5,7 +5,7 @@ import LinksOption from "./Links"
 import Divider from '@mui/material/Divider'
 
 
-const Options = () => {
+const SelectOptions = () => {
     return(
         <OptionsStyles>
             <h1>Customize</h1>
@@ -25,4 +25,4 @@ const Options = () => {
     )
 }
 
-export default Options
+export default SelectOptions

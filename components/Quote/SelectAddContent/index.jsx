@@ -9,7 +9,7 @@ import { ContentStyles } from './style'
 import DropDownTextArea from './DropDownText'
 import dropDownTextQuestions from './dropDownTextQuestions'
 
-const Content = () => {
+const SelectContent = () => {
   const { data: session } = useSession()
   const [contentItem, setContent] = useState(dropDownTextQuestions)
   let contentAreas = []
@@ -87,4 +87,4 @@ const Content = () => {
   )
 }
 
-export default Content
+export default SelectContent

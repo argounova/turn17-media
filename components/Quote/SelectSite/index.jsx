@@ -29,7 +29,7 @@ export const siteExamples = [
 ]
 
 
-export default function Selector() {
+export default function SelectSite() {
   const { data: session } = useSession()
   const [selectedTab, setSelectedTab] = useState(tabs[0])
   const [selectedValue, setSelectedValue] = useState('')
@@ -154,7 +154,7 @@ export default function Selector() {
                   variant='contained'
                   sx={{ width: 'fit-content' }}
                 >
-                  Save Selection
+                  Save Sites
                 </Button>
                 </Box>
               </motion.div>

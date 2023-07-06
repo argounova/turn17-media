@@ -25,7 +25,7 @@ export default function MainFeatures() {
           <AdCard 
             title='Free Quote'
             description='Start a quote today!'
-            linkTo='/signup'
+            linkTo='/free-quote'
           />
         </Grid>
         <Grid xs={1} sm={2} md={2} lg={2} xl={2.5}>
