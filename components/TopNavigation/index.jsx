@@ -128,8 +128,8 @@ function TopNavigation() {
                       </MenuItem>
                   ) : (
                       <MenuItem sx={{ flexDirection: 'column', alignItems: 'flex-start' }}>
-                        <Button sx={{ fontFamily: 'Oxygen', color: 'var(--char5)' }} onClick={signIn}>Login</Button>
-                        <Button sx={{ fontFamily: 'Oxygen', color: 'var(--char5)' }} href='/signup'>Sign Up</Button>
+                        <Button sx={{ fontFamily: 'Oxygen', color: 'var(--char5)' }} onClick={signIn}>Client Login</Button>
+                        {/* <Button sx={{ fontFamily: 'Oxygen', color: 'var(--char5)' }} href='/signup'>Sign Up</Button> */}
                       </MenuItem>
                   )
                 }

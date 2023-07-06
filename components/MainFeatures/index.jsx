@@ -69,7 +69,7 @@ export default function MainFeatures() {
           <AdCard 
             title='Free Consultation'
             description='Schedule now!'
-            linkTo='/free-consultation'
+            linkTo='/#free-consultation'
           />
         </Grid>
         <Grid sm={1.5} md={2} lg={2} xl={2} sx={{ display: { xs: 'none', sm: 'block', md: 'none' } }}>

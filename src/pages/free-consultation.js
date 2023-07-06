@@ -3,6 +3,11 @@ import TopNavigation from '../../components/TopNavigation'
 import BannerHeader from '../../components/BannerHeader'
 import Footer from '../../components/Footer/Footer'
 import CalendlyScheduler from '../../components/CalendlyScheduler/calendlyScheduler'
+import {
+  Box,
+  Card,
+  Container
+} from '@mui/material'
 
 
 export default function Cancel() {
@@ -16,11 +21,15 @@ export default function Cancel() {
       </Head>
       <TopNavigation />
       <BannerHeader 
-        tag1='Schedule a free 20 minute consultation.'
+        tag1='Schedule a free consultation.'
         subtag='Commitments'
         subtext1='Speak with a developer via Google Meet.'
       />
-      <CalendlyScheduler />
+      <Container maxWidth='xl' alignItems='center' sx={{ display: 'flex', justifyContent: 'center' }}>
+      <Card sx={{ width: 'fit-content', m: 2 }}>
+        <CalendlyScheduler />
+      </Card>
+      </Container>
       <Footer />
     </>
   )

@@ -37,9 +37,9 @@ export default function Latest({ latest }) {
       </Head>
       <TopNavigation />
       <BannerHeader 
-        tag1='Latest happenings from Turn17'
+        tag1='Checkout the latest from Turn17'
         // subtag='Hidden fees'
-        subtext1='Check out some of our recent clients, new sites and even our extracurricular activites.'
+        subtext1='Find client spotlights, new sites and even our extracurricular activites.'
         // subtext2='Contact info@turn17media.com with any questions.'
       />
       <main className={styles.main}>

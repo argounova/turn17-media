@@ -7,11 +7,11 @@ const questions = [
     {
         id: '2',
         question: 'Is a single page website enough for me?',
-        answer: 'You might be surprised at how much content can reasonbly fit on a single page site.  Modals (or pop-ups) can cover things like contact or sign-up forms.  There is technically no limit to how far down you can scroll on one page and features like a navigation menu and links to other parts of the same page are included.',
+        answer: 'You might be surprised at how much content can reasonbly fit on a single page site.  Modals (or pop-ups) can cover things like contact, sign-up forms, and even photo galleries.',
     },
     {
         id: '3',
-        question: 'Can I really have a website up and running in as little as 14 business days?',
+        question: 'Can I really have a website up and running in as little as 2-3 weeks?',
         answer: 'Yes!  But (there is always a but)...keep in mind that the estimated time to completion, or ETC, listed is for design and development only.  Other considerations such as securing a domain, setting up hosting and providing Turn17 Media with photos/content can add time.  If you happen to have everything else in place then there is no reason your site cannot go live at the end of development.',
     },
     {
@@ -22,12 +22,12 @@ const questions = [
     {
         id: '5',
         question: 'What if I change my mind?',
-        answer: 'Congratulations, you are human!  A change of mind (or heart) is understandable and not entirely unexpected.  Whether you want different colors/fonts or feel the need to switch from a Spec site to a GT site, we got you.  Your happiness is paramount and we will work with you on whatever the issue.',
+        answer: 'Congratulations, you are human!  A change of mind (or heart) is understandable and not entirely unexpected.  Whether you want different colors/fonts or feel the need to switch from a Spec site to a GT site.  Your satisfaction is paramount and we will work with you on whatever the issue.',
     },
     {
         id: '6',
         question: 'Are your sites mobile friendly?',
-        answer: 'Absolutely.  We have a mobile-first design philosophy ensuring your site will look and function beautifully no matter the screen size.',
+        answer: 'We have a mobile-first design philosophy ensuring your site will look and function beautifully no matter the screen size.',
     },
     {
         id: '7',
@@ -36,8 +36,8 @@ const questions = [
     },
     {
         id: '8',
-        question: 'How many 1x1 consultation sessions do I get?',
-        answer: 'A minimum of three one-hour meetings via Google Meet.  More if needed.',
+        question: 'How many developer meetings do I get?',
+        answer: 'A minimum of three one-hour meetings via Google Meet will be available to you.  More if needed.',
     },
     {
         id: '9',
@@ -57,7 +57,7 @@ const questions = [
     {
         id: '12',
         question: 'Is my deposit refundable?',
-        answer: 'Deposits are refundable for the first 24 hours after submitting the deposit.  After 24 hours, deposits are non-refundable (but can be applied towards a future project).',
+        answer: 'Deposits are non-refundable (but can be applied towards a future project).',
     },
 ]
 

@@ -220,12 +220,12 @@ export default function SignInSide({ providers }) {
               >
                 {authType}
               </Button>
-              <Grid container>
-                {/* <Grid item xs>
+              {/* <Grid container>
+                <Grid item xs>
                   <Link href="#" variant="body2">
                     Forgot password?
                   </Link>
-                </Grid> */}
+                </Grid>
                 <Grid item>
                   <Typography component="p" variant="body2">
                     {authType === "Login"
@@ -238,7 +238,7 @@ export default function SignInSide({ providers }) {
                     </Button>
                   </Typography>
                 </Grid>
-              </Grid>
+              </Grid> */}
               <Copyright sx={{ mt: 5 }} />
             </Box>
           </Box>

@@ -36,7 +36,7 @@ export default function PricingCard({ title, subtitle, price, priceDetail, etc, 
                     
                 </Box>
             <CardActions sx={{ p: 0, ml: 2, mb: 2, display: 'flex', flexDirection: 'column', alignItems: 'flex-start' }}>
-                {session? (
+                {/* {session? (
                     <Button href='/get-started' variant='contained' color='inherit'>Get Started</Button>
                 ) : (
                     <Stack direction='row' gap={1} mt={1}>
@@ -53,8 +53,8 @@ export default function PricingCard({ title, subtitle, price, priceDetail, etc, 
                         />
                         <p style={{ color: 'var(--char5a)', fontSize: '1.25rem', fontWeight: '700' }}>to start a free quote</p>
                     </Stack>
-                )}
-                
+                )} */}
+                <Button href='/free-quote' variant='contained' color='inherit'>Get a Free Quote</Button>
             </CardActions>
             <hr style={{ backgroundColor: 'var(--mb1-4)', border: 'none', height: '2px', margin: '20px' }}/>
             <Box style={{ display: 'flex', flexDirection: 'column', backgroundColor: 'var(--black)', padding: '20px' }}>

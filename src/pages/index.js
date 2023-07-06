@@ -7,6 +7,7 @@ import DownArrow from '../../components/DownArrow'
 import Parallax from '../../components/Parallax/Parallax'
 import FinishedSiteEx from '../../components/FinishedSiteExample'
 import Contact from '../../components/Contact'
+import CalendlyScheduler from '../../components/CalendlyScheduler/calendlyScheduler'
 import Footer from '../../components/Footer/Footer'
 
 
@@ -35,6 +36,8 @@ export default function Home() {
           <DownArrow />
           <FinishedSiteEx />
           <Contact />
+          <div id='free-consultation' style={{ position: 'absolute', bottom: '800px' }}/>
+          <CalendlyScheduler />
         </div>
       </main>
       <Footer />

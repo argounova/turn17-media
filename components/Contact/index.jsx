@@ -97,15 +97,15 @@ export default function Contact() {
             </div>
         )}
         <div className='contact-container'>
-            <p style={{ fontSize: 'var(--h4)', color: 'var(--char0)' }}>
+            <p style={{ color: 'var(--char0)' }}>
                 We specialize in automotive and motorsports related businesses and clients.  From a simple car club to a premier detail shop, we have you covered. 
             </p>
             <br />
-            <p style={{ fontSize: 'var(--h4)', color: 'var(--char0)' }}>
+            <p style={{ color: 'var(--char0)' }}>
                 Is your company auto adjacent or even unrelated entirely?  We do that, too!  Past clients include a music production company and custom jewler to name a few.
             </p>
             <br />
-            <p style={{ fontSize: 'var(--h4)', color: 'var(--char0)' }}>
+            <p style={{ color: 'var(--char0)' }}>
                 Don&#39;t hesitate to reach out with any questions.  We are happy to help.  
             </p>
         </div>     

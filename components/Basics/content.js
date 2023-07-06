@@ -11,7 +11,7 @@ export const tabs = [
         primaryText3: "Hosting and domains.",
         secondaryText3: "Three months of hosting and a one-year domain valued up to $30 are included.  You can also use a domain you already own.", 
         primaryText4: "Deposits and payments.",
-        secondaryText4: "A 50% deposit is required upfront.  Deposits are non-refundable 24 hours from receipt.  The balance will be due before the site can go live.",
+        secondaryText4: "A 50% deposit is required upfront.  Deposits are non-refundable.  The balance will be due before the site can go live.",
         primaryText5: "Communication.",
         secondaryText5: "Three one-hour, Google Meet developer meetings included.  Your developer will always be available via email.", 
         href: "/pricing",         
@@ -28,7 +28,7 @@ export const tabs = [
         primaryText3: "Hosting and domains.",
         secondaryText3: "Six months of hosting and a one-year domain valued up to $50 are included.  You can also use a domain you already own.", 
         primaryText4: "Deposits and payments.",
-        secondaryText4: "A 50% deposit is required upfront.  Deposits are non-refundable 24 hours from receipt.  The balance will be due before the site can go live.",
+        secondaryText4: "A 50% deposit is required upfront.  Deposits are non-refundable.  The balance will be due before the site can go live.",
         primaryText5: "Communication.",
         secondaryText5: "Four one-hour, Google Meet developer meetings included.  Your developer will always be available via email.",
         href: "/pricing" 

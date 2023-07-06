@@ -45,8 +45,22 @@ export const ContactStyles = styled.div`
         margin: 20px;
         border-radius: 5px;
 
+        p {
+            font-size: 20px;
+        }
+
         @media (min-width: 821px) {
-            width: 30%
+            width: 30%;
+
+            p {
+                font-size: 16px;
+            }
+        }
+
+        @media (min-width: 1200px) {
+            p {
+                font-size: 20px;
+            }
         }
     }
 `
