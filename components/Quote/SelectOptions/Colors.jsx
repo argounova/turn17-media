@@ -7,6 +7,7 @@ import {
     InputAdornment,
     TextField
 } from '@mui/material'
+import { OptionsStyles } from './style'
   
 
 export const colors = [
@@ -67,9 +68,9 @@ const ColorsOption = () => {
         <>
         {showComponent? (
             <>
-                <h2>Colors</h2>
+                <h2 style={{ fontFamily: 'audiowide' }}>COLORS</h2>
                 <br />
-                <p>Arguably the most impactful element of your website is the color palette as this sets the overall tone and personality.  It can be difficult to narrow down all of the colors in the rainbow to only five but a cohesive site typically won&apos;t have more than that.</p>
+                <h5>Arguably the most impactful element of your website is the color palette as this sets the overall tone and personality.  It can be difficult to narrow down all of the colors in the rainbow to only five but a cohesive site typically won&apos;t have more than that.</h5>
                 <br />
                 <div style={{ display: 'flex', flexDirection: 'row', flexWrap: 'wrap' }}>
                     {colors.map((item, index) => (
@@ -110,8 +111,10 @@ const ColorsOption = () => {
                 <Button
                     onClick={handleSave}
                     variant='contained'
+                    fullWidth
+                    className='save-btn'
                 >
-                    Save Colors
+                    Save & Continue
                 </Button>
             </>
         ) : (

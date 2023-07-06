@@ -21,5 +21,13 @@ export const OptionsStyles = styled.div`
     }
 }
 
+.save-btn {
+    background-color: var(--mb1-3);
+    color: var(--char4);
+    font-size: var(--p);
 
+    &:hover {
+      background-color: var(--mb1-4);
+    }
+}
 `

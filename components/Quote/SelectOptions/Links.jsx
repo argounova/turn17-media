@@ -1,5 +1,6 @@
 import { useState } from "react"
 import { useSession } from 'next-auth/react'
+import { OptionsStyles } from "./style"
 import {
   Button,
   Checkbox,
@@ -90,6 +91,8 @@ const LinksOption = () => {
           <Button
             onClick={handleSave}
             variant='contained'
+            fullWidth
+            className='save-btn'
           >
             Save Links
           </Button>

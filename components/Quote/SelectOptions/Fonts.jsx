@@ -1,9 +1,10 @@
 import { useState } from 'react'
-import { useSession } from 'next-auth/react';
+import { useSession } from 'next-auth/react'
+import { OptionsStyles } from './style'
 import Button from '@mui/material/Button'
-import TextField from '@mui/material/TextField';
-import FormControlLabel from '@mui/material/FormControlLabel';
-import Checkbox from '@mui/material/Checkbox';
+import TextField from '@mui/material/TextField'
+import FormControlLabel from '@mui/material/FormControlLabel'
+import Checkbox from '@mui/material/Checkbox'
 
 
 export const fonts = [
@@ -56,9 +57,9 @@ const FontsOption = () => {
         <>
             {showComponent? (
                 <>
-                    <h2>Fonts</h2>
+                    <h2 style={{ fontFamily: 'audiowide' }}>FONTS</h2>
                     <br />
-                    <p>Further customization comes in the form of choosing up to two fonts.  Keep in mind that each font has the ability to be italic, multiple weights and any size or color giving you a broad spectrum of creativity.</p>
+                    <h5>Further customization comes in the form of choosing up to two fonts.  Keep in mind that each font has the ability to be italic, multiple weights and any size or color giving you a broad spectrum of creativity.</h5>
                     <br />
                     {fonts.map((item, index) => (
                         <TextField 
@@ -83,8 +84,10 @@ const FontsOption = () => {
                     <Button
                         onClick={handleSave}
                         variant='contained'
+                        fullWidth
+                        className='save-btn'
                     >
-                        Save Fonts
+                        Save & Continue
                     </Button>
                 </>
             ) : (

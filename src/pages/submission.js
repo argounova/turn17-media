@@ -16,8 +16,7 @@ export default function Submission() {
       <TopNavigation />
       <BannerHeader 
         tag1='Your quote has been successfully submitted.'
-        tag2='You will receive an email confirmation within 24 hours.'
-        subtext1='You can view your submission in your dashboard by clicking CURRENT PROJECT.'
+        tag2='We will be in touch within 2-3 business days.'
       />
       <Footer />
     </>

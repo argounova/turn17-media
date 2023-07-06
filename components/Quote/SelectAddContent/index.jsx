@@ -46,10 +46,9 @@ const SelectContent = () => {
   return(
     <>
       <ContentStyles>
-        <h1>Additional Info</h1>
-        <br />
         <div className='content-container'>
-          <p>This section deals primarily with written content on your website.</p>
+        <h2 style={{ fontFamily: 'audiowide' }}>ADDITIONAL INFORMATION</h2>
+        <br />
           <Grid container justifyContent="flex-start">
             <Box
               sx={{
@@ -78,8 +77,9 @@ const SelectContent = () => {
             onClick={handleSave}
             variant='contained'
             fullWidth
+            className='save-btn'
           >
-            Save content and submit
+            Save & Submit
           </Button>
         </div>
       </ContentStyles>

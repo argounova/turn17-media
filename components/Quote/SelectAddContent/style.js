@@ -28,18 +28,27 @@ export const ContentStyles = styled.div`
     }
 }
 
+.save-btn {
+  background-color: var(--mb1-3);
+  color: var(--char4);
+  font-size: var(--p);
+
+  &:hover {
+    background-color: var(--mb1-4);
+  }
+}
+
 .question {
     min-height: calc(var(--gap) * 2);
-    border-radius: 6px;
+    border-radius: 5px;
+    border: none;
     width: 100%;
-    background: linear-gradient(131deg, rgba(58,134,148,1) 18%, rgba(73,156,166,1) 100%);
-    border: 2px solid rgba(0, 0, 0, 1);
-    color: var(--char0);
+    background: transparent;
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 8px 20px;
-    font-size: var(--p);
+    font-size: var(--h5);
     font-family: Oxygen;
     text-align: start;
     cursor: arrow;

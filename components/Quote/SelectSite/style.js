@@ -42,14 +42,22 @@ export const BasicsStyles = styled.section`
     width: 100%;
   }
 
-  
+  .save-btn {
+    background-color: var(--mb1-3);
+    color: var(--char4);
+    font-size: var(--p);
+
+    &:hover {
+      background-color: var(--mb1-4);
+    }
+  }
   
   ul,
   li {
     list-style: none;
     padding: 0;
     margin: 0;
-    font-family: "Oxygen", sans-serif;
+    font-family: "audiowide", sans-serif;
     font-weight: 500;
     font-size: var(--h5);
   }
@@ -77,12 +85,13 @@ export const BasicsStyles = styled.section`
     left: 0;
     right: 0;
     height: 5px;
-    background: var(--mb1-1);
-    border-radius: 25px;
+    background: var(--char3);
+    border-radius: 5px;
   }
   
   li.selected {
     background: var(--mb1-3);
+    border-radius: 5px;
   }
   
   li button {

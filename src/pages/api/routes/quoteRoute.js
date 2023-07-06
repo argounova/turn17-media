@@ -14,11 +14,11 @@ export default async function handler(req, res) {
     }
   } else if (req.method === "POST") {
     try {
-      const selections = JSON.parse(req.body)
+      const quoteData = JSON.parse(req.body)
       const client = await clientPromise
       const db = client.db("turn17_media")
-      await db.collection("selections").insertOne(selections)
-      res.status(200).json({ selections })
+      await db.collection("users").insertOne(quoteData)
+      res.status(200).json({ quoteData })
     } catch (e) {
       console.error(e)
     }
