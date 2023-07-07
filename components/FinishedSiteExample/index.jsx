@@ -10,13 +10,13 @@ export default function FinishedSiteEx() {
       <motion.div
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
-        transition={{ duration: 2.5 }}
+        transition={{ duration: 4 }}
         style={{
           marginTop: '2%',
           marginBottom: '2%'
         }}
       >
-        <div>
+        <div style={{ width: '100%' }}>
           <h2
             className='common'
             style={{
@@ -29,13 +29,9 @@ export default function FinishedSiteEx() {
           </h2>
         </div>
         <Image 
-          className='common'
           src={finishedSiteEx}
           alt='finished site example'
-          style={{
-            borderBottomLeftRadius: '10px',
-            borderBottomRightRadius: '10px',
-          }}
+          className='image-example'
         />
       </motion.div>
       <Button

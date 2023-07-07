@@ -1,10 +1,11 @@
-import ArrowDownwardIcon from '@mui/icons-material/ArrowDownward';
-import Icon from '@mui/material/Icon';
-import { motion } from 'framer-motion';
+import ArrowDownwardIcon from '@mui/icons-material/ArrowDownward'
+import Icon from '@mui/material/Icon'
+import { motion } from 'framer-motion'
+import { Container } from '@mui/material'
 
 export default function DownArrow() {
     return(
-        <>
+        <Container maxWidth sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', backgroundColor: 'var(--char5)' }}>
             <motion.div
                 style={{
                     height: '50px',
@@ -36,6 +37,6 @@ export default function DownArrow() {
                     <ArrowDownwardIcon />
                 </Icon>
             </motion.div>
-        </>
+        </Container>
     )
 }

@@ -33,9 +33,17 @@ export const SiteExample = styled.div`
         color: var(--mb1-1);
         text-align: center;
         background-color: var(--white);
-        width: 90vw;
+        width: 100%;
         height: auto;
-        box-shadow: 2px 3px 2px var(--char2);
+    }
+
+    .image-example {
+        width: 550px;
+        height: auto;
+
+        @media (min-width: 666px) {
+            width: 100%;
+        }
     }
 
     @media(min-width:1180px) {

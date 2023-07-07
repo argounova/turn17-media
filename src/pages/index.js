@@ -5,10 +5,13 @@ import BannerHeader from '../../components/BannerHeader'
 import MainFeatures from '../../components/MainFeatures'
 import DownArrow from '../../components/DownArrow'
 import Parallax from '../../components/Parallax/Parallax'
+import BannerAnimA from '../../components/Banners/BannerAnimA'
+import BannerA from '../../components/Banners/BannerA'
 import FinishedSiteEx from '../../components/FinishedSiteExample'
 import Contact from '../../components/Contact'
 import CalendlyScheduler from '../../components/CalendlyScheduler/calendlyScheduler'
 import Footer from '../../components/Footer/Footer'
+import BannerB from '../../components/Banners/BannerB'
 
 
 export default function Home() {
@@ -31,8 +34,11 @@ export default function Home() {
       <main className={styles.main}>
         <div className={styles.center}>
           <MainFeatures />
-          <DownArrow />
-          <Parallax />
+          {/* <DownArrow /> */}
+          {/* <Parallax /> */}
+          <BannerAnimA />
+          <BannerA />
+          <BannerB />
           <DownArrow />
           <FinishedSiteEx />
           <Contact />
