@@ -2,7 +2,11 @@ import { motion } from "framer-motion"
 import { SiteExample } from "./style";
 import Image from "next/image";
 import finishedSiteEx from "../../public/images/wm.png"
-import { Button } from "@mui/material";
+import { 
+  Box,
+  Button,
+  Typography
+} from "@mui/material";
 
 export default function FinishedSiteEx() {
   return(
@@ -10,29 +14,19 @@ export default function FinishedSiteEx() {
       <motion.div
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
-        transition={{ duration: 4 }}
-        style={{
-          marginTop: '2%',
-          marginBottom: '2%'
-        }}
+        transition={{ duration: 2 }}
+        style={{ width: '100%' }}
       >
-        <div style={{ width: '100%' }}>
-          <h2
-            className='common'
-            style={{
-              borderTopLeftRadius: '10px',
-              borderTopRightRadius: '10px',
-              padding: '2% 0px',
-            }}
-          >
+        <Box>
+          <Typography variant='h2' align='center' sx={{ color: 'var(--mb1-3)' }}>
             Your site.  Easy peasy, lemon squeezy.
-          </h2>
-        </div>
-        <Image 
-          src={finishedSiteEx}
-          alt='finished site example'
-          className='image-example'
-        />
+          </Typography>
+          <Image 
+            src={finishedSiteEx}
+            alt='finished site example'
+            className='image-example'
+          />
+        </Box>
       </motion.div>
       <Button
         href='/basics'

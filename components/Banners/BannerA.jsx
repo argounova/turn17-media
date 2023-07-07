@@ -11,7 +11,7 @@ import {
 
 const BannerA = () => {
   return(
-    <Container maxWidth disableGutters sx={{ height: '500px', display: 'flex', justifyContent: 'center', alignItems: 'center', background: 'linear-gradient(103deg, rgba(31,71,79,1) 0%, rgba(49,109,120,1) 22%, rgba(49,109,120,1) 78%, rgba(31,71,79,1) 100%)' }}>
+    <Container maxWidth disableGutters sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', background: 'linear-gradient(103deg, rgba(31,71,79,1) 0%, rgba(49,109,120,1) 22%, rgba(49,109,120,1) 78%, rgba(31,71,79,1) 100%)', p: 4 }}>
      <Grid
       container
       alignItems='center'

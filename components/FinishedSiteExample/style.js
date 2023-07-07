@@ -5,7 +5,7 @@ export const SiteExample = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 100vw;
+    width: 100%;
     background-color: var(--char5);
     padding-bottom: 50px;
 
@@ -27,14 +27,6 @@ export const SiteExample = styled.div`
     .btn-anim {
         position: absolute;
 
-    }
-
-    .common {
-        color: var(--mb1-1);
-        text-align: center;
-        background-color: var(--white);
-        width: 100%;
-        height: auto;
     }
 
     .image-example {
