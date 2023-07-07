@@ -4,14 +4,16 @@ import TopNavigation from '../../components/TopNavigation'
 import BannerHeader from '../../components/BannerHeader'
 import MainFeatures from '../../components/MainFeatures'
 import DownArrow from '../../components/DownArrow'
-import Parallax from '../../components/Parallax/Parallax'
 import BannerAnimA from '../../components/Banners/BannerAnimA'
+import BannerAnimB from '../../components/Banners/BannerAnimB'
 import BannerA from '../../components/Banners/BannerA'
+import BannerB from '../../components/Banners/BannerB'
+import BannerC from '../../components/Banners/BannerC'
+import BannerD from '../../components/Banners/BannerD'
 import FinishedSiteEx from '../../components/FinishedSiteExample'
 import Contact from '../../components/Contact'
 import CalendlyScheduler from '../../components/CalendlyScheduler/calendlyScheduler'
 import Footer from '../../components/Footer/Footer'
-import BannerB from '../../components/Banners/BannerB'
 
 
 export default function Home() {
@@ -34,11 +36,12 @@ export default function Home() {
       <main className={styles.main}>
         <div className={styles.center}>
           <MainFeatures />
-          {/* <DownArrow /> */}
-          {/* <Parallax /> */}
           <BannerAnimA />
           <BannerA />
-          <BannerB />
+          <BannerAnimB />
+
+          <BannerC />
+          <BannerD />
           <DownArrow />
           <FinishedSiteEx />
           <Contact />

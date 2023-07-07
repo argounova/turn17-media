@@ -6,7 +6,7 @@ import {
 } from "@mui/material"
 
 
-const BannerB = () => {
+const BannerD = () => {
   return(
     <Container maxWidth disableGutters sx={{ height: '666px', display: 'flex' }}>
       
@@ -14,4 +14,4 @@ const BannerB = () => {
   )
 }
 
-export default BannerB
+export default BannerD
