@@ -8,7 +8,7 @@ import {
 
 const BannerD = () => {
   return(
-    <Container maxWidth disableGutters sx={{ height: '666px', display: 'flex' }}>
+    <Container  sx={{ minWidth: '100vw', height: '666px', display: 'flex' }}>
       
     </Container>
   )

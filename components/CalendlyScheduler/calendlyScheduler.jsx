@@ -9,7 +9,7 @@ import {
 
 const CalendlyScheduler = () => {
   return (
-    <Container maxWidth sx={{ display: 'flex', justifyContent: 'center', backgroundColor: 'var(--char5)' }}>
+    <Container sx={{ minWidth: '100vw', display: 'flex', justifyContent: 'center', backgroundColor: 'var(--char5)' }}>
       <Card sx={{ width: 'fit-content', m: 2 }}>
         <div>
           <InlineWidget

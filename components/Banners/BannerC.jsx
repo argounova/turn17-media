@@ -11,7 +11,7 @@ import {
 const BannerC = () => {
   return(
     <BannerStyles>
-      <Container maxWidth disableGutters sx={{ display: 'flex' }}>
+      <Container sx={{ minWidth: '100vw', display: 'flex' }}>
         <Image 
           src={`/images/daytona-banner-background.jpg`}
           alt='turn17media banner background'

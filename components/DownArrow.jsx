@@ -5,7 +5,7 @@ import { Container } from '@mui/material'
 
 export default function DownArrow() {
     return(
-        <Container maxWidth sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', backgroundColor: 'var(--char5)' }}>
+        <Container sx={{ minWidth: '100vw', display: 'flex', justifyContent: 'center', alignItems: 'center', backgroundColor: 'var(--char5)' }}>
             <motion.div
                 style={{
                     height: '50px',

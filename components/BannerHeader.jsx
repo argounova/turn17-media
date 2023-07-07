@@ -7,7 +7,7 @@ import Image from 'next/image'
 
 function BannerHeader({ tag1, tag2, subtag, subtext1, subtext2 }) {
   return(
-    <Container disableGutters maxWidth sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', mb: -8 }}>
+    <Container disableGutters maxWidth='xl' sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', mb: -8 }}>
       <Image 
         src={`/images/banner-header-image.jpg`}
         width={2500}

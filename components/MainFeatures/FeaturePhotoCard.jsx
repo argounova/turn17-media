@@ -26,6 +26,7 @@ const FeaturePhotoCard = ({ cardImage, altText, title, description, linkTo }) =>
             // height={200}
             // width={400}
             fill={true}
+            sizes='(min-width: 400px) 25vw'
           />
         </CardActionArea>
         <CardContent>

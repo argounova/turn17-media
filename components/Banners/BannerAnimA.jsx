@@ -1,83 +1,88 @@
-import Image from "next/image"
-import { motion, AnimatePresence } from "framer-motion"
+import { motion } from "framer-motion"
 import { 
-  Container
+  Container,
+  Typography
 } from "@mui/material"
+import LocalAtmIcon from '@mui/icons-material/LocalAtm'
+import MobileFriendlyIcon from '@mui/icons-material/MobileFriendly'
+import DirectionsCarIcon from '@mui/icons-material/DirectionsCar'
+import SatelliteAltIcon from '@mui/icons-material/SatelliteAlt'
 
 
 const BannerAnimA = () => {
   return(
-    <Container maxWidth disableGutters sx={{ height: '333px', display: 'flex', justifyContent: 'center', alignItems: 'center', backgroundColor: 'var(--char5)' }}>
-      <AnimatePresence>
-        <motion.div
-          initial={{ x: -100, opacity: 0 }}
-          whileInView={{ x: 0, opacity: 1 }}
-          transition={{ duration: 1.2 }}
-          style={{
-            width: '15%',
-            display: 'flex',
-            justifyContent: 'space-evenly'
-          }}
-        >
-          <Image 
-              src={`/turn17-media-logo-v1-1.png`}
-              alt='turn17 media logo'
-              height={150}
-              width={150}
-          />
-        </motion.div>
-        <motion.div
-          initial={{ y: -100, opacity: 0 }}
-          whileInView={{ y: 0, opacity: 1 }}
-          transition={{ duration: 1.2 }}
-          style={{
-            width: '15%',
-            display: 'flex',
-            justifyContent: 'space-evenly'
-          }}
-        >
-          <Image 
-              src={`/turn17-media-logo-v1-1.png`}
-              alt='turn17 media logo'
-              height={150}
-              width={150}
-          />
-        </motion.div>
-        <motion.div
-          initial={{ y: 100, opacity: 0 }}
-          whileInView={{ y: 0, opacity: 1 }}
-          transition={{ duration: 1.2 }}
-          style={{
-            width: '15%',
-            display: 'flex',
-            justifyContent: 'space-evenly'
-          }}
-        >
-          <Image 
-              src={`/turn17-media-logo-v1-1.png`}
-              alt='turn17 media logo'
-              height={150}
-              width={150}
-          />
-        </motion.div>
-        <motion.div
-          initial={{ x: 100, opacity: 0 }}
-          whileInView={{ x: 0, opacity: 1 }}
-          transition={{ duration: 1.2 }}
-          style={{
-            width: '15%',
-            display: 'flex',
-            justifyContent: 'space-evenly'
-          }}
-        >
-          <Image 
-              src={`/turn17-media-logo-v1-1.png`}
-              alt='turn17 media logo'
-              height={150}
-              width={150}
-          />
-        </motion.div>
-      </AnimatePresence>
+    <Container disableGutters sx={{ minWidth: '100vw', display: 'flex', justifyContent: 'center', alignItems: 'center', backgroundColor: 'var(--char5)', flexDirection: 'row', flexWrap: 'wrap', p: 2 }}>
+      <motion.div
+        initial={{ x: -100, opacity: 0 }}
+        whileInView={{ x: 0, opacity: 1 }}
+        transition={{ duration: 1.2 }}
+        style={{
+          width: '350px',
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center',
+          flexDirection: 'column'
+        }}
+      > 
+        <LocalAtmIcon sx={{ fontSize: '200px', color: 'var(--char0)' }}/>
+        <Typography align='center' gutterBottom variant='h5' sx={{ color: 'var(--char0)' }}>
+          Flat rate pricing
+        </Typography>
+      </motion.div>
+        
+      <motion.div
+        initial={{ y: -100, opacity: 0 }}
+        whileInView={{ y: 0, opacity: 1 }}
+        transition={{ duration: 1.2 }}
+        style={{
+          width: '350px',
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center',
+          flexDirection: 'column'
+        }}
+      >
+        <DirectionsCarIcon sx={{ fontSize: '200px', color: 'var(--char0)' }}/>
+        <Typography align='center' gutterBottom variant='h5' sx={{ color: 'var(--char0)' }}>
+          Car person approved
+        </Typography>
+      </motion.div>
+
+      <motion.div
+        initial={{ y: 100, opacity: 0 }}
+        whileInView={{ y: 0, opacity: 1 }}
+        transition={{ duration: 1.2 }}
+        style={{
+          width: '350px',
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center',
+          flexDirection: 'column'
+        }}
+      >
+        <SatelliteAltIcon sx={{ fontSize: '200px', color: 'var(--char0)' }}/>
+        <Typography align='center' gutterBottom variant='h5' sx={{ color: 'var(--char0)' }}>
+          Daily communication
+        </Typography>
+      </motion.div>
+
+      <motion.div
+        initial={{ x: 100, opacity: 0 }}
+        whileInView={{ x: 0, opacity: 1 }}
+        transition={{ duration: 1.2 }}
+        style={{
+          width: '350px',
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center',
+          flexDirection: 'column'
+        }}
+      >
+        <MobileFriendlyIcon sx={{ fontSize: '200px', color: 'var(--char0)' }}/>
+        <Typography align='center' gutterBottom variant='h5' sx={{ color: 'var(--char0)' }}>
+          Responsive design
+        </Typography>
+      </motion.div>
     </Container>
   )
 }
