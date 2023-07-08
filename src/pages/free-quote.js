@@ -1,24 +1,9 @@
 import Head from 'next/head'
-import styles from '@/styles/singlepage.module.css'
 import TopNavigation from '../../components/TopNavigation'
 import BannerHeader from '../../components/BannerHeader'
 import Footer from '../../components/Footer/Footer'
 import Quote from '../../components/Quote'
-import { hasToken } from '../../utils/userAuth'
 
-
-// export async function getServerSideProps(context) {
-//   const token = await hasToken(context.req)
-//   if(!token) {
-//     return {
-//       redirect: {
-//         destination: '/invalid',
-//         permanent: false
-//       }
-//     }
-//   }
-//   return { props: {} }
-// }
 
 export default function FreeQuote() {
   return (
@@ -36,7 +21,7 @@ export default function FreeQuote() {
         subtext1='Complete the following for a free quote.'
         subtext2='We will contact you within 2-3 business days.'
       />
-      <main className={styles.main}>
+      <main>
         <Quote />
       </main>
       <Footer />
