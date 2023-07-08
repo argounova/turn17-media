@@ -1,4 +1,5 @@
 import * as React from 'react'
+import PropTypes from 'prop-types'
 import { TopNavigationStyles } from './style'
 import { useSession, signIn, signOut } from 'next-auth/react'
 import { menuItems } from '../../constants/topNavigationLinks'
@@ -8,19 +9,60 @@ import {
   Box,
   Button,
   Container,
+  Fab,
+  Fade,
   IconButton,
   Menu,
   MenuItem,
-  Toolbar
+  Toolbar,
+  useScrollTrigger
 } from '@mui/material'
 import Image from 'next/image'
 import Link from 'next/link'
 import MenuIcon from '@mui/icons-material/Menu'
+import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp'
 import '@fontsource/audiowide'
 import '@fontsource/oxygen'
 
 
-function TopNavigation() {
+function ScrollTop(props) {
+  const { children } = props;
+  const trigger = useScrollTrigger({
+    disableHysteresis: true,
+    threshold: 100,
+  });
+
+  const handleClick = (event) => {
+    const anchor = (event.target.ownerDocument || document).querySelector(
+      '#back-to-top-anchor',
+    );
+
+    if (anchor) {
+      anchor.scrollIntoView({
+        block: 'center',
+      })
+    }
+  }
+
+  return (
+    <Fade in={trigger}>
+      <Box
+        onClick={handleClick}
+        role="presentation"
+        sx={{ position: 'fixed', bottom: 30, right: 30, zIndex: 100 }}
+      >
+        {children}
+      </Box>
+    </Fade>
+  )
+}
+
+ScrollTop.propTypes = {
+  children: PropTypes.element.isRequired,
+}
+
+
+function TopNavigation(props) {
   const { data: session } = useSession()
   const [anchorElNav, setAnchorElNav] = React.useState(null)
   const [anchorElUser, setAnchorElUser] = React.useState(null)
@@ -40,9 +82,9 @@ function TopNavigation() {
 
   return (
     <TopNavigationStyles>
-      <AppBar elevation={0}  style={{ backgroundColor: 'var(--char5)' }}>
+      <AppBar elevation={0}  style={{ backgroundColor: 'var(--char5)' }} position="static">
         <Container maxWidth="xl">
-          <Toolbar disableGutters>
+          <Toolbar disableGutters id="back-to-top-anchor">
             <Link href="/">
               <Image src="/turn17-logo-main.png" alt="Turn 17 Media Logo" width={90} height={90} />
             </Link>
@@ -138,6 +180,11 @@ function TopNavigation() {
           </Toolbar>
         </Container>
       </AppBar>
+      <ScrollTop {...props}>
+        <Fab size="large" aria-label="scroll back to top" className='scroll-top-fab'>
+          <KeyboardArrowUpIcon />
+        </Fab>
+      </ScrollTop>
     </TopNavigationStyles>
   );
 }

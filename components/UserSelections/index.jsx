@@ -50,7 +50,7 @@ const UserSelections = () => {
     <DashboardStyles>
     <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
       <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center', flexWrap: 'wrap' }}>
-        <Button href='/get-started' variant='contained' className='btn-new'>
+        <Button href='/free-quote' variant='contained' className='btn-new' disabled>
           Start a Free Quote
         </Button>
         <Button onClick={getData} variant='contained' className='btn-showhide'>
