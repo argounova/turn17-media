@@ -42,7 +42,7 @@ export default function Latest({ latest }) {
         subtext1='Find client spotlights, new sites and even our extracurricular activites.'
         // subtext2='Contact info@turn17media.com with any questions.'
       />
-      <main className={styles.main}>
+      <main>
         {latest.map((post) => (
           <div className={styles.postDiv} key={post._id}>
             <Stack 

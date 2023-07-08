@@ -1,11 +1,24 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect } from 'react'
 import Head from 'next/head'
 import TopNavigation from '../../components/TopNavigation'
 import BannerHeader from '../../components/BannerHeader'
 import Footer from '../../components/Footer/Footer'
 import { useSession } from 'next-auth/react'
+import { hasToken } from '../../utils/userAuth'
 
 
+export async function getServerSideProps(context) {
+  const token = await hasToken(context.req)
+  if(!token) {
+    return {
+      redirect: {
+        destination: '/invalid',
+        permanent: false
+      }
+    }
+  }
+  return { props: {} }
+}
 
 export default function Success() {
   const { data: session, status, update } = useSession()

@@ -1,5 +1,4 @@
 import Head from 'next/head'
-import styles from '@/styles/Home.module.css'
 import TopNavigation from '../../components/TopNavigation'
 import BannerHeader from '../../components/BannerHeader'
 import MainFeatures from '../../components/MainFeatures'
@@ -7,7 +6,6 @@ import DownArrow from '../../components/DownArrow'
 import BannerAnimA from '../../components/Banners/BannerAnimA'
 import BannerAnimB from '../../components/Banners/BannerAnimB'
 import BannerA from '../../components/Banners/BannerA'
-import BannerB from '../../components/Banners/BannerB'
 import BannerC from '../../components/Banners/BannerC'
 import BannerD from '../../components/Banners/BannerD'
 import FinishedSiteEx from '../../components/FinishedSiteExample'
@@ -33,21 +31,18 @@ export default function Home() {
         subtext1='Understand what you&apos;re getting and how much it will cost from the beginning.'
         subtext2='A secure, professional website doesn&apos;t need to be complicated.'
       />
-      <main className={styles.main}>
-        <div className={styles.center}>
-          <MainFeatures />
-          <BannerAnimA />
-          <BannerA />
-          <BannerAnimB />
-
-          <BannerC />
-          <BannerD />
-          <DownArrow />
-          <FinishedSiteEx />
-          <Contact />
-          <div id='free-consultation' style={{ position: 'absolute', bottom: '800px' }}/>
-          <CalendlyScheduler />
-        </div>
+      <main>
+        <MainFeatures />
+        <BannerAnimA />
+        <BannerA />
+        <BannerAnimB />
+        <BannerC />
+        <BannerD />
+        <DownArrow />
+        <FinishedSiteEx />
+        <Contact />
+        <div id='free-consultation' style={{ position: 'absolute', bottom: '800px' }}/>
+        <CalendlyScheduler />
       </main>
       <Footer />
     </>

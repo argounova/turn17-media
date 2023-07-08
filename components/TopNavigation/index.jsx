@@ -46,7 +46,7 @@ function TopNavigation() {
             <Link href="/">
               <Image src="/turn17-logo-main.png" alt="Turn 17 Media Logo" width={90} height={90} />
             </Link>
-            <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' }, justifyContent: 'center', ml: '45px' }}>
+            <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' }, justifyContent: 'center', ml: '40px' }}>
               {menuItems.map((page, index) => (
                 <Link
                   key={index}
@@ -73,7 +73,7 @@ function TopNavigation() {
                 anchorEl={anchorElNav}
                 anchorOrigin={{
                   vertical: 'bottom',
-                  horizontal: 'center',
+                  horizontal: 'right',
                 }}
                 keepMounted
                 transformOrigin={{

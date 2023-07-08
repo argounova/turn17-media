@@ -81,7 +81,7 @@ export default function SignInSide({ providers }) {
             redirect: false,
             callbackUrl: `${window.location.origin}`
         })
-        res.error ? alert('Login unsuccessful') : redirectHome()
+        res.error ? alert('Email or password are incorrect') : redirectHome()
     }
 
     const handleSubmit = (event) => {

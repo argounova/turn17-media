@@ -1,5 +1,4 @@
 import Head from 'next/head'
-import styles from '@/styles/basics.module.css'
 import TopNavigation from '../../components/TopNavigation'
 import BannerHeader from '../../components/BannerHeader'
 import BasicsCards from '../../components/Basics'
@@ -22,9 +21,9 @@ export default function Basics() {
         subtag='Complex understanding'
         subtext1='Decide your site&apos;s layout.'
       />
-      <main className={styles.main}>
-          <BasicsCards />
-          <Contact />
+      <main>
+        <BasicsCards />
+        <Contact />
       </main>
       <Footer />
     </>

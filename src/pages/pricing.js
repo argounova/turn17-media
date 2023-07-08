@@ -1,5 +1,4 @@
 import Head from 'next/head'
-import styles from '@/styles/Pricing.module.css'
 import TopNavigation from '../../components/TopNavigation'
 import BannerHeader from '../../components/BannerHeader'
 import Footer from '../../components/Footer/Footer'
@@ -21,11 +20,10 @@ export default function Pricing() {
       <BannerHeader 
         tag1='What will this actually cost?'
         subtag='Hidden fees'
-        // subtext1='As champions of transparency, Turn17 Media will always be upfront with pricing.'
         subtext2='Shopping for a website shouldn&apos;t take place in the dark.  Know the final figure before you pull the trigger.'
       />
       <PricingCards />
-      <main className={styles.main}>
+      <main>
         <Contact />
       </main>
       <Footer />

@@ -1,6 +1,5 @@
 import Head from 'next/head'
 import clientPromise from '../../lib/mongodb'
-import styles from '@/styles/singlepage.module.css'
 import TopNavigation from '../../components/TopNavigation'
 import BannerHeader from '../../components/BannerHeader'
 import Footer from '../../components/Footer/Footer'
@@ -31,9 +30,8 @@ export default function Contact({isConnected}) {
       <TopNavigation />
       <BannerHeader 
         tag1='Missed a gear?'
-        // subtag='Hidden fees'
         subtext1='Sorry, you must be logged in to access that page.'
-        subtext2='Please register or login to continue.'
+        subtext2='Please login to continue.'
       />
       <Footer />
     </>
