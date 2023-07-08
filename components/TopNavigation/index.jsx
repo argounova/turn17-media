@@ -40,7 +40,7 @@ function TopNavigation() {
 
   return (
     <TopNavigationStyles>
-      <AppBar color="" elevation={0}  style={{ backgroundColor: 'var(--char5)' }}>
+      <AppBar elevation={0}  style={{ backgroundColor: 'var(--char5)' }}>
         <Container maxWidth="xl">
           <Toolbar disableGutters>
             <Link href="/">
@@ -93,7 +93,7 @@ function TopNavigation() {
                 ))}
               </Menu>
             </Box>
-            <Box sx={{ flexGrow: 0 }}>
+            <Box>
               {session && (
                 <p style={{ color: 'var(--char0)', textAlign: 'center' }}>{session.user.name}</p>
                 )
