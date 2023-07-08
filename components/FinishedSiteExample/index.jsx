@@ -18,7 +18,7 @@ export default function FinishedSiteEx() {
         style={{ width: '100%' }}
       >
         <Box>
-          <Typography variant='h2' align='center' sx={{ color: 'var(--mb1-3)' }}>
+          <Typography variant='h2' align='center' sx={{ color: 'var(--mb1-3)', mb: 10 }}>
             Your site.  Easy peasy, lemon squeezy.
           </Typography>
           <Image 

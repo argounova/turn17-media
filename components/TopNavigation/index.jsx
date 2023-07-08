@@ -64,7 +64,7 @@ function TopNavigation() {
                 aria-controls="menu-appbar"
                 aria-haspopup="true"
                 onClick={handleOpenNavMenu}
-                style={{ color: 'var(--mb1-3)' }}
+                style={{ color: 'var(--mb1-3)', paddingLeft: '50px' }}
               >
                 <MenuIcon />
               </IconButton>
