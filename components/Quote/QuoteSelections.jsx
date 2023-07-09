@@ -1,22 +1,18 @@
 import * as React from 'react';
 import { BasicsStyles } from "./style" 
 import { useState } from "react"
-import { tabs } from './templates'
+import { tabs } from './tabs'
 import { motion, AnimatePresence } from "framer-motion"
-import { useSession } from 'next-auth/react'
 import { 
   Box,
   Button,
-  Checkbox,
   Container,
   FormControl,
   FormControlLabel,
-  FormLabel,
   Radio,
   RadioGroup,
   TextField,
 } from '@mui/material';
-import TemplateRow from './TemplateRow'
 
 
 export const siteExamples = [
@@ -31,13 +27,9 @@ export const siteExamples = [
   },
 ]
 
-
-export default function SelectSite() {
-  const { data: session } = useSession()
+export default function QuoteSelections() {
   const [selectedTab, setSelectedTab] = useState(tabs[0])
-  const [selectedValue, setSelectedValue] = useState('')
   const [showComponent, setShowComponent] = useState(true)
-  const [bypass, setBypass] = useState(false)
   const [siteEx, setSiteEx] = useState(siteExamples)
   const [sitePurpose, setSitePurpose] = useState('')
   const [siteVisitors, setSiteVisitors] = useState('')
@@ -67,24 +59,24 @@ export default function SelectSite() {
   const handleSave = () => {
     const postData = async () => {
         const data = {
-            siteType: selectedTab.name,
-            siteCost: selectedTab.cost,
-            siteExs: siteEx,
-            projectStatus: 'Not started',
-            etc: '00/00/2023',
-            onTrack: 'ON TRACK',
-            sitePurpose: sitePurpose,
-            siteVisitors: siteVisitors,
-            siteAudience: siteAudience,
-            siteRedesign: siteRedesign,
-            siteHosting: siteHosting,
-            siteDomain: siteDomain,
-            siteTechnicalReqs: siteTechnicalReqs,
-            siteTimeline: siteTimeline,
-            siteBudget: siteBudget,
-            clientName: clientName,
-            clientEmail: clientEmail,
-            clientCompany: clientCompany
+          name: clientName,
+          email: clientEmail,
+          clientCompany: clientCompany,
+          siteType: selectedTab.name,
+          siteCost: selectedTab.cost,
+          siteExs: siteEx,
+          projectStatus: 'Not started',
+          etc: '00/00/2023',
+          onTrack: 'ON TRACK',
+          sitePurpose: sitePurpose,
+          siteVisitors: siteVisitors,
+          siteAudience: siteAudience,
+          siteRedesign: siteRedesign,
+          siteHosting: siteHosting,
+          siteDomain: siteDomain,
+          siteTechnicalReqs: siteTechnicalReqs,
+          siteTimeline: siteTimeline,
+          siteBudget: siteBudget,
         }
         const response = await fetch('/api/routes/quoteRoute', {
             method: 'POST',

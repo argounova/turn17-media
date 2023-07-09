@@ -17,7 +17,7 @@ export default async function handler(req, res) {
       const quoteData = JSON.parse(req.body)
       const client = await clientPromise
       const db = client.db("turn17_media")
-      await db.collection("users").insertOne(quoteData)
+      await db.collection("quotes").insertOne(quoteData)
       res.status(200).json({ quoteData })
     } catch (e) {
       console.error(e)

@@ -1,10 +1,10 @@
-import SelectSite from './SelectSite'
+import QuoteSelections from './QuoteSelections'
 
 
 const Quote = () => {
   return(
     <>
-      <SelectSite />
+      <QuoteSelections />
     </>
   )
 }
