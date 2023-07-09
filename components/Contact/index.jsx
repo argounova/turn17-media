@@ -1,4 +1,5 @@
-import * as React from 'react'
+import { useState } from 'react'
+import { motion } from 'framer-motion'
 import { ContactStyles } from './style'
 import { 
     Button,
@@ -8,27 +9,32 @@ import Image from 'next/image'
 import emailjs from '@emailjs/browser'
 
 export default function Contact() {
-    const [userName, setUserName] = React.useState('')
-    const [userEmail, setEmail] = React.useState('')
-    const [message, setMessage] = React.useState('')
-    const [showSuccess, setShowSuccess] = React.useState(false)
-    const [showFail, setShowFail] = React.useState(false)
-    const templateParams = {
-        user_name: userName,
-        user_email: userEmail,
-        message: message
-    }
+  const [userName, setUserName] = useState('')
+  const [userEmail, setEmail] = useState('')
+  const [message, setMessage] = useState('')
+  const [showContactForm, setShowContactForm] = useState(true)
+  const [showLoading, setShowLoading] = useState(false)
+  const [showSuccess, setShowSuccess] = useState(false)
+  const [showFail, setShowFail] = useState(false)
+  const templateParams = {
+    user_name: userName,
+    user_email: userEmail,
+    message: message
+  }
 
-    const handleSendMessage = () => {
-        emailjs.send('service_l8xkawv', 'turn17media_contact', templateParams, 'd-nj0U9pmkBW1-kef')
-        .then(function(response) {
-            console.log('Message sent!', response.status, response.text);
-            setShowSuccess(true)
-         }, function(error) {
-            console.log('FAILED...', error);
-            setShowFail(true)
-         });
-    }
+  const handleSendMessage = () => {
+    setShowContactForm(false)
+    setShowLoading(true)
+    emailjs.send('service_l8xkawv', 'turn17media_contact', templateParams, 'd-nj0U9pmkBW1-kef')
+    .then(function(response) {
+        console.log(response)
+        setShowLoading(false)
+        setShowSuccess(true)
+      }, function(error) {
+        console.log(error)
+        setShowFail(true)
+      })
+  }
 
   return (
     <ContactStyles>
@@ -39,7 +45,7 @@ export default function Contact() {
             <br />
             <Image src="/turn17-logo-main.png" alt="Turn 17 Media Logo" width={250} height={250} />
         </div>
-        { !showSuccess && !showFail && (
+        { showContactForm && (
             <div className='contact-form'>
                 <TextField
                     fullWidth
@@ -84,14 +90,39 @@ export default function Contact() {
                 >Send</Button>   
             </div>
         )}
+        { showLoading && (
+          <div className='contact-form' style={{ justifyContent: 'center' }}>
+            <h2 style={{ fontFamily: 'audiowide' }}>SENDING...</h2>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 350 350">
+              <motion.g>
+                <motion.circle
+                  initial={{ pathLength: 0 }}
+                  animate={{ pathLength: 1 }}
+                  transition={{
+                  duration: 1.5,
+                  repeat: Infinity,
+                  repeatType: "loop",
+                  }}
+                  cx="175"
+                  cy="175"
+                  r="100"
+                  fill="none"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
+                </motion.circle>
+              </motion.g>
+            </svg>
+          </div>
+        )}
         { showSuccess && (
-            <div className='contact-form'>
+            <div className='contact-form' style={{ justifyContent: 'center' }}>
                 <h2>Thank you for contacting us.</h2>
                 <h4>We will get back to you within 2 business days!</h4>
             </div>
         )}
         { showFail && (
-            <div className='contact-form'>
+            <div className='contact-form' style={{ justifyContent: 'center' }}>
                 <h2>Something went wrong...</h2>
                 <h4>Please email us at info@turn17media.com</h4>
             </div>

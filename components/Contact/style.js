@@ -27,6 +27,7 @@ export const ContactStyles = styled.div`
         height: 400px;
         padding: 20px;
         border-radius: 5px;
+        stroke: var(--mb1-1);
 
         @media (min-width: 821px) {
             width: 30%
