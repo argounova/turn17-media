@@ -22,16 +22,17 @@ export default function FAQS() {
       </Head>
       <TopNavigation />
       <BannerHeader 
-        tag1='Answers.'
+        tag1='You have questions.'
+        tag2='We have answers.'
         subtext1='Feel free to contact us if you need more information.'
       />
-      <Container maxWidth sx={{ mt: 10, mb: 10 }}>
-        <Card raised>
-          <CardContent>
+      {/* <Container maxWidth sx={{ mt: 10, mb: 10 }}>
+        <Card raised >
+          <CardContent> */}
             <FaQuestions />
-          </CardContent>
+          {/* </CardContent>
         </Card>
-      </Container>
+      </Container> */}
       <Contact />
       <Footer />
     </>

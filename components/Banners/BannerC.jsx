@@ -13,7 +13,7 @@ const BannerC = () => {
     <BannerStyles>
       <Container disableGutters sx={{ minWidth: '100vw', display: 'flex' }}>
         <Image 
-          src={`/images/daytona-banner-background.jpg`}
+          src={`/images/daytona-banner-background-1.jpg`}
           alt='turn17media banner background'
           width={2500}
           height={666}

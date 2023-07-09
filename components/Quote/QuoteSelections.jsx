@@ -291,21 +291,21 @@ export default function QuoteSelections() {
                   <br />
                   <h2>Please provide your contact information.</h2>
                   <TextField
-                    sx={{ mt: 1, width: '50ch' }}
+                    sx={{ mt: 1, width: '50ch', maxWidth: '100%' }}
                     onChange={(e) => {setClientName(e.target.value)}}
                     label='Name'
                     required
                     name='clientName'
                   />
                   <TextField
-                    sx={{ mt: 1, width: '50ch' }}
+                    sx={{ mt: 1, width: '50ch', maxWidth: '100%' }}
                     onChange={(e) => {setClientEmail(e.target.value)}}
                     label='Email'
                     required
                     name='clientEmail'
                   />
                   <TextField
-                    sx={{ mt: 1, width: '50ch' }}
+                    sx={{ mt: 1, width: '50ch', maxWidth: '100%' }}
                     onChange={(e) => {setClientCompany(e.target.value)}}
                     label='Company'
                     name='clientCompany'

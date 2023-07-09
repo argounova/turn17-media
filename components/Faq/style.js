@@ -7,7 +7,7 @@ export const FaqStyles = styled.section`
     width: 100%;
     background-color: transparent;
     border: 2px solid var(--mb1-1);
-    color: var(--mb1-1);
+    color: var(--mb1-3);
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -29,7 +29,7 @@ export const FaqStyles = styled.section`
       font-size: 35px;
       justify-content: center;
       align-items: center;
-      color: var(--mb1-1);
+      color: var(--mb1-3);
       transform-origin: center;
       transition: transform 0.6s ease;
     }
@@ -39,6 +39,7 @@ export const FaqStyles = styled.section`
     padding: calc(var(--gap) / 2);
     font-size: var(--p);
     font-family: Oxygen;
+    color: var(--mb1-3);
   }
   margin-bottom: calc(var(--gap) / 2);
 

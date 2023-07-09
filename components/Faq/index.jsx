@@ -11,10 +11,14 @@ export default function FaQuestions() {
             <Box
             sx={{
                 p: 2,
+                mb: 5,
+                mt: -2,
                 display: 'grid',
                 gridTemplateColumns: { md: '1fr 1fr' },
                 gap: 2,
-                width: '75%'
+                width: '75%',
+                backgroundColor: 'var(--char5)',
+                borderRadius: '5px'
             }}
             
             >

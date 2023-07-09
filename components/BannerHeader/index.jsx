@@ -11,10 +11,11 @@ function BannerHeader({ tag1, tag2, subtag, subtext1, subtext2 }) {
       <Image 
         src={`/images/banner-header-image.jpg`}
         width={2500}
-        height={666}
+        height={450}
         alt='turn17media background'
         priority
         unoptimized={true}
+        className='bannerHeaderImage'
       />
       <Box className='bannerHeaderContent'>
         <h1>{tag1}</h1>

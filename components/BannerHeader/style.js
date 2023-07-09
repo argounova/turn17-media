@@ -8,11 +8,17 @@ margin-bottom: -90px;
 
 .bannerHeaderContent {
     position: absolute;
-    top: 17%;
+    top: 19%;
     left: 50%;
     z-index: 10;
     transform: translateX(-50%);
     text-align: center;
+    width: 95vw;
+
+
+    @media (min-width: 390px) {
+    }
+    
 }
 
 .bannerHeaderContent p {
