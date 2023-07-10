@@ -2,6 +2,7 @@ import Head from 'next/head'
 import TopNavigation from '../../components/TopNavigation'
 import BannerHeader from '../../components/BannerHeader'
 import Footer from '../../components/Footer/Footer'
+import { Container } from '@mui/material'
 
 
 export default function Cancel() {
@@ -18,6 +19,7 @@ export default function Cancel() {
         tag1='Your payment was cancelled.'
         subtext1='Your card has not been charged.'
       />
+      <Container disableGutters sx={{ backgroundColor: 'var(--char5)', height: '25vh', minWidth: '100%' }}/>
       <Footer />
     </>
   )

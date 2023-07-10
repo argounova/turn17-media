@@ -3,6 +3,7 @@ import clientPromise from '../../lib/mongodb'
 import TopNavigation from '../../components/TopNavigation'
 import BannerHeader from '../../components/BannerHeader'
 import Footer from '../../components/Footer/Footer'
+import { Container } from '@mui/material'
 
 export async function getServerSideProps() {
   try {
@@ -33,6 +34,7 @@ export default function Contact({isConnected}) {
         subtext1='Sorry, you must be logged in to access that page.'
         subtext2='Please login to continue.'
       />
+      <Container disableGutters sx={{ backgroundColor: 'var(--char5)', height: '25vh', minWidth: '100%' }}/>
       <Footer />
     </>
   )

@@ -2,6 +2,7 @@ import Head from 'next/head'
 import TopNavigation from '../../components/TopNavigation'
 import BannerHeader from '../../components/BannerHeader'
 import Footer from '../../components/Footer/Footer'
+import { Container } from '@mui/material'
 
 
 export default function Submission() {
@@ -18,6 +19,7 @@ export default function Submission() {
         tag1='Your quote has been successfully submitted.'
         tag2='We will be in touch within 2-3 business days.'
       />
+      <Container disableGutters sx={{ backgroundColor: 'var(--char5)', height: '25vh', minWidth: '100%' }}/>
       <Footer />
     </>
   )

@@ -5,6 +5,7 @@ import BannerHeader from '../../components/BannerHeader'
 import Footer from '../../components/Footer/Footer'
 import { useSession } from 'next-auth/react'
 import { hasToken } from '../../utils/userAuth'
+import { Container } from '@mui/material'
 
 
 export async function getServerSideProps(context) {
@@ -78,6 +79,7 @@ export default function Success() {
         subtext1='Thanks for your payment.'
         subtext2='Head to your dashboard and schedule your developer meeting.'
       />
+      <Container disableGutters sx={{ backgroundColor: 'var(--char5)', height: '25vh', minWidth: '100%' }}/>
       <Footer />
     </>
   )
