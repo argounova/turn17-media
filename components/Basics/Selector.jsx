@@ -3,11 +3,10 @@ import { useState } from "react"
 import { tabs } from "./content"
 import { motion, AnimatePresence } from "framer-motion"
 import ContentGrid from "./ContentGrid"
-import Button from "../Button"
+import CustomBtn from "../Button"
 
 export default function Selector() {
   const [selectedTab, setSelectedTab] = useState(tabs[0])
-  const [tabColor, setTabColor] = useState(tabs[0].color)
 
   return (
     <BasicsStyles className="window">
@@ -58,9 +57,9 @@ export default function Selector() {
                 secondaryText5={selectedTab.secondaryText5}
             />
             <div className="button-div">
-                <Button
+                <CustomBtn
                     href={selectedTab.href}
-                    text='Get Started'
+                    text='Pricing'
                     arrow={true}
                 />
             </div>

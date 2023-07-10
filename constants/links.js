@@ -4,17 +4,17 @@ export const menuItems = [
       text: "home",
     },
     {
-      path: "/",
+      path: "/basics",
       text: "services",
     },
-    {
-      path: "/",
-      text: "gallery",
-    },
-    {
-      path: "/",
-      text: "contact",
-    },
+    // {
+    //   path: "/gallery",
+    //   text: "gallery",
+    // },
+    // {
+    //   path: "/contact",
+    //   text: "contact",
+    // },
     {
       path: "/",
       text: "T17 Racing",

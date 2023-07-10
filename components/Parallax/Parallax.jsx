@@ -1,23 +1,26 @@
+import * as React from 'react'
 import { ParallaxStyles } from "./style"
-import { useRef } from "react";
-import * as React from 'react';
-import Card from '@mui/material/Card';
-import CardActionArea from '@mui/material/CardActionArea';
-import CardContent from '@mui/material/CardContent';
-import Typography from '@mui/material/Typography';
+import { useRef } from "react"
+import {
+  Card,
+  CardActionArea,
+  CardContent,
+  Typography
+} from '@mui/material'
 import {
   motion,
   useScroll,
   useSpring,
   useTransform,
 } from "framer-motion"
+import Link from "next/link"
 import steps from "./steps"
 
 function useParallax(value, distance) {
   return useTransform(value, [0, 1], [-distance, distance]);
 }
 
-function Step({ title, subtitle, step, bgColor }) {
+function Step({ title, subtitle, step, bgColor, linkTo }) {
   const ref = useRef(null);
   const { scrollYProgress } = useScroll({ target: ref });
   const y = useParallax(scrollYProgress, 300);
@@ -33,16 +36,18 @@ function Step({ title, subtitle, step, bgColor }) {
         boxShadow: '0px 3px 3px var(--char3)',
         margin: '5px 1px'
         }}>
-          <CardActionArea>
-            <CardContent>
-              <Typography gutterBottom variant="h5" component="div">
-                {title}
-              </Typography>
-              <Typography variant="body2" color='var(--char0)' align='left'>
-                {subtitle}
-              </Typography>
-            </CardContent>
-          </CardActionArea>
+          <Link href={`${linkTo}`}>
+            <CardActionArea>
+              <CardContent>
+                <Typography gutterBottom variant="h5" component="div">
+                  {title}
+                </Typography>
+                <Typography variant="body2" color='var(--char0)' align='left'>
+                  {subtitle}
+                </Typography>
+              </CardContent>
+            </CardActionArea>
+          </Link>
         </Card>      
       </div>
       <motion.h2 style={{ y }}>{step}</motion.h2>
@@ -69,6 +74,7 @@ export default function Parallax() {
               subtitle={ step.subtitle }
               step={ step.step }
               bgColor={ step.bgColor }
+              linkTo={ step.linkTo }
             />
           ))}
           <motion.div className="progress" style={{ scaleX }} />

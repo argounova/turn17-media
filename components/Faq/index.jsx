@@ -7,15 +7,18 @@ import questions from './questions';
 export default function FaQuestions() {
     return(
         <>
-        <h1 style={{ textAlign: 'center', fontFamily: 'Oxygen' }}>FAQ</h1>
         <Grid container justifyContent="center">
             <Box
             sx={{
                 p: 2,
+                mb: 5,
+                mt: -2,
                 display: 'grid',
                 gridTemplateColumns: { md: '1fr 1fr' },
                 gap: 2,
-                width: '75%'
+                width: '75%',
+                backgroundColor: 'var(--char5)',
+                borderRadius: '5px'
             }}
             
             >

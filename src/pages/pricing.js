@@ -1,27 +1,13 @@
 import Head from 'next/head'
-import clientPromise from '../../lib/mongodb'
-import styles from '@/styles/Pricing.module.css'
 import TopNavigation from '../../components/TopNavigation'
 import BannerHeader from '../../components/BannerHeader'
 import Footer from '../../components/Footer/Footer'
 import PricingCards from '../../components/PricingCards/pricing'
-import FaQuestions from '../../components/Faq/index'
+import Contact from '../../components/Contact'
 
-export async function getServerSideProps() {
-  try {
-    await clientPromise
-    return {
-      props: { isConnected: true },
-    }
-  } catch (e) {
-    console.error(e)
-    return {
-      props: { isConnected: false },
-    }
-  }
-}
 
-export default function Pricing({isConnected}) {
+
+export default function Pricing() {
   return (
     <>
       <Head>
@@ -34,12 +20,11 @@ export default function Pricing({isConnected}) {
       <BannerHeader 
         tag1='What will this actually cost?'
         subtag='Hidden fees'
-        subtext1='As champions of transparency, Turn17 Media will always be upfront with pricing.'
         subtext2='Shopping for a website shouldn&apos;t take place in the dark.  Know the final figure before you pull the trigger.'
       />
       <PricingCards />
-      <main className={styles.main}>
-        <FaQuestions />
+      <main>
+        <Contact />
       </main>
       <Footer />
     </>

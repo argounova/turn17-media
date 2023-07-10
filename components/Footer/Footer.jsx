@@ -31,14 +31,14 @@ const Footer = () => {
         </FooterMenuStyles>
           <FooterMenuStyles className="footer__menu products__menu">
             <h5>
-              <Link href="/services/all" style={{ color: '#000' }}>
+              <Link href="/services/all" style={{ color: 'var(--char2)' }}>
                 Services
               </Link>
             </h5>
             <ul>
-              <li><Link href="/">Single Page Websites</Link></li>
-              <li><Link href="/">Multi Page Websites</Link></li>
-              <li><Link href="/">Database & eCommerce</Link></li>
+              <li><Link href="/basics">Spec Class Websites</Link></li>
+              <li><Link href="/basics">GT Class Websites</Link></li>
+              {/* <li><Link href="/get-started/custom">Custom Sites</Link></li> */}
             </ul>
           </FooterMenuStyles>
         {metadata.linkedInUsername ||
@@ -101,8 +101,8 @@ const Footer = () => {
       </div>
       <CopyrightStyles>
         <div className="container container__tight">
-          <p style={{ color: 'var(--char5)' }}>
-            Designed & developed by {metadata.developerName}
+          <p>
+            Designed & developed by {metadata.developerName}, LLC
           </p>
         </div>
       </CopyrightStyles>

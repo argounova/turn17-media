@@ -3,6 +3,7 @@ import styled from "@emotion/styled"
 export const FooterStyles = styled.footer`
   &.section {
     padding: 0px;
+    background-color: var(--char5);
 
     .container {
       display: flex;
@@ -49,6 +50,7 @@ export const FooterMenuStyles = styled.div`
     margin-top: 20px;
     display: inline-block;
     border-bottom: 2px solid #333;
+    color: var(--char2);
 
     a {
       color: #fff;
@@ -69,7 +71,7 @@ export const FooterMenuStyles = styled.div`
     margin-bottom: 5px;
 
     a {
-      color: var(--bodyColor);
+      color: var(--mb1-3);
       text-decoration: none;
       text-transform: capitalize;
       font-weight: 700;
@@ -82,7 +84,7 @@ export const FooterMenuStyles = styled.div`
     &:hover,
     &:focus {
       a {
-        color: var(--primary);
+        color: var(--mb1-4);
       }
     }
   }
@@ -110,13 +112,13 @@ export const FooterMenuStyles = styled.div`
         }
 
         a {
-          color: var(--primary);
+          color: var(--mb1-3);
         }
 
         &:hover,
         &:focus {
           a {
-            color: #fff;
+            color: var(--mb1-4);
           }
         }
       }
@@ -130,6 +132,7 @@ export const CopyrightStyles = styled.div`
 
   p {
     margin: 10px 0px;
+    color: var(--char2);
 
     @media (max-width: 475px) {
       font-size: 13px
