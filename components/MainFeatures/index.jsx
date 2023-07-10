@@ -13,7 +13,7 @@ import gtSite from '../../public/images/gt-site-card-bw.jpg'
 
 export default function MainFeatures() {
   return (
-    <Box m={2} >
+    <Box m={2} mb={15}>
       <Grid 
         container
         spacing={4}
