@@ -88,12 +88,12 @@ function TopNavigation(props) {
             <Link href="/">
               <Image src="/turn17-logo-main.png" alt="Turn 17 Media Logo" width={90} height={90} />
             </Link>
-            <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' }, justifyContent: 'center', ml: '40px' }}>
+            <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' }, justifyContent: 'center' }}>
               {menuItems.map((page, index) => (
                 <Link
                   key={index}
                   href={page.path}
-                  style={{ my: 2, color: '#85D3E7', display: 'block', fontFamily: 'audiowide', fontSize: '1.3rem', fontWeight: 'lighter', letterSpacing: '.2rem', paddingLeft: '2%', paddingRight: '2%' }}
+                  style={{ color: '#85D3E7', display: 'block', fontFamily: 'audiowide', fontSize: '1.3rem', fontWeight: 'lighter', letterSpacing: '.2rem', paddingLeft: '2%', paddingRight: '2%' }}
                 >
                   {page.text}
                 </Link>
@@ -106,7 +106,7 @@ function TopNavigation(props) {
                 aria-controls="menu-appbar"
                 aria-haspopup="true"
                 onClick={handleOpenNavMenu}
-                style={{ color: 'var(--mb1-3)', paddingLeft: '50px' }}
+                style={{ color: 'var(--mb1-3)' }}
               >
                 <MenuIcon />
               </IconButton>
@@ -115,7 +115,7 @@ function TopNavigation(props) {
                 anchorEl={anchorElNav}
                 anchorOrigin={{
                   vertical: 'bottom',
-                  horizontal: 'right',
+                  horizontal: 'center',
                 }}
                 keepMounted
                 transformOrigin={{
@@ -130,17 +130,17 @@ function TopNavigation(props) {
               >
                 {menuItems.map((page, index) => (
                   <MenuItem key={index}>
-                    <Link sx={{ fontFamily: 'Oxygen' }} href={page.path}>{page.text}</Link>
+                    <Link href={page.path}>{page.text}</Link>
                   </MenuItem>
                 ))}
               </Menu>
             </Box>
-            <Box>
+            <Box sx={{ flexGrow: 0 }}>
               {session && (
                 <p style={{ color: 'var(--char0)', textAlign: 'center' }}>{session.user.name}</p>
                 )
               }
-                <IconButton onClick={handleOpenUserMenu} sx={{ p: 1, width: '125px' }}>
+                <IconButton onClick={handleOpenUserMenu} sx={{ width: '90px' }}>
                   {session? (
                     <Avatar alt={`${session?.user.name}`} style={{ backgroundColor: 'var(--mb1-3)' }} src={`${session?.user.image}`} />
                   ) : (
@@ -148,16 +148,17 @@ function TopNavigation(props) {
                   )}
                 </IconButton>
               <Menu
+                sx={{ mt: '60px' }}
                 id="menu-appbar"
                 anchorEl={anchorElUser}
                 anchorOrigin={{
-                  vertical: 'bottom',
-                  horizontal: 'center',
+                  vertical: 'top',
+                  horizontal: 'right',
                 }}
                 keepMounted
                 transformOrigin={{
                   vertical: 'top',
-                  horizontal: 'center',
+                  horizontal: 'right',
                 }}
                 open={Boolean(anchorElUser)}
                 onClose={handleCloseUserMenu}
