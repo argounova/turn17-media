@@ -4,7 +4,7 @@ export const menuItems = [
       text: "home",
     },
     {
-      path: "/basics",
+      path: "/web-design",
       text: "services",
     },
     // {

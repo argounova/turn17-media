@@ -59,7 +59,7 @@ export default function Selector() {
             <div className="button-div">
                 <CustomBtn
                     href={selectedTab.href}
-                    text='Pricing'
+                    text='Free Quote'
                     arrow={true}
                 />
             </div>

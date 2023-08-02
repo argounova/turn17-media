@@ -14,7 +14,7 @@ export const tabs = [
         secondaryText4: "A 50% deposit is required upfront.  Deposits are non-refundable.  The balance will be due before the site can go live.",
         primaryText5: "Communication.",
         secondaryText5: "Three one-hour, Google Meet developer meetings included.  Your developer will always be available via email.", 
-        href: "/pricing",         
+        href: "/free-quote",         
     },
     { 
         name: "GT Class", 
@@ -31,7 +31,7 @@ export const tabs = [
         secondaryText4: "A 50% deposit is required upfront.  Deposits are non-refundable.  The balance will be due before the site can go live.",
         primaryText5: "Communication.",
         secondaryText5: "Four one-hour, Google Meet developer meetings included.  Your developer will always be available via email.",
-        href: "/pricing" 
+        href: "/free-quote" 
     },
     // { 
     //     name: "Custom", 
