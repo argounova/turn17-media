@@ -1,6 +1,7 @@
 import Head from 'next/head'
 import TopNavigation from '../../components/TopNavigation'
 import BannerHeader from '../../components/BannerHeader'
+import WebDesignMain from '../../components/WebDesign'
 import BasicsCards from '../../components/Basics'
 import Footer from '../../components/Footer/Footer'
 import Contact from '../../components/Contact'
@@ -16,11 +17,7 @@ export default function WebDesign() {
         <link rel="icon" href="/turn17-media-tab-logo.jpg" />
       </Head>
       <TopNavigation />
-      <BannerHeader 
-        tag1='Web Design & Development.'
-        subtag='Complex understanding'
-        subtext1='Modern, professional and affordable sites.'
-      />
+      <WebDesignMain />
       <main>
         <BasicsCards />
         <Contact />
