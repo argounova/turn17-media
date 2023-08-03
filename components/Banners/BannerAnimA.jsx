@@ -6,7 +6,7 @@ import {
 import LocalAtmIcon from '@mui/icons-material/LocalAtm'
 import MobileFriendlyIcon from '@mui/icons-material/MobileFriendly'
 import SatelliteAltIcon from '@mui/icons-material/SatelliteAlt'
-import HttpsIcon from '@mui/icons-material/Https';
+import HttpsIcon from '@mui/icons-material/Https'
 
 
 const BannerAnimA = () => {

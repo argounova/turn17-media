@@ -12,6 +12,7 @@ export const WebDesignStyles = styled.section`
     margin: 0;
     background: url(https://turn17media-main.s3.amazonaws.com/turn17media-background-clean-2500x1000.jpg);
     background-size: cover;
+    background-position: center;
 }
 
 .hide {
@@ -75,6 +76,54 @@ export const WebDesignStyles = styled.section`
     width: 530px;
     height: 1062;
     background-image: url(https://turn17media-main.s3.amazonaws.com/mobile-example.png);
+}
+
+.bannB__container-main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 100vw;
+    min-height: 180px;
+    height: fit-content;
+    background: var(--char5);
+}
+
+.bannC__container-alt {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 100vw;
+    min-height: 180px;
+    height: fit-content;
+    padding: 50px;
+}
+
+.bannC__container-main {
+    display: flex;
+    align-items: space-evenly;
+    justify-content: space-evenly;
+    flex-direction: row;
+    flex-wrap: wrap;
+    min-width: 100vw;
+    min-height: 500px;
+    height: fit-content;
+    margin: 0;
+    padding: 70px 0px;
+    background: url(https://turn17media-main.s3.amazonaws.com/turn17media-teal-black-background-2500x666.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+.bannC__motion-div {
+    width: 350px;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background: var(--char5);
+    border-radius: 10px;
+    margin: 20px;
 }
 
 `

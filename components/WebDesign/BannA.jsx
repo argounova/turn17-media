@@ -20,7 +20,7 @@ const BannA = () => {
             transition={{ duration: 0.5 }}
           >
             <Typography gutterBottom variant="h2" sx={{ color: 'var(--white)', fontFamily: 'audiowide' }} align="center">
-              "Mobile First" Design
+              &#34;Mobile First&#34; Design
             </Typography>
           </motion.div>
           <Box sx={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', alignItems: 'center' }}>
@@ -31,6 +31,7 @@ const BannA = () => {
             >
               <Image 
                 src={`${'https://turn17media-main.s3.amazonaws.com/mobile-example.png'}`}
+                alt="mobile phone"
                 width={350}
                 height={708}
                 unoptimized={true}

@@ -1,10 +1,10 @@
 import Head from 'next/head'
 import TopNavigation from '../../components/TopNavigation'
-import BannerHeader from '../../components/BannerHeader'
 import WebDesignMain from '../../components/WebDesign'
-import BasicsCards from '../../components/Basics'
 import Footer from '../../components/Footer/Footer'
 import Contact from '../../components/Contact'
+import CalendlyScheduler from '../../components/CalendlyScheduler/calendlyScheduler'
+
 
 
 export default function WebDesign() {
@@ -18,10 +18,8 @@ export default function WebDesign() {
       </Head>
       <TopNavigation />
       <WebDesignMain />
-      <main>
-        <BasicsCards />
-        <Contact />
-      </main>
+      <Contact />
+      <CalendlyScheduler />
       <Footer />
     </>
   )

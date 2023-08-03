@@ -9,9 +9,9 @@ import DownArrow from "../DownArrow"
 const BannB = () => {
   return (
     <WebDesignStyles>
-      <Container sx={{ minWidth: '100vw', height: '200px', backgroundColor: 'var(--char5)', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-        <Typography variant="h2" sx={{ color: 'var(--white)', letterSpacing: '0.5rem' }}>
-          Choose a single page or a multi page website.
+      <Container className="bannB__container-main">
+        <Typography variant="h2" align="center" sx={{ color: 'var(--white)', letterSpacing: '0.2rem' }}>
+          Single and multi page websites.
         </Typography>
       </Container>
       <DownArrow />

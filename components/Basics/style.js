@@ -2,7 +2,7 @@ import styled from "@emotion/styled"
 
 export const BasicsStyles = styled.section`
   .window {
-    width: 1000px;
+    width: 1200px;
     max-width: 90vw;
     border-radius: 5px;
     background: white;
@@ -13,6 +13,7 @@ export const BasicsStyles = styled.section`
     display: flex;
     flex-direction: column;
     margin-bottom: 50px;
+    margin: 20px auto;
   }
   
   nav {
