@@ -21,9 +21,8 @@ const PhotoGallery = () => {
           alignItems="center"
         >
           {galleryA.map((item) => (
-            <Grid>
+            <Grid key={item.id}>
               <Item
-                key={item.id}
                 original={item.srcOriginal}
                 thumbnail={item.srcThumb}
                 width={item.srcWidth}
