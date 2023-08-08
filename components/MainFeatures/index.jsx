@@ -32,9 +32,9 @@ export default function MainFeatures() {
           <FeaturePhotoCard 
             cardImage={specSite}
             altText='card image colors'
-            title='Spec Class Website'
-            description='Minimalistic in design, professional by nature.'
-            linkTo='/basics'
+            title='Web Design'
+            description='Modern, mobile-first design.'
+            linkTo='/web-design'
           />
         </Grid>
         <Grid xs={1} md={2} lg={2} xl={2} sx={{ display: { sm: 'none', md: 'block' } }}>
@@ -47,12 +47,12 @@ export default function MainFeatures() {
             <FeatureTextCard 
               title='Build Time'
               description='Efficient development means your site goes live sooner.'
-              linkTo='/basics'
+              linkTo='/web-design'
             />
             <FeatureTextCard 
               title='Satisfaction'
               description='Client happiness is paramount.'
-              linkTo='/basics'
+              linkTo='/faqs'
             />
           </Stack>
         </Grid>
@@ -60,9 +60,9 @@ export default function MainFeatures() {
           <FeaturePhotoCard 
             cardImage={gtSite}
             altText='card image payments'
-            title='GT Class Website'
-            description='Multiple pages, highly customizable.'
-            linkTo='/basics'
+            title='Photography'
+            description='Digital media solutions.'
+            linkTo='/photography'
           />
         </Grid>
         <Grid xs={1} sm={1.25} md={3} lg={1.5} xl={2}>
@@ -95,7 +95,7 @@ export default function MainFeatures() {
           <AdCard 
             title='Free Quote'
             description='Start a quote today!'
-            linkTo='/signup'
+            linkTo='/free-quote'
           />
         </Grid>
       </Grid>

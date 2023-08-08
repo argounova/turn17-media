@@ -29,7 +29,7 @@ export default function FinishedSiteEx() {
         </Box>
       </motion.div>
       <Button
-        href='/basics'
+        href='/web-design'
         variant='contained'
         className='btn'
       >

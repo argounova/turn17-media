@@ -36,8 +36,8 @@ const Footer = () => {
               </Link>
             </h5>
             <ul>
-              <li><Link href="/basics">Spec Class Websites</Link></li>
-              <li><Link href="/basics">GT Class Websites</Link></li>
+              <li><Link href="/web-design">Web Design</Link></li>
+              <li><Link href="/photography">Photography</Link></li>
               {/* <li><Link href="/get-started/custom">Custom Sites</Link></li> */}
             </ul>
           </FooterMenuStyles>

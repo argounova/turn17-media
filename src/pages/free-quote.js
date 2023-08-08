@@ -16,10 +16,10 @@ export default function FreeQuote() {
       </Head>
       <TopNavigation />
       <BannerHeader 
-        tag1='Let the Journey Begin'
+        tag1='Complete the following for a free quote.'
         // subtag='Hidden fees'
-        subtext1='Complete the following for a free quote.'
-        subtext2='We will contact you within 2-3 business days.'
+        subtext1='Please choose Spec or GT for a single page or multi page website, respectively.'
+        // subtext2='We will contact you within 2-3 business days.'
       />
       <main>
         <Quote />

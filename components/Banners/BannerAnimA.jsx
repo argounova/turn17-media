@@ -5,8 +5,8 @@ import {
 } from "@mui/material"
 import LocalAtmIcon from '@mui/icons-material/LocalAtm'
 import MobileFriendlyIcon from '@mui/icons-material/MobileFriendly'
-import DirectionsCarIcon from '@mui/icons-material/DirectionsCar'
 import SatelliteAltIcon from '@mui/icons-material/SatelliteAlt'
+import HttpsIcon from '@mui/icons-material/Https'
 
 
 const BannerAnimA = () => {
@@ -42,9 +42,9 @@ const BannerAnimA = () => {
           flexDirection: 'column'
         }}
       >
-        <DirectionsCarIcon sx={{ fontSize: '200px', color: 'var(--char0)' }}/>
+        <HttpsIcon sx={{ fontSize: '200px', color: 'var(--char0)' }}/>
         <Typography align='center' gutterBottom variant='h5' sx={{ color: 'var(--char0)' }}>
-          Car person approved
+          SSL Certificates
         </Typography>
       </motion.div>
 
