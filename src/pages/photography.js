@@ -18,10 +18,10 @@ export default function Photography() {
       </Head>
       <TopNavigation />
       <BannerHeader 
-        tag1='Digital media solutions.'
+        tag1='Coming Soon.'
         // subtag='Complex understanding'
-        subtext1='Portrait, engagement, automotive and architectural photography are a few of our specialties.'
-        subtext2='Contact us today or schedule a free consultation below.'
+        // subtext1='Automotive, engagement and portrait photography are a few of our specialties.'
+        // subtext2='Contact us today or schedule a free consultation below.'
       />
       <main>
         <PhotoGallery />
