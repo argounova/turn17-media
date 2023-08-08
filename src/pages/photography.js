@@ -4,6 +4,7 @@ import BannerHeader from '../../components/BannerHeader'
 import Footer from '../../components/Footer/Footer'
 import Contact from '../../components/Contact'
 import CalendlyScheduler from '../../components/CalendlyScheduler/calendlyScheduler'
+import PhotoGallery from '../../components/PhotoGallery'
 
 
 export default function Photography() {
@@ -23,7 +24,7 @@ export default function Photography() {
         subtext2='Contact us today or schedule a free consultation below.'
       />
       <main>
-        
+        <PhotoGallery />
         <Contact />
         <CalendlyScheduler />
       </main>
