@@ -81,7 +81,7 @@ const BannA = () => {
                 transition={{ duration: 1, delay: 0.3 }}
               >
                 <Typography gutterBottom variant="h4" align="center" sx={{ color: 'var(--mb1-3)', fontFamily: 'audiowide', textDecoration: 'underline', paddingLeft: {lg: '80px'}, textAlign: {lg: 'left'} }} >
-                  Ultra Quick
+                  Performant
                 </Typography>
                 <Typography variant="h6" align="center" sx={{ paddingLeft: {lg: '80px'}, textAlign: {lg: 'left'} }}>
                   Fast load times and pre-rendering means mobile sites respond to touch immediately.

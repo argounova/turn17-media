@@ -11,13 +11,13 @@ const questions = [
     },
     {
         id: '3',
-        question: 'Can I really have a website up and running in as little as 2-3 weeks?',
+        question: 'Can I really have a website up and running in as little as 4-5 weeks?',
         answer: 'Yes!  But (there is always a but)...keep in mind that the estimated time to completion, or ETC, listed is for design and development only.  Other considerations such as securing a domain, setting up hosting and providing Turn17 Media with photos/content can add time.  If you happen to have everything else in place then there is no reason your site cannot go live at the end of development.',
     },
     {
         id: '4',
         question: 'Is a domain and hosting included?',
-        answer: 'Yes, the price above includes a domain and 6-12 months of free hosting.  Certain restrictions apply such as a cap on domain cost, available bandwith, etc.',
+        answer: 'Hosting services and domain assistance are available.  The multi page website does include three months of free hosting.',
     },
     {
         id: '5',

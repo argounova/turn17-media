@@ -2,7 +2,7 @@ import Head from 'next/head'
 import TopNavigation from '../../components/TopNavigation'
 import BannerHeader from '../../components/BannerHeader'
 import Footer from '../../components/Footer/Footer'
-import PricingCards from '../../components/PricingCards/pricing'
+// import PricingCards from '../../components/PricingCards/pricing'
 import Contact from '../../components/Contact'
 
 
@@ -22,7 +22,7 @@ export default function Pricing() {
         subtag='Hidden fees'
         subtext2='Shopping for a website shouldn&apos;t take place in the dark.  Know the final figure before you pull the trigger.'
       />
-      <PricingCards />
+      {/* <PricingCards /> */}
       <main>
         <Contact />
       </main>

@@ -42,7 +42,7 @@ export default function MainFeatures() {
             <FeatureTextCard 
               title='Pricing'
               description='Flat-rate structure with no hidden fees.'
-              linkTo='/pricing'
+              linkTo='/web-design'
             />
             <FeatureTextCard 
               title='Build Time'

@@ -28,8 +28,8 @@ export default function Home() {
         tag1='Welcome to Turn17 Media.'
         tag2='Discover affordable web design and photography solutions.'
         subtag='If you have to ask, you can&apos;t afford it'
-        subtext1='Understand what you&apos;re getting and how much it will cost from the beginning.'
-        subtext2='A secure, professional website doesn&apos;t need to be complicated.'
+        // subtext1='Understand what you&apos;re getting and how much it will cost from the beginning.'
+        // subtext2='A secure, professional website doesn&apos;t need to be complicated.'
       />
       <main>
         <MainFeatures />
