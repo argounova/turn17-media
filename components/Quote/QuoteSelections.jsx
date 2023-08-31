@@ -15,6 +15,7 @@ import {
   RadioGroup,
   TextField,
 } from '@mui/material'
+import emailjs from '@emailjs/browser'
 
 
 export const siteExamples = [
@@ -47,6 +48,10 @@ export default function QuoteSelections() {
   const [clientNameEntered, setClientNameEntered] = useState(null)
   const [isValid, setIsValid] = useState(null)
   let siteExs = []
+  const templateParams = {
+    user_name: clientName,
+    user_email: clientEmail,
+  }
 
   const updateSiteExState = (index) => (e) => {
     siteExs = siteEx.map((item, i) => {
@@ -90,6 +95,7 @@ export default function QuoteSelections() {
     postData().then((data) => {
       location.replace('/submission?status=success')
     })
+    emailjs.send('service_l8xkawv', 'turn17media_quote', templateParams, 'd-nj0U9pmkBW1-kef')
   }
 
   return (
@@ -268,7 +274,7 @@ export default function QuoteSelections() {
                   onChange={(e) => {setSiteTimeline(e.target.value)}}
                 >
                   <FormControlLabel value="asap" control={<Radio />} label="ASAP" />
-                  <FormControlLabel value="2to4weeks" control={<Radio />} label="2-4 weeks" />
+                  <FormControlLabel value="4to6weeks" control={<Radio />} label="4-6 weeks" />
                   <FormControlLabel value="1to2months" control={<Radio />} label="1-2 months" />
                   <FormControlLabel value="furtherOut" control={<Radio />} label="Further out" />
                 </RadioGroup>
@@ -283,6 +289,7 @@ export default function QuoteSelections() {
                   // value={value}
                   onChange={(e) => {setSiteBudget(e.target.value)}}
                 >
+                  <FormControlLabel value="less" control={<Radio />} label="Less" />
                   <FormControlLabel value="800to1200" control={<Radio />} label="$800 - $1200" />
                   <FormControlLabel value="1300to1800" control={<Radio />} label="$1300 - $1800" />
                   <FormControlLabel value="2000to2500" control={<Radio />} label="$2000 - $2500" />

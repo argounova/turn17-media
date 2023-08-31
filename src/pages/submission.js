@@ -17,7 +17,7 @@ export default function Submission() {
       <TopNavigation />
       <BannerHeader 
         tag1='Your quote has been successfully submitted.'
-        tag2='We will be in touch within 2-3 business days.'
+        tag2='We will be in touch within 1-3 business days.'
       />
       <Container disableGutters sx={{ backgroundColor: 'var(--char5)', height: '25vh', minWidth: '100%' }}/>
       <Footer />
