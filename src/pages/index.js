@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import Head from 'next/head'
 import TopNavigation from '../../components/TopNavigation'
 import BannerHeader from '../../components/BannerHeader'
@@ -10,11 +11,13 @@ import BannerC from '../../components/Banners/BannerC'
 import BannerD from '../../components/Banners/BannerD'
 import FinishedSiteEx from '../../components/FinishedSiteExample'
 import Contact from '../../components/Contact'
-import CalendlyScheduler from '../../components/CalendlyScheduler/calendlyScheduler'
 import Footer from '../../components/Footer/Footer'
+import ControlledModal from '../../components/ControlledModal'
+import CalendlyScheduler from '../../components/CalendlyScheduler/CalendlyScheduler'
 
 
 export default function Home() {
+  const [shouldShowModal, setShouldShowModal] = useState(false)
   return (
     <>
       <Head>
@@ -32,7 +35,9 @@ export default function Home() {
         // subtext2='A secure, professional website doesn&apos;t need to be complicated.'
       />
       <main>
-        <MainFeatures />
+        <MainFeatures 
+          onClick={() => setShouldShowModal(!shouldShowModal)}
+        />
         <BannerAnimA />
         <BannerA />
         <BannerAnimB />
@@ -42,7 +47,14 @@ export default function Home() {
         <FinishedSiteEx />
         <Contact />
         <div id='free-consultation' style={{ position: 'absolute', bottom: '800px' }}/>
-        <CalendlyScheduler />
+        <ControlledModal
+          shouldShow={shouldShowModal}
+          onRequestClose={() => {
+            setShouldShowModal(false)
+          }}
+        >
+          <CalendlyScheduler />
+        </ControlledModal>
       </main>
       <Footer />
     </>

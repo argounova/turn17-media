@@ -1,6 +1,7 @@
 import * as React from 'react'
 import {
   Box,
+  Button,
   Stack
 } from '@mui/material'
 import Grid from '@mui/material/Unstable_Grid2'
@@ -11,7 +12,7 @@ import specSite from '../../public/images/spec-site-card-bw.jpg'
 import gtSite from '../../public/images/gt-site-card-bw.jpg'
 
 
-export default function MainFeatures() {
+export default function MainFeatures({ onClick }) {
   return (
     <Box m={2} mb={15}>
       <Grid 
@@ -23,7 +24,7 @@ export default function MainFeatures() {
       >
         <Grid xs={1} lg={1.5} xl={2} sx={{ display: { xs: 'block', sm: 'none', lg: 'block' } }}>
           <AdCard 
-            title='Free Quote'
+            title='FREE QUOTE'
             description='Start a quote today!'
             linkTo='/free-quote'
           />
@@ -69,7 +70,8 @@ export default function MainFeatures() {
           <AdCard 
             title='Free Consultation'
             description='Schedule now!'
-            linkTo='/#free-consultation'
+            onClick={onClick}
+            button={true}
           />
         </Grid>
         <Grid sm={1.5} md={2} lg={2} xl={2} sx={{ display: { xs: 'none', sm: 'block', md: 'none' } }}>
@@ -93,7 +95,7 @@ export default function MainFeatures() {
         </Grid>
         <Grid sm={1.25} md={3} lg={1.5} xl={2} sx={{ display: { xs: 'none', sm: 'block', md: 'block', lg: 'none' } }}>
           <AdCard 
-            title='Free Quote'
+            title='FREE QUOTE'
             description='Start a quote today!'
             linkTo='/free-quote'
           />

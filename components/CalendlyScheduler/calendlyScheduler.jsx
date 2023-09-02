@@ -9,8 +9,8 @@ import {
 
 const CalendlyScheduler = () => {
   return (
-    <Container sx={{ minWidth: '100vw', display: 'flex', justifyContent: 'center', backgroundColor: 'var(--char5)' }}>
-      <Card sx={{ width: 'fit-content', m: 2 }}>
+    <Container sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+      <Card>
         <div>
           <InlineWidget
             url="https://calendly.com/turn17media"
