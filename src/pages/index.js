@@ -13,7 +13,7 @@ import FinishedSiteEx from '../../components/FinishedSiteExample'
 import Contact from '../../components/Contact'
 import Footer from '../../components/Footer/Footer'
 import ControlledModal from '../../components/ControlledModal'
-import CalendlyScheduler from '../../components/CalendlyScheduler/CalendlyScheduler'
+import CalendlyScheduler from '../../components/CalendlyScheduler/calendlyScheduler'
 
 
 export default function Home() {

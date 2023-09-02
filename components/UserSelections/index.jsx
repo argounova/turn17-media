@@ -12,7 +12,7 @@ import {
 } from '@mui/material'
 import PayGTDeposit from '../PayGTDeposit'
 import PaySpecDeposit from '../PaySpecDeposit'
-import CalendlyScheduler from '../CalendlyScheduler/CalendlyScheduler'
+import CalendlyScheduler from '../CalendlyScheduler/calendlyScheduler'
 import { DashboardStyles } from './style'
 
  

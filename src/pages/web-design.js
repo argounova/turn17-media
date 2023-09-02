@@ -3,7 +3,7 @@ import TopNavigation from '../../components/TopNavigation'
 import WebDesignMain from '../../components/WebDesign'
 import Footer from '../../components/Footer/Footer'
 import Contact from '../../components/Contact'
-import CalendlyScheduler from '../../components/CalendlyScheduler/CalendlyScheduler'
+import CalendlyScheduler from '../../components/CalendlyScheduler/calendlyScheduler'
 
 
 
