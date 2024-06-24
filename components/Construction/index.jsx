@@ -22,7 +22,7 @@ function Construction() {
           Under Construction
         </Typography>
         <Typography variant='h2' align='center' gutterBottom>
-          Check back soon!
+          Please check back soon!
         </Typography>
       </motion.div>
     </ConstructionStyles>
