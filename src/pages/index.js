@@ -48,7 +48,7 @@ export default function Home() {
         <BannerD />
         <DownArrow />
         <FinishedSiteEx />
-        // <Contact />
+        <Contact />
         <div id='free-consultation' style={{ position: 'absolute', bottom: '800px' }}/>
         <ControlledModal
           shouldShow={shouldShowModal}
